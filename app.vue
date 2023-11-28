@@ -7,7 +7,7 @@ const bg_color = computed(() => colorMode.preference === 'light' ? '#E6E9EF' : '
   <TheHeader />
   <TopographySvg :color="bg_color" class="background" />
   <NuxtPage class="min-h-[90vh] max-w-5xl" />
-  <!-- <Footer /> -->
+  <TheFooter />
 </template>
 
 <style scoped>
