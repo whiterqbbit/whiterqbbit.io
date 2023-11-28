@@ -10,4 +10,6 @@ export default defineNuxtConfig({
   devServer: { port: 3210 },
 
   i18n: { vueI18n: './i18n.config.ts' },
+
+  colorMode: { classSuffix: '' },
 })

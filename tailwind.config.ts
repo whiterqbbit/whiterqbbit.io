@@ -22,6 +22,7 @@ export default <Partial<Config>>{
       },
     },
   },
+  darkMode: 'class',
 }
 
 // desired font
