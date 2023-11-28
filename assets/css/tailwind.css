@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md bg-blue-500 text-white;
+  }
+}
+
+@layer base {
+  body {
+    @apply dark:bg-gray-900 bg-pink-500 
+    max-w-5xl mx-auto
+    font-sans text-mocha-black dark:text-mocha-white;
+  }
+}
