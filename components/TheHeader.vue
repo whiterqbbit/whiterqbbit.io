@@ -11,10 +11,10 @@ watch(() => route.path, newPath => path.value = newPath)
 
 <template>
   <nav
-    class="sticky top-0 z-50 transition-all duration-1000 rounded-b-3xl backdrop-blur-sm bg-stone-100 dark:bg-stone-950"
+    class="sticky top-0 z-50 transition-all duration-1000 rounded-b-3xl backdrop-blur-sm"
     :class="y > 0 ? 'bg-opacity-50 dark:bg-opacity-70 py-0' : 'bg-opacity-0 dark:bg-opacity-0 py-3'"
   >
-    <div name="container" class="flex max-w-5xl m-auto px-2 sm:px-4 md:px-6 lg:px-0">
+    <div name="container" class="flex max-w-5xl m-auto font-bold px-2 sm:px-4 md:px-6 lg:px-0">
       <NuxtLink to="/" class="flex gap-2 sm:gap-4">
         <NuxtImg src="/catppuccin_logo.png" width="48" height="48" class="w-10 h-10 md:w-12 md:h-12 m-auto rounded-full" />
         <div class="m-auto sm:text-xl md:text-2xl text-sky">Guillaume Bonnefoy</div>
@@ -38,14 +38,14 @@ watch(() => route.path, newPath => path.value = newPath)
 
 <style scoped>
 ul li * {
-  @apply transition-all duration-300 ease-in-out;
+  @apply hover-zoom;
 }
 
 ul li .nav-link {
-  @apply text-red-100 font-bold underline decoration-amber-700/40 underline-offset-[6px] decoration-2;
+  @apply text-anim-color font-black underline decoration-ctp-yellow/50 underline-offset-[6px] decoration-2;
 }
 
 ul li *:hover {
-  @apply hover:text-red-100;
+  @apply hover:text-anim-color hover:scale-105 font-black;
 }
 </style>

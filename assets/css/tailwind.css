@@ -15,3 +15,31 @@
     @apply px-4 py-2 rounded-md bg-blue-500 text-white;
   }
 }
+
+@layer utilities {
+  @keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
+
+  .text-anim-color {
+    --bg-size: 400%;
+    --color-one: theme('colors.ctp-yellow.DEFAULT');
+    --color-two: theme('colors.ctp-mauve.DEFAULT');
+    background: linear-gradient(
+                  90deg,
+                  var(--color-one),
+                  var(--color-two),
+                  var(--color-one)
+                ) 0 0 / var(--bg-size) 100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: move-bg 10s infinite linear;
+  }
+
+  .hover-zoom {
+    @apply transition-transform duration-200 ease-in-out scale-100 hover:scale-105;
+  }
+}
