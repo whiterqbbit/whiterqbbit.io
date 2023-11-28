@@ -1,24 +1,35 @@
 {
-  "name": "nuxt-app",
-  "private": true,
+  "name": "whiterqbbit",
   "type": "module",
+  "private": true,
+  "packageManager": "pnpm@8.11.0",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "pre-commit": "pnpm lint && pnpm typecheck",
+    "typecheck": "nuxt typecheck",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@nuxt/image": "^1.1.0",
+    "@nuxtjs/color-mode": "^3.3.2",
+    "@nuxtjs/eslint-module": "^4.1.0"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^2.1.1",
     "@nuxt/devtools": "latest",
     "@nuxtjs/i18n": "8.0.0-rc.5",
     "@unocss/nuxt": "^0.57.7",
+    "eslint": "^8.54.0",
     "nuxt": "^3.8.2",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
   },
-  "dependencies": {
-    "@nuxt/image": "^1.1.0",
-    "@nuxtjs/color-mode": "^3.3.2"
+  "simple-git-hooks": {
+    "pre-commit": "pnpm pre-commit"
   }
 }
