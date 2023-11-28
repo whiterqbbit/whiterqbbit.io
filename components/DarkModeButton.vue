@@ -8,8 +8,8 @@ function toggleColorMode() {
 
 <template>
   <button
-    class="text-xl p-2 rounded-full hover:bg-orange-50 dark:hover:bg-slate-600
-    i-heroicons-moon-20-solid dark:i-heroicons-sun-20-solid"
+    class="text-3xl hover:text-ctp-yellow rounded-full
+    i-heroicons-moon-20-solid dark:i-heroicons-sun-solid"
     @click="toggleColorMode"
   />
 </template>
