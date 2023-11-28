@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import { getIconCollections, iconsPlugin } from '@egoist/tailwindcss-icons'
 
 export default <Partial<Config>>{
   theme: {
@@ -23,6 +24,11 @@ export default <Partial<Config>>{
     },
   },
   darkMode: 'class',
+  plugins: [
+    iconsPlugin({
+      collections: getIconCollections(['ci', 'heroicons']),
+    }),
+  ],
 }
 
 // desired font
