@@ -11,7 +11,9 @@ export default <Partial<Config>>{
     iconsPlugin({
       collections: getIconCollections(['ci', 'heroicons']),
     }),
-    catppuccin,
+    catppuccin({
+      prefix: 'ctp',
+    }),
   ],
 }
 // desired font

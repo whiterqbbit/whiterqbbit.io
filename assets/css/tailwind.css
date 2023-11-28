@@ -4,8 +4,8 @@
 
 @layer base {
   body {
-    @apply latte dark:mocha bg-base dark:bg-mantle
-    font-sans text-text
+    @apply ctp-latte dark:ctp-mocha bg-ctp-base dark:bg-ctp-mantle
+    font-sans text-ctp-text
     mx-auto;
   }
 }
