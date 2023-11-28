@@ -32,7 +32,7 @@ watch(() => colorMode.value, () => {
         <slot name="image" />
       </div>
 
-      <div class="text-2xl font-medium">
+      <div class="text-2xl font-medium text-anim-color">
         <slot name="title" />
       </div>
 

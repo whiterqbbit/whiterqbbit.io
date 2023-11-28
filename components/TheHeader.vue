@@ -14,7 +14,7 @@ watch(() => route.path, newPath => path.value = newPath)
     class="sticky top-0 z-50 transition-all ease-out duration-1000 rounded-b-3xl bg-ctp-mantle"
     :class="y > 0 ? 'bg-opacity-50 dark:bg-opacity-70 backdrop-blur-sm py-1' : 'bg-opacity-0 dark:bg-opacity-0 py-4'"
   >
-    <div name="container" class="flex max-w-5xl m-auto font-bold px-2 sm:px-4 md:px-6 lg:px-0">
+    <div name="container" class="flex max-w-5xl m-auto font-bold px-2 sm:px-4 md:px-6">
       <NuxtLink to="/" class="flex gap-2 sm:gap-4">
         <NuxtImg src="/catppuccin_logo.png" width="48" height="48" class="w-10 h-10 md:w-12 md:h-12 m-auto rounded-full hover:animate-bounce" />
         <div class="m-auto sm:text-xl md:text-2xl text-sky emphasize">Guillaume Bonnefoy</div>

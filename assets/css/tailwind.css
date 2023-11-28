@@ -39,7 +39,26 @@
     animation: move-bg 10s infinite linear;
   }
 
-  .hover-zoom {
-    @apply transition-transform duration-200 ease-in-out scale-100 hover:scale-105;
+  .hover-fast-transition {
+    @apply transition-transform duration-75 ease-in-out;
+  }
+
+  @keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
+
+  .border-animation {
+    --bg-size: 400%;
+    --color-one: theme('colors.ctp-green.DEFAULT');
+    --color-two: theme('colors.ctp-blue.DEFAULT');
+    background: linear-gradient(
+                  90deg,
+                  var(--color-one),
+                  var(--color-two),
+                  var(--color-one)
+                ) 0 0 / var(--bg-size) 100%;
+    animation: move-bg 12s infinite linear;
   }
 }
