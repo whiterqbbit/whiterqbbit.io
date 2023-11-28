@@ -14,6 +14,17 @@ export default defineConfig({
   ],
   theme: {
     colors: {
+      mocha: {
+        black: '#1B1B29',
+        blue: '#89B4FA',
+        red: '#F38BA8',
+        green: '#A6E3A1',
+        teal: '#89DCEB',
+        white: '#F2CDCD',
+        pink: '#F5C2E7',
+        orange: '#FAB387',
+        yellow: '#F9E2AF',
+      },
     },
   },
   presets: [
@@ -22,8 +33,8 @@ export default defineConfig({
     presetIcons(),
     presetTypography(),
     presetWebFonts({
-      fonts: {
-      },
+      provider: 'bunny',
+      fonts: { sans: 'Nunito' },
     }),
   ],
   transformers: [
