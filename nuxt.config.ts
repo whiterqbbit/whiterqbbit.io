@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/color-mode',
     '@nuxtjs/i18n',
+    '@nuxt/content',
   ],
 
   devtools: { enabled: true },
@@ -17,6 +18,10 @@ export default defineNuxtConfig({
     domains: ['whiterqbbit.io'],
     dir: 'public',
     format: ['webp'],
-    provider: 'netlify'
+    provider: 'netlify',
+  },
+
+  content: {
+    documentDriven: true,
   },
 })
