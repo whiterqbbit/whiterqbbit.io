@@ -10,7 +10,7 @@ const { elementX, elementY } = useMouseInElement(card)
 const colorMode = useColorMode()
 
 watch(() => colorMode.value, () => {
-  const color = colorMode.value === 'light' ? '#EED49F45' : '#89B4FA30'
+  const color = colorMode.value === 'light' ? '#8839EF25' : '#89B4FA30'
   if (card.value)
     card.value.style.setProperty('--gradient-color', color)
 })
