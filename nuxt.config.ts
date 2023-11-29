@@ -15,7 +15,8 @@ export default defineNuxtConfig({
 
   image: {
     domains: ['whiterqbbit.io'],
-    dir: 'assets',
+    dir: 'public',
     format: ['webp'],
+    provider: 'netlify'
   },
 })
