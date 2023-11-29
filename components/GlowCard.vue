@@ -2,6 +2,8 @@
 import { ref } from 'vue'
 import { useMouseInElement } from '@vueuse/core'
 
+const { title } = defineProps<{ title: string }>()
+
 const card = ref<HTMLDivElement>()
 const { elementX, elementY } = useMouseInElement(card)
 
@@ -21,7 +23,7 @@ watch(() => colorMode.value, () => {
       '--x': `${elementX}px`,
       '--y': `${elementY}px`,
     }"
-    class="p-4 lg:p-8 overflow-hidden rounded-2xl
+    class="p-4 lg:p-8 overflow-hidden rounded-3xl shadow-xl
     border border-b-0 border-gradient border-ctp-text/10 bg-ctp-mantle
     before:absolute before:-inset-px before:h-[calc(100%+2px)] before:w-[calc(100%+2px)] before:rounded-xl
     group relative before:blur-xl"
@@ -33,10 +35,10 @@ watch(() => colorMode.value, () => {
       </div>
 
       <div class="text-2xl font-medium text-anim-color">
-        <slot name="title" />
+        {{ title }}
       </div>
 
-      <div class="mt-3 text-base text-subtext0">
+      <div class="mt-4 text-base text-subtext0">
         <slot />
       </div>
     </div>

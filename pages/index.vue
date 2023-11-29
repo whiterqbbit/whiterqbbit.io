@@ -26,8 +26,7 @@
     </div>
 
     <div class="flex gap-12">
-      <TheCard>
-        <template #title> Ingénieur-commercial en merguez </template>
+      <GlowCard title="Ingénieur-commercial en merguez">
         <template #default>
           Mon grand kiff dans la vie, c’est les merguez. Merguez pois-chiche, merguez camembert,
           ou encore merguez sardines, aucune ne me résiste.
@@ -35,9 +34,8 @@
           mais je suis également chercheur en saucisse toulousaine sur mon temps libre.
           Je m’intéresse actuellement à la saucisse de Francfort.
         </template>
-      </TheCard>
-      <TheCard>
-        <template #title> Formation </template>
+      </GlowCard>
+      <GlowCard title="Formation">
         <template #default>
           Après avoir obtenu mon bac spécialité Merguez avec mention Bien Cuite, j’ai intégré
           l’ENSM (École Nationale Supérieure de la Merguez) et ai été promu major de ma promotion.
@@ -45,9 +43,8 @@
           où j’ai pu écrire une thèse sur l'impact de la merguez sur la santé mentale du Tiers-Etat
           au XVIIIe siècle.
         </template>
-      </TheCard>
-      <TheCard>
-        <template #title> Passion Merguez </template>
+      </GlowCard>
+      <GlowCard title="Passion Merguez">
         <template #default>
           Ma vocation m'a été transmise par mon père, qui est lui-même issu d'une longue lignée de
           merguezologues, dont le premier représentant est le célèbre Jean-Baptiste Merguez. C'est
@@ -56,7 +53,7 @@
           la merguez à la truffe et la merguez au vinaigre balsamique. J'ai également inventé le
           tacos merguez, qui a connu un succès fulgurant dans le monde entier.
         </template>
-      </TheCard>
+      </GlowCard>
     </div>
   </div>
 </template>
