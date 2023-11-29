@@ -17,6 +17,14 @@
 }
 
 @layer utilities {
+  .hover-fast-transition {
+    @apply transition-transform duration-150 ease-out;
+  }
+  
+  .raise-color {
+    @apply hover-fast-transition text-anim-color -translate-y-[3px];
+  }
+
   @keyframes move-bg {
     to {
       background-position: var(--bg-size) 0;
@@ -37,10 +45,6 @@
     background-clip: text;
     -webkit-background-clip: text;
     animation: move-bg 10s infinite linear;
-  }
-
-  .hover-fast-transition {
-    @apply transition-transform duration-75 ease-in-out;
   }
 
   @keyframes move-bg {
