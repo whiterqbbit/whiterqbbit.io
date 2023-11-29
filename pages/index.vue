@@ -4,7 +4,7 @@
       <div class="aspect-w-1 aspect-h-1">
         <div class="border-animation rounded-full">
           <div class="inline-flex p-1 rounded-full">
-            <NuxtImg src="/malt_catppuccin.jpg" class="h-64 object-cover rounded-full" />
+            <NuxtImg src="malt_catppuccin.jpg" class="h-64 object-cover rounded-full" />
           </div>
         </div>
       </div>

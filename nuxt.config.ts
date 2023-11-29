@@ -12,4 +12,10 @@ export default defineNuxtConfig({
   i18n: { vueI18n: './i18n.config.ts' },
 
   colorMode: { preference: 'dark', classSuffix: '' },
+
+  image: {
+    domains: ['whiterqbbit.io'],
+    dir: 'public',
+    format: ['webp'],
+  },
 })
