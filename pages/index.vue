@@ -3,7 +3,10 @@
     <div class="flex justify-around place-content-center">
       <div class="aspect-w-1 aspect-h-1">
         <div class="border-animation rounded-full">
-          <div class="inline-flex p-1 rounded-full">
+          <div
+            class="inline-flex p-1 rounded-full shadow-[0_0_30px_11px] shadow-ctp-blue/25
+            transition duration-500 ease-in-out hover:shadow-[0_0_40px_11px] hover:shadow-ctp-teal/30"
+          >
             <NuxtImg src="malt_catppuccin.jpg" class="h-64 object-cover rounded-full" />
           </div>
         </div>

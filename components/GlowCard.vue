@@ -23,7 +23,8 @@ watch(() => colorMode.value, () => {
       '--x': `${elementX}px`,
       '--y': `${elementY}px`,
     }"
-    class="p-4 lg:p-8 overflow-hidden rounded-3xl shadow-xl
+    class="p-4 lg:p-8 overflow-hidden rounded-3xl
+    shadow-xl transition-shadow duration-1000 ease-in hover:shadow-ctp-blue/10
     border border-b-0 border-gradient border-ctp-text/10 bg-ctp-mantle
     before:absolute before:-inset-px before:h-[calc(100%+2px)] before:w-[calc(100%+2px)] before:rounded-xl
     group relative before:blur-xl"
