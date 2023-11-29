@@ -1,5 +1,37 @@
 <template>
-  <div>
-    <p class="text-mocha-white text-5xl font-black text-anim-color">404 frero</p>
+  <div class="m-auto text-center flex place-content-center place-items-center hover:animate-spin">
+    <GlowCard class="hover:animate-spin">
+      <template #default>
+        <GlowCard class="hover:animate-spin">
+          <template #default>
+            <GlowCard class="hover:animate-spin">
+              <template #default>
+                <GlowCard class="hover:animate-spin">
+                  <template #default>
+                    <GlowCard class="hover:animate-spin">
+                      <template #default>
+                        <GlowCard class="hover:animate-spin">
+                          <template #default>
+                            <GlowCard class="hover:animate-spin">
+                              <template #default>
+                                <GlowCard title="404 frero" class="hover:animate-spin">
+                                  <template #default>
+                                    lol
+                                  </template>
+                                </glowcard>
+                              </template>
+                            </GlowCard>
+                          </template>
+                        </GlowCard>
+                      </template>
+                    </GlowCard>
+                  </template>
+                </GlowCard>
+              </template>
+            </GlowCard>
+          </template>
+        </GlowCard>
+      </template>
+    </glowcard>
   </div>
 </template>

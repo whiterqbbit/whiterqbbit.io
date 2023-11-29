@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useMouseInElement } from '@vueuse/core'
 
-const { title } = defineProps<{ title: string }>()
+const { title } = defineProps<{ title?: string }>()
 
 const card = ref<HTMLDivElement>()
 const { elementX, elementY } = useMouseInElement(card)
@@ -34,11 +34,11 @@ watch(() => colorMode.value, () => {
         <slot name="image" />
       </div>
 
-      <div class="text-2xl font-medium text-anim-color">
+      <div v-if="title" class="text-2xl font-medium text-anim-color mb-4">
         {{ title }}
       </div>
 
-      <div class="mt-4 text-base text-subtext0">
+      <div class="text-base text-subtext0">
         <slot />
       </div>
     </div>
