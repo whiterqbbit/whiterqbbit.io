@@ -26,6 +26,9 @@ dependencies:
   '@vueuse/core':
     specifier: ^10.6.1
     version: 10.6.1(vue@3.3.9)
+  hero-patterns:
+    specifier: ^2.1.0
+    version: 2.1.0
 
 devDependencies:
   '@antfu/eslint-config':
@@ -5411,6 +5414,10 @@ packages:
       hast-util-parse-selector: 4.0.0
       property-information: 6.4.0
       space-separated-tokens: 2.0.2
+    dev: false
+
+  /hero-patterns@2.1.0:
+    resolution: {integrity: sha512-cHob8+etbF3kl+ylmvFQORBdFx3njmFUv+JIbu4i+GVNvfCgvNkWolkBhYU9fE2cecx+DGxLSiSNq+F5NWJrTQ==}
     dev: false
 
   /hookable@5.5.3:

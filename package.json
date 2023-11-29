@@ -21,7 +21,8 @@
     "@nuxt/image": "^1.1.0",
     "@nuxtjs/color-mode": "^3.3.2",
     "@nuxtjs/eslint-module": "^4.1.0",
-    "@vueuse/core": "^10.6.1"
+    "@vueuse/core": "^10.6.1",
+    "hero-patterns": "^2.1.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.1.1",

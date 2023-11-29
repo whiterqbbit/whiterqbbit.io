@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { topography } from 'hero-patterns'
+
 useHead({
   title: 'Guillaume Bonnefoy',
   meta: [{ name: 'Guillaume Bonnefoy', content: 'Veni, Vidi, Codi' }],
@@ -10,8 +12,9 @@ const bg_color = computed(() => colorMode.preference === 'light' ? '#E6E9EF' : '
 </script>
 
 <template>
-  <TopographySvg class="fixed top-0 left-0 h-screen -z-10" :color="bg_color" />
-  <TheHeader />
-  <NuxtPage class="min-h-[90vh] max-w-5xl" />
-  <TheFooter />
+  <div :style="`background-image: ${topography(bg_color, 1)}`">
+    <TheHeader />
+    <NuxtPage class="min-h-[90vh] max-w-5xl" />
+    <TheFooter />
+  </div>
 </template>
