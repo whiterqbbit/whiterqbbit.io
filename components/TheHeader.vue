@@ -31,9 +31,10 @@ watch(() => route.path, newPath => path.value = newPath)
         </li>
       </ul>
 
-      <div class="my-auto">
+      <div class="my-auto flex gap-1">
+        <LocaleButton />
+        <p> | </p>
         <DarkModeButton />
-        <!-- <LocaleButton /> -->
       </div>
     </div>
   </nav>

@@ -3,7 +3,7 @@ export default defineI18nConfig(() => ({
   locale: 'fr',
   messages: {
     en: {
-      flag: '🇬🇧',
+      flag: '🇺🇸',
       header: {
         portfolio: 'Portfolio',
         blog: 'Blog',
