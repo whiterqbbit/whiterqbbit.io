@@ -7,7 +7,7 @@
         <NuxtLink class="i-ci-linkedin" to="https://www.linkedin.com/in/white-rqbbit/" target="_blank" />
       </li>
     </ul>
-    <div class="text-center text-sm">
+    <div class="text-center text-sm text-ctp-overlay1">
       Fait par mes petites mains avec Nuxt.<br>
       <NuxtLink class="hover:text-anim-color" to="https://www.github.com/whiterqbbit/whiterqbbit-website" target="_blank">
         Code source sur Github
