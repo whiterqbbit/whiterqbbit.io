@@ -1,22 +1,16 @@
+import { TheHeader } from '~/locales/components/TheHeader'
+
 export default defineI18nConfig(() => ({
   legacy: false,
   locale: 'fr',
   messages: {
     en: {
       flag: '🇺🇸',
-      header: {
-        portfolio: 'Portfolio',
-        blog: 'Blog',
-        about: 'About',
-      },
+      header: TheHeader.en
     },
     fr: {
       flag: '🇫🇷',
-      header: {
-        portfolio: 'Portfolio',
-        blog: 'Blog',
-        about: 'À Propos',
-      },
+      header: TheHeader.fr
     },
   },
 }))
