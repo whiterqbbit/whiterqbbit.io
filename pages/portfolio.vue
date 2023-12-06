@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { vue2, vue3, nuxt, tailwind, unocss, typescript, chrome, ethereum, node, nodets, express, prisma, react, sequelize, mongodb, elasticsearch, aws_omniscient, aws_ttt, terraform, docker, netlify, bootstrap, sass, html5, javascript, puppeteer, amplify, jest, vitest, cucumber, metabase } = icons
+const { vue2, vue3, nuxt, tailwind, unocss, typescript, chrome, ethereum, node, nodets, prisma, react, sequelize, mongodb, elasticsearch, agile, aws_omniscient, aws_ttt, aws_calypso, terraform, docker, netlify, bootstrap, sass, html5, javascript, puppeteer, amplify, jest, vitest, cucumber, metabase } = icons
 
 interface IProject {
   name: string
@@ -13,42 +13,58 @@ interface IProject {
 const projects: IProject[] = [
   {
     name: 'ChadGuard',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl sed aliquam ultricies, nunc sapien aliquet nunc, nec ult',
+    description: `<h3>Extension Chrome utilisant IA pour bloquer le contenu adulte.</h3>
+                  <p>~3000 utilisateurs actifs.</p>
+                  <p class="text-ctp-overlay2 italic">Produit, UI/UX, développement</p>
+                    `,
     stack: { front: [vue2, tailwind], back: [chrome] },
     url: 'https://chromewebstore.google.com/detail/chadguard/oogpehhghgfaeojjbflgeemilhkhgbhe?hl=fr&pli=1',
-    source: 'https://github.com/LaGuerrePiece/ChadGuard'
+    source: 'https://github.com/LaGuerrePiece/ChadGuard',
   },
   {
     name: 'Moonolith',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl sed aliquam ultricies, nunc sapien aliquet nunc, nec ult',
+    description: 'App web3 décentralisée axée sur la liberté d\'expression.',
     stack: { front: [html5, javascript], back: [ethereum] },
     url: 'https://www.moonolith.io/',
-    source: 'https://github.com/LaGuerrePiece/moonolith'
+    source: 'https://github.com/LaGuerrePiece/moonolith',
   },
   {
     name: 'Kafo',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl sed aliquam ultricies, nunc sapien aliquet nunc, nec ult',
-    stack: { front: [vue3, unocss, typescript, vitest], back: [nodets, express, prisma, amplify] },
+    description: 'Startup marketplace et rencontre coworking.',
+    stack: { front: [vue3, unocss, typescript, vitest], back: [nodets, prisma, amplify, agile] },
+    url: 'https://www.kafo.work/',
+    // source: 'https://github.com/whiterqbbit/kafo_front_vitesse'
   },
   {
     name: 'Aestima-immo',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl sed aliquam ultricies, nunc sapien aliquet nunc, nec ult',
+    description: `Startup SaaS dans la gestion de patrimoine.`,
     stack: { front: [vue2, tailwind], back: [nodets, mongodb, docker, terraform, puppeteer] },
+    url: 'https://www.aestima-immo.com/',
   },
   {
     name: 'My Omniscient',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl sed aliquam ultricies, nunc sapien aliquet nunc, nec ult',
-    stack: { front: [vue2, bootstrap, sass], back: [node, aws_omniscient, elasticsearch, cucumber] },
+    description: 'Startup IOT dans le secteur du BTP.',
+    stack: { front: [vue2, bootstrap, sass], back: [node, aws_omniscient, elasticsearch, mongodb, cucumber, agile] },
+    url: 'https://myomniscient.com/solutions/application/',
   },
   {
     name: 'Tictactrip',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl sed aliquam ultricies, nunc sapien aliquet nunc, nec ult',
-    stack: { front: [react, tailwind, jest], back: [nodets, aws_ttt, terraform, sequelize, metabase, jest] },
+    description: 'Startup de moteur de recherche d\'itinéraire.',
+    stack: { front: [react, tailwind, jest], back: [nodets, aws_ttt, terraform, sequelize, metabase, jest, agile] },
+    url: 'https://www.tictactrip.eu/',
+  },
+  {
+    name: 'Calypso Bonnefoy',
+    description: 'Site vitrine d\'artiste style classique. Formulaire, mailing.',
+    stack: { front: [nuxt, tailwind], back: [aws_calypso, docker, terraform] },
+    url: 'https://www.calypsobonnefoy.com/',
+    source: 'https://github.com/whiterqbbit/calypso_bonnefoy/',
   },
   {
     name: 'Ce site !',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl sed aliquam ultricies, nunc sapien aliquet nunc, nec ult',
+    description: 'Petit site statique mettant en valeur mes talents !',
     stack: { front: [nuxt, tailwind], back: [netlify] },
+    source: 'https://github.com/whiterqbbit/whiterqbbit-website',
   },
 ]
 </script>
@@ -66,7 +82,7 @@ const projects: IProject[] = [
         class="max-w-xs overflow-visible"
       >
         <template #default>
-          <p>{{ project.description }}</p>
+          <div class="cursor-pointer text-sm flex flex-col gap-2" @click="console.log('dab')" v-html="project.description" />
           <div class="flex flex-col mt-4 gap-2 text-2xl cursor-default">
             <div class="flex flex-row gap-2">
               <div v-for="tech in project.stack.front" :key="tech.name">
@@ -89,3 +105,9 @@ const projects: IProject[] = [
     </div>
   </div>
 </template>
+
+<style scoped>
+h3 {
+  @apply text-ctp-subtext1;
+}
+</style>

@@ -71,6 +71,14 @@ export const icons = {
     name: 'AWS Cloudwatch, S3',
     icon: 'i-simple-icons-amazonaws',
   },
+  aws_calypso: {
+    name: 'AWS ECR, EC2, S3, Route53, ACM',
+    icon: 'i-simple-icons-amazonaws',
+  },
+  agile: {
+    name: 'Agile',
+    icon: 'i-simple-icons-atlassian',
+  },
   terraform: {
     name: 'Terraform',
     icon: 'i-simple-icons-terraform',
