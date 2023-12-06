@@ -1,10 +1,9 @@
 export default defineNuxtConfig({
   modules: [
-    '@nuxtjs/tailwindcss',
     '@nuxt/image',
-    '@nuxtjs/color-mode',
     '@nuxtjs/i18n',
     '@nuxt/content',
+    '@nuxt/ui',
   ],
 
   devtools: { enabled: true },

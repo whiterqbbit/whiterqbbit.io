@@ -9,7 +9,7 @@ export default <Partial<Config>>{
   darkMode: 'class',
   plugins: [
     iconsPlugin({
-      collections: getIconCollections(['ci', 'heroicons']),
+      collections: getIconCollections(['ci', 'heroicons', 'simple-icons']),
     }),
     catppuccin({
       prefix: 'ctp',
