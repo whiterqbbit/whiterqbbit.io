@@ -15,12 +15,15 @@ const projects: IProject[] = [
     name: 'ChadGuard',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl sed aliquam ultricies, nunc sapien aliquet nunc, nec ult',
     stack: { front: [vue2, tailwind], back: [chrome] },
-    url: 'https://chromewebstore.google.com/detail/chadguard/oogpehhghgfaeojjbflgeemilhkhgbhe?hl=fr&pli=1'
+    url: 'https://chromewebstore.google.com/detail/chadguard/oogpehhghgfaeojjbflgeemilhkhgbhe?hl=fr&pli=1',
+    source: 'https://github.com/LaGuerrePiece/ChadGuard'
   },
   {
     name: 'Moonolith',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl sed aliquam ultricies, nunc sapien aliquet nunc, nec ult',
     stack: { front: [html5, javascript], back: [ethereum] },
+    url: 'https://www.moonolith.io/',
+    source: 'https://github.com/LaGuerrePiece/moonolith'
   },
   {
     name: 'Kafo',
@@ -52,14 +55,14 @@ const projects: IProject[] = [
 
 <template>
   <div class="flex flex-col gap-4 m-auto py-4">
-    <div class="text-4xl text-center text-anim-color">
+    <div class="text-4xl text-center text-anim-color mb-8">
       Quelques projets
     </div>
     <div
       class="flex flex-wrap justify-around w-full gap-4"
     >
       <GlowCard
-        v-for="project in projects" :key="project.name" :title="project.name"
+        v-for="project in projects" :key="project.name" :title="project.name" :url="project.url" :source="project.source"
         class="max-w-xs overflow-visible"
       >
         <template #default>

@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useMouseInElement } from '@vueuse/core'
 
-const { title } = defineProps<{ title?: string }>()
+const { title, url, source } = defineProps<{ title?: string, url?: string, source?: string }>()
 
 const card = ref<HTMLDivElement>()
 const { elementX, elementY } = useMouseInElement(card)
@@ -31,8 +31,14 @@ watch(() => colorMode.value, () => {
   >
     <!-- voir si certaines classes ne sont pas retirables -->
     <div class="relative">
-      <div v-if="title" class="text-2xl font-medium text-anim-color mb-4">
-        {{ title }}
+      <div class="flex gap-4 place-content-center text-2xl">
+        <div v-if="title" class="text-2xl font-medium text-anim-color mb-4">
+          {{ title }}
+        </div>
+        <div class="mt-1">
+          <NuxtLink v-if="url" class="i-ci-link hover:text-ctp-yellow" :to="url" target="_blank" />
+          <NuxtLink v-if="source" class="i-ci-github hover:text-ctp-yellow" :to="source" target="_blank" />
+        </div>
       </div>
 
       <div class="">
