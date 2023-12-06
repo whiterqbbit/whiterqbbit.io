@@ -6,6 +6,7 @@ interface IProject {
   description: string
   image?: string
   url?: string
+  tasks?: string
   source?: string
   stack: { front: typeof icons[keyof typeof icons][], back: typeof icons[keyof typeof icons][] }
 }
@@ -13,17 +14,17 @@ interface IProject {
 const projects: IProject[] = [
   {
     name: 'ChadGuard',
-    description: `<h3>Extension Chrome utilisant IA pour bloquer le contenu adulte.</h3>
-                  <p>~3000 utilisateurs actifs.</p>
-                  <p class="text-ctp-overlay2 italic">Produit, UI/UX, développement</p>
-                    `,
+    description: `<p>Extension Chrome utilisant IA pour bloquer le contenu adulte.</p>
+                  <p>~3000 utilisateurs actifs.</p>`,
+    tasks: 'Produit, développement fullstack, UI/UX',
     stack: { front: [vue2, tailwind], back: [chrome] },
     url: 'https://chromewebstore.google.com/detail/chadguard/oogpehhghgfaeojjbflgeemilhkhgbhe?hl=fr&pli=1',
     source: 'https://github.com/LaGuerrePiece/ChadGuard',
   },
   {
     name: 'Moonolith',
-    description: 'App web3 décentralisée axée sur la liberté d\'expression.',
+    description: `App web3 décentralisée axée sur la liberté d'expression.`,
+    tasks: 'Produit, développement fullstack, direction artistique, musique',
     stack: { front: [html5, javascript], back: [ethereum] },
     url: 'https://www.moonolith.io/',
     source: 'https://github.com/LaGuerrePiece/moonolith',
@@ -31,6 +32,7 @@ const projects: IProject[] = [
   {
     name: 'Kafo',
     description: 'Startup marketplace et rencontre coworking.',
+    tasks: 'Produit, développement fullstack, UI/UX, enquêtes utilisateurs',
     stack: { front: [vue3, unocss, typescript, vitest], back: [nodets, prisma, amplify, agile] },
     url: 'https://www.kafo.work/',
     // source: 'https://github.com/whiterqbbit/kafo_front_vitesse'
@@ -38,18 +40,21 @@ const projects: IProject[] = [
   {
     name: 'Aestima-immo',
     description: `Startup SaaS dans la gestion de patrimoine.`,
+    tasks: 'Développement fullstack',
     stack: { front: [vue2, tailwind], back: [nodets, mongodb, docker, terraform, puppeteer] },
     url: 'https://www.aestima-immo.com/',
   },
   {
     name: 'My Omniscient',
     description: 'Startup IOT dans le secteur du BTP.',
+    tasks: 'Développement fullstack',
     stack: { front: [vue2, bootstrap, sass], back: [node, aws_omniscient, elasticsearch, mongodb, cucumber, agile] },
     url: 'https://myomniscient.com/solutions/application/',
   },
   {
     name: 'Tictactrip',
     description: 'Startup de moteur de recherche d\'itinéraire.',
+    tasks: 'Développement backend',
     stack: { front: [react, tailwind, jest], back: [nodets, aws_ttt, terraform, sequelize, metabase, jest, agile] },
     url: 'https://www.tictactrip.eu/',
   },
@@ -83,6 +88,7 @@ const projects: IProject[] = [
       >
         <template #default>
           <div class="cursor-pointer text-sm flex flex-col gap-2" @click="console.log('dab')" v-html="project.description" />
+          <div v-if="project.tasks" class="mt-2 text-sm italic text-ctp-overlay2"> {{ project.tasks }} </div>
           <div class="flex flex-col mt-4 gap-2 text-2xl cursor-default">
             <div class="flex flex-row gap-2">
               <div v-for="tech in project.stack.front" :key="tech.name">
@@ -105,9 +111,3 @@ const projects: IProject[] = [
     </div>
   </div>
 </template>
-
-<style scoped>
-h3 {
-  @apply text-ctp-subtext1;
-}
-</style>
