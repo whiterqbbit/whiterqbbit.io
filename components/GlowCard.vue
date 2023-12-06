@@ -24,19 +24,19 @@ watch(() => colorMode.value, () => {
       '--y': `${elementY}px`,
     }"
     class="p-4 lg:p-8 overflow-hidden rounded-3xl
-    shadow-xl transition-all duration-500 hover:shadow-ctp-blue/10 hover:-translate-y-1
-    border border-b-0 border-gradient border-ctp-text/10 bg-ctp-mantle
+    shadow-xl transition-all duration-200 hover:shadow-ctp-blue/10 hover:-translate-y-1 hover:translate-x-1
+    border border-gradient border-ctp-text/10 bg-ctp-mantle
     before:absolute before:-inset-px before:h-[calc(100%+2px)] before:w-[calc(100%+2px)] before:rounded-xl
     group relative before:blur-xl"
   >
     <!-- voir si certaines classes ne sont pas retirables -->
     <div class="relative">
-      <div class="">
-        <slot name="image" />
-      </div>
-
       <div v-if="title" class="text-2xl font-medium text-anim-color mb-4">
         {{ title }}
+      </div>
+
+      <div class="">
+        <slot name="image" />
       </div>
 
       <div class="text-base text-subtext0">
