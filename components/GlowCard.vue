@@ -36,8 +36,8 @@ watch(() => colorMode.value, () => {
           {{ title }}
         </div>
         <div class="mt-1">
-          <NuxtLink v-if="url" class="i-ci-link hover:text-ctp-yellow" :to="url" target="_blank" />
-          <NuxtLink v-if="source" class="i-ci-github hover:text-ctp-yellow" :to="source" target="_blank" />
+          <NuxtLink v-if="url" class="i-ci-link transition ease-out duration-300 hover:text-ctp-yellow" :to="url" target="_blank" />
+          <NuxtLink v-if="source" class="i-ci-github transition ease-out duration-300 hover:text-ctp-yellow" :to="source" target="_blank" />
         </div>
       </div>
 

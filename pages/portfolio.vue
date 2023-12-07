@@ -67,7 +67,7 @@ const projects: IProject[] = [
     source: 'https://github.com/whiterqbbit/calypso_bonnefoy/',
   },
   {
-    name: 'Ce site !',
+    name: 'Ce site-meme!',
     description: 'Petit site statique mettant en valeur mes talents !',
     stack: { front: [nuxt, tailwind], back: [netlify] },
     source: 'https://github.com/whiterqbbit/whiterqbbit-website',
@@ -77,7 +77,7 @@ const projects: IProject[] = [
 
 <template>
   <div class="flex flex-col gap-4 m-auto py-4">
-    <div class="text-4xl text-center text-anim-color mb-8">
+    <div class="text-4xl text-center mb-8">
       Quelques projets
     </div>
     <div
@@ -89,10 +89,10 @@ const projects: IProject[] = [
       >
         <template #default>
           <div class="text-sm flex flex-col gap-1" v-html="project.description" />
-          <div v-if="project.tasks" class="mt-2 text-sm italic text-ctp-overlay2"> {{ project.tasks }} </div>
-          <div class="flex flex-col mt-4 gap-2 text-lg cursor-default text-ctp-subtext2">
+          <div v-if="project.tasks" class="mt-2 text-sm italic text-ctp-overlay2 hover:text-anim-color-light"> {{ project.tasks }} </div>
+          <div class="flex flex-col mt-4 gap-2 text-lg cursor-default text-ctp-overlay2 hover:text-ctp-text transition duration-300 ease-out">
             <div class="flex flex-row gap-2">
-              <span class="text-sm ">Front :</span>
+              <span class="text-sm text-ctp-overlay2">Front :</span>
               <div v-for="tech in project.stack.front" :key="tech.name">
                 <UTooltip :text="tech.name">
                   <li :class="tech.icon" />
@@ -101,7 +101,7 @@ const projects: IProject[] = [
             </div>
 
             <div class="flex flex-row gap-2">
-              <span class="text-sm">Back :</span>
+              <span class="text-sm text-ctp-overlay2">Back :</span>
               <div v-for="tech in project.stack.back" :key="tech.name">
                 <UTooltip :text="tech.name">
                   <li :class="tech.icon" />

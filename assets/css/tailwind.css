@@ -34,7 +34,23 @@
   .text-anim-color {
     --bg-size: 400%;
     --color-one: theme('colors.ctp-yellow.DEFAULT');
-    --color-two: theme('colors.ctp-mauve.DEFAULT');
+    --color-two: theme('colors.ctp-lavender.DEFAULT');
+    background: linear-gradient(
+                  90deg,
+                  var(--color-one),
+                  var(--color-two),
+                  var(--color-one)
+                ) 0 0 / var(--bg-size) 100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: move-bg 10s infinite linear;
+  }
+
+  .text-anim-color-light {
+    --bg-size: 400%;
+    --color-one: theme('colors.ctp-overlay2.DEFAULT');
+    --color-two: theme('colors.ctp-text.DEFAULT');
     background: linear-gradient(
                   90deg,
                   var(--color-one),
