@@ -22,17 +22,17 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 </script>
 
 <template>
-  <UForm ref="form" :schema="schema" :state="state" class="space-y-4" @submit="onSubmit">
+  <UForm ref="form" :schema="schema" :state="state" class="space-y-4 flex flex-col" netlify @submit="onSubmit">
     <UFormGroup name="email" label="Email">
-      <UInput v-model="state.email" />
+      <UInput v-model="state.email" icon="i-ci-mail" />
     </UFormGroup>
 
-    <UFormGroup name="message" label="Votre message">
-      <UTextarea autoresize v-model="state.message" />
+    <UFormGroup name="message" label="Message">
+      <UTextarea v-model="state.message" autoresize />
     </UFormGroup>
 
-    <UButton icon="i-ci-mail" type="submit">
-      Submit
+    <UButton icon="i-ci-paper-plane" type="submit" size="lg" class="mx-auto pt-4">
+      Envoyer
     </UButton>
   </UForm>
 </template>
