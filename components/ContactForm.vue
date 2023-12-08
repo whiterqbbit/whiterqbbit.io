@@ -16,13 +16,27 @@ type Schema = z.infer<typeof schema>
 
 const form = ref()
 
-async function onSubmit(event: FormSubmitEvent<Schema>) {
-  console.log(event.data)
+const is_emailing = ref(false)
+const display_error = ref(false)
+const has_sent = ref(false)
+async function submit(event: FormSubmitEvent<Schema>) {
+  is_emailing.value = true
+  display_error.value = false
+
+  try {
+    await $fetch('/api/resend', { method: 'POST', body: { ...event.data } })
+    has_sent.value = true
+  }
+  catch (error) {
+    console.error(error)
+    display_error.value = true
+  }
+  is_emailing.value = false
 }
 </script>
 
 <template>
-  <UForm ref="form" :schema="schema" :state="state" class="space-y-4 flex flex-col" data-netlify="true" @submit="onSubmit">
+  <UForm ref="form" :schema="schema" :state="state" class="space-y-4 flex flex-col" data-netlify="true" @submit="submit">
     <UFormGroup name="email" label="Email">
       <UInput v-model="state.email" icon="i-ci-mail" />
     </UFormGroup>
@@ -32,8 +46,11 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     </UFormGroup>
 
     <div class="my-3" />
-    <UButton icon="i-ci-paper-plane" type="submit" size="lg" class="mx-auto">
-      Envoyer
+    <UButton :icon="has_sent ? 'i-ci-circle-check' : 'i-ci-paper-plane'" type="submit" size="lg" class="mx-auto" :loading="is_emailing">
+      {{ has_sent ? 'Envoyé !' : 'Envoyer' }}
     </UButton>
+    <p v-if="display_error" class="text-ctp-red">
+      Navré, il y a eu une erreur, veuillez me contacter par mail à whiterqbbit@proton.me !
+    </p>
   </UForm>
 </template>

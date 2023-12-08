@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/content',
     '@nuxt/ui',
+    'nuxt-resend',
   ],
 
   devtools: { enabled: true },
