@@ -63,10 +63,30 @@
     animation: move-bg 10s infinite linear;
   }
 
-  @keyframes move-bg {
-    to {
-      background-position: var(--bg-size) 0;
-    }
+  .bg-anim-color {
+    --bg-size: 400%;
+    --color-one: theme('colors.ctp-yellow.DEFAULT');
+    --color-two: theme('colors.ctp-lavender.DEFAULT');
+    background: linear-gradient(
+                  90deg,
+                  var(--color-one),
+                  var(--color-two),
+                  var(--color-one)
+                ) 0 0 / var(--bg-size) 100%;
+    animation: move-bg 10s infinite linear;
+  }
+
+  .bg-anim-color-light {
+    --bg-size: 400%;
+    --color-one: theme('colors.ctp-overlay2.DEFAULT');
+    --color-two: theme('colors.ctp-text.DEFAULT');
+    background: linear-gradient(
+                  90deg,
+                  var(--color-one),
+                  var(--color-two),
+                  var(--color-one)
+                ) 0 0 / var(--bg-size) 100%;
+    animation: move-bg 10s infinite linear;
   }
 
   .border-animation {
