@@ -23,7 +23,8 @@
     "@nuxt/ui": "^2.11.0",
     "@nuxtjs/eslint-module": "^4.1.0",
     "@vueuse/core": "^10.6.1",
-    "hero-patterns": "^2.1.0"
+    "hero-patterns": "^2.1.0",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.2.0",
