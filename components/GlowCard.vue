@@ -28,11 +28,12 @@ watch(() => colorMode.value, () => {
       '--x': `${elementX}px`,
       '--y': `${elementY}px`,
     }"
-    class="p-4 lg:p-8 overflow-hidden rounded-3xl shadow-xl
+    class="p-4 lg:p-8 overflow-hidden rounded-3xl
     border border-gradient border-ctp-text/10 bg-ctp-mantle
     before:absolute before:-inset-px before:h-[calc(100%+2px)] before:w-[calc(100%+2px)] before:rounded-xl
+    shadow-xl transition-all duration-200 hover:shadow-ctp-blue/10 
     group relative before:blur-xl"
-    :class="[anim ? 'transition-all duration-200 hover:shadow-ctp-blue/10 hover:-translate-y-1 hover:translate-x-1' : '']"
+    :class="[anim ? 'hover:-translate-y-1 hover:translate-x-1' : '']"
   >
     <!-- voir si certaines classes ne sont pas retirables -->
     <div class="relative">
