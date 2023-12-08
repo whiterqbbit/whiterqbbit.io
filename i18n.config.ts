@@ -6,11 +6,11 @@ export default defineI18nConfig(() => ({
   messages: {
     en: {
       flag: '🇺🇸',
-      header: TheHeader.en
+      header: TheHeader.en,
     },
     fr: {
       flag: '🇫🇷',
-      header: TheHeader.fr
+      header: TheHeader.fr,
     },
   },
 }))
