@@ -22,7 +22,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 </script>
 
 <template>
-  <UForm ref="form" :schema="schema" :state="state" class="space-y-4 flex flex-col" netlify @submit="onSubmit">
+  <UForm ref="form" :schema="schema" :state="state" class="space-y-4 flex flex-col" data-netlify="true" @submit="onSubmit">
     <UFormGroup name="email" label="Email">
       <UInput v-model="state.email" icon="i-ci-mail" />
     </UFormGroup>
