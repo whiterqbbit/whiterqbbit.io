@@ -31,7 +31,8 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       <UTextarea v-model="state.message" autoresize />
     </UFormGroup>
 
-    <UButton icon="i-ci-paper-plane" type="submit" size="lg" class="mx-auto pt-4">
+    <div class="my-3" />
+    <UButton icon="i-ci-paper-plane" type="submit" size="lg" class="mx-auto">
       Envoyer
     </UButton>
   </UForm>
