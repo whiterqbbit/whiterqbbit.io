@@ -84,7 +84,7 @@ const projects: IProject[] = [
       class="flex flex-wrap justify-around w-full gap-4"
     >
       <GlowCard
-        v-for="project in projects" :key="project.name" :title="project.name" :url="project.url" :source="project.source"
+        v-for="project in projects" :key="project.name" anim :title="project.name" :url="project.url" :source="project.source"
         class="max-w-xs overflow-visible"
       >
         <template #default>
