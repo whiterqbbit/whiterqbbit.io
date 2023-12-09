@@ -6,6 +6,9 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     'nuxt-resend',
   ],
+  extends: [
+    'nuxt-umami',
+  ],
 
   devtools: { enabled: true },
   devServer: { port: 3210 },

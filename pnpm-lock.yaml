@@ -32,6 +32,9 @@ dependencies:
   hero-patterns:
     specifier: ^2.1.0
     version: 2.1.0
+  nuxt-umami:
+    specifier: ^2.5.5
+    version: 2.5.5(vue@3.3.9)
   zod:
     specifier: ^3.22.4
     version: 3.22.4
@@ -7544,6 +7547,15 @@ packages:
       - rollup
       - supports-color
     dev: true
+
+  /nuxt-umami@2.5.5(vue@3.3.9):
+    resolution: {integrity: sha512-awB5MEa6Me7eAumUdr2sqtfAjaWAW6JmABKGzJpszw/+cmAfDleoRQxWw4X9Aql2jOxqxa6BQCPRbDKQo+QZSA==}
+    dependencies:
+      '@vueuse/core': 10.7.0(vue@3.3.9)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: false
 
   /nuxt@3.8.2(eslint@8.55.0)(typescript@5.3.2)(vite@4.5.0):
     resolution: {integrity: sha512-HUAyifmqTs2zcQBGvcby3KNs2pBAk+l7ZbLjD1oCNqQQ+wBuZ1qgLC4Ebu++y4g3o3Y8WAWSvpafbKRLQZziPw==}

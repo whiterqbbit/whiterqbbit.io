@@ -27,6 +27,7 @@ async function submit(event: FormSubmitEvent<Schema>) {
   try {
     await $fetch('/api/resend', { method: 'POST', body: { ...event.data } })
     has_sent.value = true
+    umTrackEvent('contact_form_sent', { email: event.data.email, message: event.data.message })
     useToast().add({ title: 'Message envoyé !' })
   }
   catch (error) {
