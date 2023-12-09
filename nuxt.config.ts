@@ -10,6 +10,8 @@ export default defineNuxtConfig({
     'nuxt-umami',
   ],
 
+  app: { pageTransition: { name: 'page', mode: 'out-in' } },
+
   devtools: { enabled: true },
   devServer: { port: 3210 },
 

@@ -20,3 +20,15 @@ const bg_color = computed(() => colorMode.preference === 'light' ? '#E6E9EF' : '
     <UNotifications />
   </div>
 </template>
+
+<style>
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.1s ease-in;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(0.2rem);
+}
+</style>
