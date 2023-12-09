@@ -18,5 +18,11 @@ export default defineAppConfig({
       background: 'bg-ctp-mantle dark:bg-ctp-mantle',
       color: 'text-ctp-text dark:text-ctp-text',
     },
+    notification: {
+      position: 'left-0',
+      rounded: 'rounded-xl',
+      background: 'bg-ctp-mantle dark:bg-ctp-mantle',
+      progress: { background: 'bg-ctp-sky dark:bg-ctp-sky' },
+    },
   },
 })

@@ -19,6 +19,7 @@ const form = ref()
 const is_emailing = ref(false)
 const display_error = ref(false)
 const has_sent = ref(false)
+
 async function submit(event: FormSubmitEvent<Schema>) {
   is_emailing.value = true
   display_error.value = false
@@ -26,6 +27,7 @@ async function submit(event: FormSubmitEvent<Schema>) {
   try {
     await $fetch('/api/resend', { method: 'POST', body: { ...event.data } })
     has_sent.value = true
+    useToast().add({ title: 'Message envoyé !' })
   }
   catch (error) {
     console.error(error)
