@@ -18,7 +18,7 @@
 
 <style scoped>
 ul li * {
-  @apply hover-fast-transition;
+  @apply transition-very-fast;
 }
 
 ul li *:hover {

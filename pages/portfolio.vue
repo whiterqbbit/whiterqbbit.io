@@ -90,7 +90,7 @@ const projects: IProject[] = [
         <template #default>
           <div class="text-sm flex flex-col gap-1" v-html="project.description" />
           <div v-if="project.tasks" class="mt-2 text-sm italic text-ctp-overlay2 hover:text-anim-color-light"> {{ project.tasks }} </div>
-          <div class="flex flex-col mt-4 gap-2 text-lg cursor-default text-ctp-overlay2 hover:text-ctp-text transition duration-300 ease-out">
+          <div class="flex flex-col mt-4 gap-2 text-lg cursor-default text-ctp-overlay2 hover:text-ctp-text transition-fast">
             <div class="flex flex-row gap-2">
               <span class="text-sm text-ctp-overlay2">Front :</span>
               <div v-for="tech in project.stack.front" :key="tech.name">

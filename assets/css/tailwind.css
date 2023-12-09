@@ -17,12 +17,24 @@
 }
 
 @layer utilities {
-  .hover-fast-transition {
-    @apply transition-transform duration-150 ease-out;
+  .transition-very-fast {
+    @apply transition-all duration-150 ease-out;
+  }
+
+  .transition-fast {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .transition-medium {
+    @apply transition-all duration-500 ease-out;
+  }
+
+  .transition-slow {
+    @apply transition-all duration-1000 ease-out;
   }
   
   .raise-color {
-    @apply hover-fast-transition text-anim-color -translate-y-[3px];
+    @apply transition-very-fast text-anim-color -translate-y-[3px];
   }
 
   @keyframes move-bg {
@@ -91,8 +103,8 @@
 
   .border-animation {
     --bg-size: 400%;
-    --color-one: theme('colors.ctp-green.DEFAULT');
-    --color-two: theme('colors.ctp-blue.DEFAULT');
+    --color-one: theme('colors.ctp-yellow.DEFAULT');
+    --color-two: theme('colors.ctp-lavender.DEFAULT');
     background: linear-gradient(
                   90deg,
                   var(--color-one),

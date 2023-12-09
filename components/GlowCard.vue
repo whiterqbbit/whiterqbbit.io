@@ -15,7 +15,7 @@ const { elementX, elementY } = useMouseInElement(card)
 const colorMode = useColorMode()
 
 watch(() => colorMode.value, () => {
-  const color = colorMode.value === 'light' ? '#8839EF25' : '#89B4FA30'
+  const color = colorMode.value === 'light' ? '#89B4FA40' : '#89B4FA30'
   if (card.value)
     card.value.style.setProperty('--gradient-color', color)
 })
@@ -42,8 +42,8 @@ watch(() => colorMode.value, () => {
           {{ title }}
         </div>
         <div class="mt-1">
-          <NuxtLink v-if="url" class="i-ci-link transition ease-out duration-300 hover:text-ctp-yellow" :to="url" target="_blank" />
-          <NuxtLink v-if="source" class="i-ci-github transition ease-out duration-300 hover:text-ctp-yellow" :to="source" target="_blank" />
+          <NuxtLink v-if="url" class="i-ci-link transition-fast hover:text-ctp-yellow" :to="url" target="_blank" />
+          <NuxtLink v-if="source" class="i-ci-github transition-fast hover:text-ctp-yellow" :to="source" target="_blank" />
         </div>
       </div>
 

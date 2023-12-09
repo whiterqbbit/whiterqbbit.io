@@ -11,7 +11,7 @@ watch(() => route.path, newPath => path.value = newPath)
 
 <template>
   <nav
-    class="sticky top-0 z-50 transition-all ease-out duration-1000 rounded-b-3xl bg-ctp-mantle"
+    class="sticky top-0 z-50 transition-slow rounded-b-3xl bg-ctp-mantle"
     :class="y > 0 ? 'bg-opacity-50 dark:bg-opacity-70 backdrop-blur-sm py-1' : 'bg-opacity-0 dark:bg-opacity-0 py-4'"
   >
     <div name="container" class="flex max-w-5xl m-auto px-2 sm:px-4 md:px-6">
