@@ -1,7 +1,6 @@
 export default defineEventHandler(async (event) => {
   const { emails } = useResend()
 
-  console.log(useResend())
   const body = await readBody(event)
   const { email, message } = body
 
@@ -11,8 +10,6 @@ export default defineEventHandler(async (event) => {
     subject: 'Nouveau message whiterqbbit.io',
     text: `Un nouveau message a été envoyé par ${email}:\n\n${message}`,
   })
-
-  console.log(result)
 
   return result
 })
