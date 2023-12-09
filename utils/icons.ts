@@ -7,6 +7,10 @@ export const icons = {
     name: 'Vue 3',
     icon: 'i-simple-icons-vuedotjs',
   },
+  vue23: {
+    name: 'Vue 2 & 3',
+    icon: 'i-simple-icons-vuedotjs',
+  },
   nuxt: {
     name: 'Nuxt 3',
     icon: 'i-simple-icons-nuxtdotjs',
@@ -55,9 +59,21 @@ export const icons = {
     name: 'Sequelize',
     icon: 'i-simple-icons-sequelize',
   },
+  firebase: {
+    name: 'Firebase',
+    icon: 'i-simple-icons-firebase',
+  },
+  postgresql: {
+    name: 'PostgreSQL',
+    icon: 'i-simple-icons-postgresql',
+  },
   mongodb: {
     name: 'MongoDB',
     icon: 'i-simple-icons-mongodb',
+  },
+  redis: {
+    name: 'Redis',
+    icon: 'i-simple-icons-redis',
   },
   elasticsearch: {
     name: 'Elasticsearch w/ Kuzzle',
@@ -123,6 +139,10 @@ export const icons = {
     name: 'Vitest',
     icon: 'i-simple-icons-vitest',
   },
+  cypress: {
+    name: 'Cypress',
+    icon: 'i-simple-icons-cypress',
+  },
   cucumber: {
     name: 'Cucumber',
     icon: 'i-simple-icons-cucumber',
@@ -130,5 +150,85 @@ export const icons = {
   metabase: {
     name: 'Metabase',
     icon: 'i-simple-icons-metabase',
+  },
+  i18n: {
+    name: 'i18n',
+    icon: 'i-heroicons-globe-europe-africa-solid',
+  },
+  google_analytics: {
+    name: 'Google Analytics',
+    icon: 'i-simple-icons-googleanalytics',
+  },
+  google_ads: {
+    name: 'Google Ads',
+    icon: 'i-simple-icons-googleads',
+  },
+  cloudwatch: {
+    name: 'AWS Cloudwatch',
+    icon: 'i-simple-icons-amazoncloudwatch',
+  },
+  radix: {
+    name: 'Radix',
+    icon: 'i-simple-icons-radixui',
+  },
+  macOS: {
+    name: 'macOS',
+    icon: 'i-simple-icons-apple',
+  },
+  debian: {
+    name: 'Debian',
+    icon: 'i-simple-icons-debian',
+  },
+  arch: {
+    name: 'Arch',
+    icon: 'i-simple-icons-archlinux',
+  },
+  figma: {
+    name: 'Figma',
+    icon: 'i-simple-icons-figma',
+  },
+  lighthouse: {
+    name: 'Lighthouse',
+    icon: 'i-simple-icons-lighthouse',
+  },
+  openai: {
+    name: 'OpenAI',
+    icon: 'i-simple-icons-openai',
+  },
+  aws: {
+    name: 'AWS',
+    icon: 'i-simple-icons-amazonaws',
+  },
+  lambda: {
+    name: 'Lambda',
+    icon: 'i-simple-icons-awslambda',
+  },
+  s3: {
+    name: 'S3',
+    icon: 'i-simple-icons-amazons3',
+  },
+  ec2: {
+    name: 'EC2',
+    icon: 'i-simple-icons-amazonec2',
+  },
+  route53: {
+    name: 'Route53',
+    icon: 'i-simple-icons-amazonroute53',
+  },
+  step_functions: {
+    name: 'Step Functions',
+    icon: 'i-simple-icons-amazonaws',
+  },
+  iot_core: {
+    name: 'IOT Core',
+    icon: 'i-simple-icons-amazonaws',
+  },
+  github_actions: {
+    name: 'Github Actions',
+    icon: 'i-simple-icons-githubactions',
+  },
+  photoshop: {
+    name: 'Photoshop',
+    icon: 'i-simple-icons-adobephotoshop',
   },
 }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { vue2, vue3, nuxt, tailwind, unocss, typescript, chrome, ethereum, node, nodets, prisma, react, sequelize, mongodb, elasticsearch, aws_omniscient, aws_ttt, aws_calypso, terraform, docker, netlify, bootstrap, sass, html5, javascript, puppeteer, amplify, jest, vitest, cucumber } = icons
+const { vue2, vue3, nuxt, tailwind, unocss, typescript, chrome, ethereum, node, nodets, prisma, react, sequelize, redis, mongodb, elasticsearch, aws_omniscient, aws_ttt, aws_calypso, terraform, docker, netlify, bootstrap, sass, html5, javascript, puppeteer, amplify, jest, vitest, cucumber } = icons
 
 interface IProject {
   name: string
@@ -56,7 +56,7 @@ const projects: IProject[] = [
     name: 'Tictactrip',
     description: `Startup de moteur de recherche d'itinéraire.`,
     tasks: `Dev backend, reverse-engineering d'apps`,
-    stack: { front: [react, tailwind, jest], back: [nodets, aws_ttt, terraform, sequelize, jest] },
+    stack: { front: [react, tailwind, jest], back: [nodets, aws_ttt, terraform, sequelize, redis, jest] },
     url: 'https://www.tictactrip.eu/',
   },
   {
