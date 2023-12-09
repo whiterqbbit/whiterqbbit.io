@@ -25,4 +25,9 @@ export default defineAppConfig({
       progress: { background: 'bg-ctp-sky dark:bg-ctp-sky' },
     },
   },
+  umami: {
+    autoTrack: true,
+    version: 2,
+    ignoreLocalhost: true,
+  },
 })
