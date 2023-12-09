@@ -159,6 +159,10 @@ export const icons = {
     name: 'Google Analytics',
     icon: 'i-simple-icons-googleanalytics',
   },
+  umami: {
+    name: 'Umami',
+    icon: 'i-simple-icons-umami',
+  },
   google_ads: {
     name: 'Google Ads',
     icon: 'i-simple-icons-googleads',

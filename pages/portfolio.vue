@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { vue2, vue3, nuxt, tailwind, unocss, typescript, chrome, ethereum, node, nodets, prisma, react, sequelize, redis, mongodb, elasticsearch, aws_omniscient, aws_ttt, aws_calypso, terraform, docker, netlify, bootstrap, sass, html5, javascript, puppeteer, amplify, jest, vitest, cucumber } = icons
+const { vue2, vue3, nuxt, tailwind, unocss, typescript, chrome, ethereum, node, nodets, prisma, umami, google_analytics, react, sequelize, redis, mongodb, elasticsearch, aws_omniscient, aws_ttt, aws_calypso, terraform, docker, netlify, bootstrap, sass, html5, javascript, puppeteer, amplify, jest, vitest, cucumber } = icons
 
 interface IProject {
   name: string
@@ -62,14 +62,14 @@ const projects: IProject[] = [
   {
     name: 'Calypso Bonnefoy',
     description: `Site vitrine d'artiste de style classique. <br>Formulaire, mailing.`,
-    stack: { front: [nuxt, tailwind], back: [aws_calypso, docker, terraform] },
+    stack: { front: [nuxt, tailwind], back: [aws_calypso, docker, terraform, google_analytics] },
     url: 'https://www.calypsobonnefoy.com/',
     source: 'https://github.com/whiterqbbit/calypso_bonnefoy/',
   },
   {
     name: 'Ce site-meme!',
     description: 'Petit site statique mettant en valeur mes talents !',
-    stack: { front: [nuxt, tailwind], back: [netlify] },
+    stack: { front: [nuxt, tailwind], back: [netlify, umami] },
     source: 'https://github.com/whiterqbbit/whiterqbbit-website',
   },
 ]

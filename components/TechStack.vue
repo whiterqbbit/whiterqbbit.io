@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { vue23, nuxt, tailwind, unocss, typescript, node, nodets, prisma, react, sequelize, postgresql, mongodb, openai, elasticsearch, firebase, terraform, docker, netlify, aws, bootstrap, sass, redis, lighthouse, puppeteer, amplify, jest, vitest, cucumber, figma, i18n, express, cypress, metabase, google_analytics, cloudwatch, radix, macOS, debian, arch, lambda, github_actions, s3, ec2, route53, step_functions, iot_core, photoshop } = icons
+const { vue23, nuxt, tailwind, unocss, typescript, node, nodets, prisma, react, sequelize, postgresql, mongodb, openai, elasticsearch, firebase, terraform, docker, netlify, aws, bootstrap, sass, redis, lighthouse, puppeteer, amplify, jest, vitest, cucumber, figma, i18n, express, cypress, metabase, google_analytics, umami, cloudwatch, radix, macOS, debian, arch, lambda, github_actions, s3, ec2, route53, step_functions, iot_core, photoshop } = icons
 
 const short_stack = [
   { name: 'Front', tech: [typescript, vue23, nuxt, tailwind, vitest] },
@@ -12,7 +12,7 @@ const long_stack = [
   { name: 'Front', tech: [typescript, vue23, nuxt, react, tailwind, bootstrap, sass, unocss, radix, i18n, lighthouse, jest, vitest, cypress] },
   { name: 'Back', tech: [nodets, node, express, openai, puppeteer, jest, cucumber] },
   { name: 'Database', tech: [postgresql, mongodb, prisma, sequelize, redis, elasticsearch, firebase] },
-  { name: 'Monitoring', tech: [metabase, cloudwatch, google_analytics] },
+  { name: 'Monitoring', tech: [metabase, cloudwatch, umami, google_analytics] },
   { name: 'Infra', tech: [terraform, docker, github_actions, netlify] },
   { name: 'AWS', tech: [s3, lambda, ec2, route53, amplify, cloudwatch, step_functions, iot_core] },
   { name: 'OS', tech: [arch, debian, macOS] },
