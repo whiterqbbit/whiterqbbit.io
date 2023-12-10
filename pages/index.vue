@@ -1,9 +1,24 @@
+<script setup lang="ts">
+const pic_src = ref('malt_catppuccin.jpg')
+
+function useEaster() {
+  useToast().add({
+    title: '🐇',
+    timeout: 8000,
+    closeButton: { icon: 'i-ci-help' },
+    icon: 'i-ci-help',
+    click: () => { pic_src.value = 'malt_chad.jpg' },
+  })
+  umTrackEvent('easter_egg')
+}
+</script>
+
 <template>
   <div class="flex flex-col gap-12 mx-auto text-lg mt-12 max-w-4xl px-2 sm:px-4 md:px-6">
     <div class="flex justify-evenly place-content-center">
       <div class="border-animation rounded-full">
         <div class="p-1.5 rounded-full glow-anim">
-          <NuxtImg src="malt_catppuccin.jpg" class="h-64 object-cover rounded-full" @click="useEaster()" />
+          <NuxtImg :src="pic_src" class="h-64 object-cover rounded-full" @click="useEaster()" />
         </div>
       </div>
 
@@ -23,7 +38,7 @@
       <div class="w-1/2 place-self-center">
         Je suis actuellement : <span class="text-anim-color text-2xl italic font-bold pr-1">disponible !</span><br><br>
         J'aime travailler sur des projets <strong>ambitieux</strong> et <strong>challengeants</strong>!<br>
-        Si votre vision est claire, je peux vous fournir le design et le développement de votre app en un
+        Si votre vision est claire, je peux vous livrer le design et le développement de votre app en un
         <strong>temps record</strong> !
         <!-- Mon TJM est de <span class="text-anim-color font-bold pr-1">400€</span><br> -->
       </div>
