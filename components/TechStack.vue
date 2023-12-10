@@ -2,8 +2,8 @@
 const { vue23, nuxt, tailwind, unocss, typescript, node, nodets, prisma, react, sequelize, postgresql, mongodb, openai, elasticsearch, firebase, terraform, docker, netlify, aws, bootstrap, sass, redis, lighthouse, puppeteer, amplify, jest, vitest, cucumber, figma, i18n, express, cypress, metabase, google_analytics, umami, cloudwatch, radix, macOS, debian, arch, lambda, github_actions, s3, ec2, route53, step_functions, iot_core, photoshop } = icons
 
 const short_stack = [
-  { name: 'Front', tech: [typescript, vue23, nuxt, tailwind, vitest] },
-  { name: 'Back', tech: [nodets, express, postgresql, mongodb, redis, jest] },
+  { name: 'Front', tech: [typescript, vue23, nuxt, tailwind] },
+  { name: 'Back', tech: [nodets, express, postgresql, mongodb] },
   { name: 'Infra', tech: [docker, terraform, aws] },
   { name: 'Design', tech: [figma, photoshop] },
 ]
@@ -24,22 +24,21 @@ const current_stack = computed(() => is_short_stack.value ? short_stack : long_s
 </script>
 
 <template>
-  <div class="bg-ctp-base p-12 rounded-3xl">
-    Un panorama des technologies avec lesquelles j'ai travaillé :
+  <div class="rounded-3xl">
     <div class="mt-4 flex flex-wrap gap-4">
       <div
         v-for="type in current_stack" :key="type.name"
-        class="flex gap-2 transition-slow rounded-xl px-2 pt-4 pb-2 w-fit
-      border-2 border-ctp-surface2 hover:border-ctp-overlay2"
+        class="flex flex-wrap gap-2 bg-ctp-mantle transition-slow rounded-xl px-4 pt-4 pb-2 w-fit
+              border border-ctp-surface0 hover:border-ctp-overlay2"
       >
         <div class="place-self-center font-semibold text-ctp-overlay2">{{ type.name }} :</div>
-        <ul v-for="tech in type.tech" :key="tech.name">
+        <ul v-for="tech in type.tech" :key="tech.name" class="flex">
           <UTooltip :text="tech.name">
-            <li :class="tech.icon" class="text-4xl hover:text-ctp-sky transition-slow" />
+            <li :class="tech.icon" class="text-xl hover:text-ctp-sky transition-slow" />
           </UTooltip>
         </ul>
       </div>
     </div>
-    <UButton class="mt-4" @click="is_short_stack = !is_short_stack">{{ is_short_stack ? 'Voir plus' : 'Voir moins' }}</UButton>
+    <UButton :icon="is_short_stack ? 'i-ci-caret-down-md' : 'i-ci-caret-up-md'" class="mt-8 pr-4" @click="is_short_stack = !is_short_stack">{{ is_short_stack ? 'En détail' : 'Voir moins' }}</UButton>
   </div>
 </template>
