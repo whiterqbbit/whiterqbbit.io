@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const moi_src = ref('moi_station_f_comp.jpg')
+</script>
+
 <template>
   <UContainer class="text-xl mt-8">
     <div class="flex flex-col gap-10">
@@ -8,7 +12,7 @@
           et à 30 ans, j'en ai fait mon métier !
         </div>
         <NuxtImg
-          src="moi_station_f_comp.jpg" alt="moi a station-f"
+          :src="moi_src" @click="moi_src = 'manga_moi.png'" alt="moi a station-f"
           class="h-64 border-animation p-[0.3rem] glow-anim object-cover rounded-3xl"
         />
       </div>

@@ -3,12 +3,20 @@ const pic_src = ref('malt_catppuccin.jpg')
 
 function useEaster() {
   useToast().add({
-    title: '🐇',
+    title: '',
     timeout: 8000,
-    closeButton: { icon: 'i-ci-help' },
     icon: 'i-ci-help',
-    click: () => { pic_src.value = 'malt_chad.jpg' },
+    actions: [{
+      label: '🐇',
+      size: 'xl',
+      click: () => { pic_src.value = 'malt_seinen.jpg' },
+    }, {
+      label: '🐑',
+      size: 'xl',
+      click: () => { pic_src.value = 'malt_chad.jpg' },
+    }],
   })
+
   umTrackEvent('easter_egg')
 }
 </script>
