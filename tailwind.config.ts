@@ -4,7 +4,7 @@ import catppuccin from '@catppuccin/tailwindcss'
 
 export default <Partial<Config>>{
   theme: {
-    extend: { colors: { } },
+    extend: { fontFamily: { museo: ['Museo', 'sans-serif'] } },
   },
   darkMode: 'class',
   plugins: [
@@ -16,6 +16,3 @@ export default <Partial<Config>>{
     }),
   ],
 }
-// desired font
-// provider: 'bunny',
-// fonts: 'Nunito'

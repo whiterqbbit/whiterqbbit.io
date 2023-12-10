@@ -1,3 +1,4 @@
+@import './fonts.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,7 +6,7 @@
 @layer base {
   body {
     @apply ctp-latte dark:ctp-mocha bg-ctp-base dark:bg-ctp-mantle
-    font-sans text-ctp-text
+    font-museo text-ctp-text
     mx-auto;
   }
 }
