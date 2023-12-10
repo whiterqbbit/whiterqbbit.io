@@ -5,6 +5,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxt/ui',
     'nuxt-resend',
+    '@nuxtjs/fontaine',
   ],
   extends: [
     'nuxt-umami',
