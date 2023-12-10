@@ -16,7 +16,6 @@ function useEaster() {
       click: () => { pic_src.value = 'malt_chad.jpg' },
     }],
   })
-
   umTrackEvent('easter_egg')
 }
 </script>
@@ -26,14 +25,13 @@ function useEaster() {
     <div class="flex justify-evenly place-content-center">
       <div class="border-animation rounded-full">
         <div class="p-1.5 rounded-full glow-anim">
-          <NuxtImg :src="pic_src" class="h-64 object-cover rounded-full" @click="useEaster()" />
+          <NuxtImg :src="pic_src" class="h-64 w-64 object-cover rounded-full" @click="useEaster()" />
         </div>
       </div>
 
       <div class="flex flex-col text-center w-1/2 gap-4 justify-round place-content-center">
         <div class="text-3xl">
-          Hello ! Je suis
-          <span class="text-anim-color font-bold text-4xl">Guillaume Bonnefoy</span>
+          Hello ! Je suis <span class="text-anim-color font-bold text-4xl">Guillaume Bonnefoy</span>
         </div>
         <p class="text-ctp-subtext1">
           Développeur fullstack et designer graphique,
