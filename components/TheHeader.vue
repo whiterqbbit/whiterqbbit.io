@@ -18,7 +18,8 @@ watch(() => route.path, newPath => path.value = newPath)
       <NuxtLink to="/" class="group flex gap-2 sm:gap-4">
         <NuxtImg
           src="/whiterqbbit.svg" width="48" height="48"
-          class="w-10 h-10 md:w-12 md:h-12 autoSlideIn m-auto rounded-full"
+          class="w-10 h-10 md:w-12 md:h-12 autoSlideIn m-auto rounded-full transition-slow
+                shadow-[0_0_14px_3px] shadow-ctp-blue/25 hover:shadow-[0_0_20px_4px] hover:shadow-ctp-blue/30"
         />
         <div class="m-auto sm:text-xl md:text-2xl text-sky hover-target font-black">Guillaume Bonnefoy</div>
       </NuxtLink>
