@@ -39,6 +39,6 @@ const current_stack = computed(() => is_short_stack.value ? short_stack : long_s
         </ul>
       </div>
     </div>
-    <UButton :icon="is_short_stack ? 'i-ci-caret-down-md' : 'i-ci-caret-up-md'" class="mt-8 pr-4" @click="is_short_stack = !is_short_stack">{{ is_short_stack ? 'En détail' : 'Voir moins' }}</UButton>
+    <UButton :icon="is_short_stack ? 'i-ci-caret-down-md' : 'i-ci-caret-up-md'" class="mt-8 pr-4" @click="is_short_stack = !is_short_stack">{{ is_short_stack ? 'En détail' : 'Moins de buzzwords' }}</UButton>
   </div>
 </template>
