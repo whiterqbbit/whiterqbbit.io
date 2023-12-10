@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <div class="flex gap-8">
+    <div class="flex gap-12">
       <div class="w-1/2 place-self-center">
         Je suis actuellement : <span class="text-anim-color text-2xl italic font-bold pr-1">disponible !</span><br><br>
         J'aime travailler sur des projets <strong>ambitieux</strong> et <strong>challengeants</strong>!<br>
@@ -37,7 +37,7 @@
         </template>
       </GlowCard>
     </div>
-    <div class="flex gap-8">
+    <div class="flex gap-12">
       <GlowCard title="Ma stack" class="place-self-center w-1/2">
         <template #default>
           <TechStack />
@@ -48,13 +48,13 @@
         Je privilégie les techniques <strong>modernes</strong>, mais <strong>matures</strong>. Évidemment, tout est fonction du projet !
       </div>
     </div>
-    <div class="flex gap-8">
+    <div class="flex gap-12">
       <div class="w-1/2 place-self-center">
         Si votre projet le nécessite, je peux également solliciter mes amis au travers de notre collectif de freelance
         <span class="text-anim-color text-2xl italic font-bold pr-1">Vite!</span>.<br>
         C'est particulièrement pertinent pour les projets crypto/web3/IA, ou simplement si vous voulez avancer encore plus vite.
       </div>
-      <NuxtImg src="https://media1.tenor.com/m/w61O0eYj-M4AAAAC/frens.gif" class="h-64 object-cover rounded-3xl" />
+      <img src="https://media1.tenor.com/m/w61O0eYj-M4AAAAC/frens.gif" class="h-64 object-cover rounded-3xl">
     </div>
     <GlowCard title="Contactez-moi !" class="my-16 m-auto w-1/2 !shadow-[0_0_80px_13px] !shadow-ctp-blue/30">
       <template #default>
