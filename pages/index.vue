@@ -10,7 +10,7 @@
       <div class="flex flex-col text-center w-1/2 gap-4 justify-round place-content-center">
         <div class="text-3xl">
           Hello ! Je suis
-          <span class="text-anim-color font-bold text-4xl">Guillaume</span>
+          <span class="text-anim-color font-bold text-4xl">Guillaume Bonnefoy</span>
         </div>
         <p class="text-ctp-subtext1">
           Développeur fullstack et designer graphique,
@@ -52,7 +52,7 @@
       </div>
       <img src="https://media1.tenor.com/m/w61O0eYj-M4AAAAC/frens.gif" class="h-64 object-cover rounded-3xl">
     </div>
-    <GlowCard title="Contactez-moi !" class="my-16 m-auto w-1/2 !shadow-[0_0_80px_13px] !shadow-ctp-blue/30">
+    <GlowCard title="Contactez-moi !" class="my-16 m-auto w-1/2" emphasize>
       <template #default>
         <ContactForm />
       </template>
