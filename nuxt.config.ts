@@ -11,6 +11,7 @@ export default defineNuxtConfig({
   ],
 
   app: { pageTransition: { name: 'page', mode: 'out-in' } },
+  runtimeConfig: { public: { ENVIRONNEMENT: process.env.ENVIRONNEMENT } },
 
   devtools: { enabled: true },
   devServer: { port: 3210 },
@@ -26,7 +27,5 @@ export default defineNuxtConfig({
     provider: 'netlify',
   },
 
-  content: {
-    documentDriven: true,
-  },
+  content: { documentDriven: true },
 })

@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { topography } from 'hero-patterns'
 
+const env_is_local = useRuntimeConfig().public.ENVIRONNEMENT === 'local'
+const emoji = env_is_local ? '🔮' : '🐇'
+
 useHead({
-  title: 'Guillaume Bonnefoy',
+  title: env_is_local ? 'LOC - Guillaume Bonnefoy' : 'Guillaume Bonnefoy',
   meta: [{ name: 'Guillaume Bonnefoy', content: 'Veni, Vidi, Codi' }],
-  link: [{ rel: 'icon', type: 'image/svg+xml', href: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Ctext y=\'.9em\' font-size=\'90\'%3E🐇%3C/text%3E%3C/svg%3E' }],
+  link: [{ rel: 'icon', type: 'image/svg+xml', href: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E${emoji}%3C/text%3E%3C/svg%3E` }],
 })
 
 const colorMode = useColorMode()
