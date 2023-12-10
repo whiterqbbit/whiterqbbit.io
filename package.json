@@ -9,7 +9,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "pre-commit": "pnpm lint:fix && pnpm typecheck",
+    "pre-commit": "pnpm lint && pnpm typecheck",
     "typecheck": "nuxt typecheck",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
