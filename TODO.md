@@ -1,11 +1,12 @@
 # Features
-- [ ] Umami / Matomo
+- Responsiveness
+- SEO
+- Translation
 
 # Design
 - [ ] Faire photo dans les couleurs
-- [ ] Trouver un pattern de fond
+- [-] Trouver un pattern de fond
 - [ ] Font
+- [ ] Remake logo
 
 # Pages
-- [ ] 404
-- [ ] contact (envoi mail | formulaire)
