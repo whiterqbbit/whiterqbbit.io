@@ -1,20 +1,16 @@
 <template>
   <div class="flex flex-col gap-12 mx-auto text-lg mt-12 max-w-4xl px-2 sm:px-4 md:px-6">
     <div class="flex justify-evenly place-content-center">
-      <div>
-        <div class="border-animation rounded-full">
-          <div class="inline-flex p-1 rounded-full glow-anim">
-            <NuxtImg src="malt_catppuccin.jpg" class="h-64 object-cover rounded-full" />
-          </div>
+      <div class="border-animation rounded-full">
+        <div class="p-1.5 rounded-full glow-anim">
+          <NuxtImg src="malt_catppuccin.jpg" class="h-64 object-cover rounded-full" @click="useEaster()" />
         </div>
       </div>
 
       <div class="flex flex-col text-center w-1/2 gap-4 justify-round place-content-center">
-        <div>
-          <div class="text-3xl">
-            Hello ! Je suis
-            <span class="text-anim-color font-bold text-4xl">Guillaume</span>
-          </div>
+        <div class="text-3xl">
+          Hello ! Je suis
+          <span class="text-anim-color font-bold text-4xl">Guillaume</span>
         </div>
         <p class="text-ctp-subtext1">
           Développeur fullstack et designer graphique,

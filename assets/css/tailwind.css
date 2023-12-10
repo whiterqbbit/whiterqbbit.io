@@ -116,6 +116,6 @@
   }
 
   .glow-anim {
-    @apply shadow-[0_0_30px_11px] shadow-ctp-blue/25 transition-slow hover:shadow-[0_0_40px_11px] hover:shadow-ctp-yellow/30;
+    @apply shadow-[0_0_30px_11px] shadow-ctp-blue/25 transition-slow hover:shadow-[0_0_40px_11px] hover:shadow-ctp-blue/30;
   }
 }
