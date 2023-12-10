@@ -46,7 +46,7 @@ const projects: IProject[] = [
     url: 'https://myomniscient.com/solutions/application/',
   },
   {
-    name: 'Aestima-immo',
+    name: 'Aestima',
     description: `Startup SaaS dans la gestion de patrimoine.`,
     tasks: `Dev fullstack, refactor front d'une v1 et dev d'une v2`,
     stack: { front: [vue2, tailwind], back: [nodets, mongodb, docker, terraform, puppeteer] },
@@ -60,14 +60,14 @@ const projects: IProject[] = [
     url: 'https://www.tictactrip.eu/',
   },
   {
-    name: 'Calypso Bonnefoy',
+    name: 'Calypso',
     description: `Site vitrine d'artiste de style classique. <br>Formulaire, mailing.`,
     stack: { front: [nuxt, tailwind], back: [aws_calypso, docker, terraform, google_analytics] },
     url: 'https://www.calypsobonnefoy.com/',
     source: 'https://github.com/whiterqbbit/calypso_bonnefoy/',
   },
   {
-    name: 'Ce site-meme!',
+    name: 'Ce site-même!',
     description: 'Petit site statique mettant en valeur mes talents !',
     stack: { front: [nuxt, tailwind], back: [netlify, umami] },
     source: 'https://github.com/whiterqbbit/whiterqbbit-website',
