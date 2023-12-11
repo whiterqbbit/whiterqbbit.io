@@ -28,5 +28,5 @@ export default defineNuxtConfig({
     provider: 'netlify',
   },
 
-  content: { documentDriven: true },
+  content: { documentDriven: true, contentHead: false },
 })
