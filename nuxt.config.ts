@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     'nuxt-umami',
   ],
 
-  app: { pageTransition: { name: 'page', mode: 'out-in' } },
+  app: { pageTransition: { name: 'page', mode: 'in-out' } },
   runtimeConfig: { public: { ENVIRONNEMENT: process.env.ENVIRONNEMENT } },
 
   devtools: { enabled: true },
