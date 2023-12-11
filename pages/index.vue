@@ -3,18 +3,14 @@ const pic_src = ref('malt_catppuccin.jpg')
 
 function useEaster() {
   useToast().add({
-    title: '',
     timeout: 8000,
+    ui: { wrapper: 'w-fit' },
     icon: 'i-ci-help',
-    actions: [{
-      label: '🐇',
-      size: 'xl',
-      click: () => { pic_src.value = 'malt_seinen.jpg' },
-    }, {
-      label: '🐑',
-      size: 'xl',
-      click: () => { pic_src.value = 'malt_chad.jpg' },
-    }],
+    closeButton: { loading: true },
+    actions: [
+      { label: '🐇', size: 'xl', click: () => { pic_src.value = 'malt_seinen.jpg' } },
+      { label: '🐑', size: 'xl', click: () => { pic_src.value = 'malt_chad.jpg' } },
+    ],
   })
   umTrackEvent('easter_egg')
 }
@@ -25,7 +21,7 @@ function useEaster() {
     <div class="flex justify-evenly place-content-center">
       <div class="border-animation rounded-full">
         <div class="p-1.5 rounded-full glow-anim">
-          <NuxtImg :src="pic_src" class="h-64 w-64 object-cover rounded-full" @click="useEaster()" />
+          <NuxtImg :src="pic_src" class="w-64 object-cover rounded-full m-0" @click="useEaster()" />
         </div>
       </div>
 
