@@ -38,7 +38,6 @@
     "eslint": "^8.55.0",
     "nuxt": "^3.8.2",
     "nuxt-resend": "^0.0.2",
-    "nuxt-simple-sitemap": "^4.1.15",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5"
   },
