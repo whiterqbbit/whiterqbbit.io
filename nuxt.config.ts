@@ -40,7 +40,7 @@ export default defineNuxtConfig({
   content: { documentDriven: true, contentHead: false },
 
   site: {
-    // url: 'https://whiterqbbit.io',
+    url: 'https://whiterqbbit.io',
     name: 'Guillaume Bonnefoy',
     description: 'Portfolio de Guillaume Bonnefoy - "Veni, Vidi, Codi"',
     identity: { type: 'Person' },
