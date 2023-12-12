@@ -7,7 +7,7 @@ if (useRuntimeConfig().public.ENVIRONNEMENT === 'local') // sets favicon to 🔮
 useSchemaOrg([
   definePerson({
     name: 'Guillaume Bonnefoy',
-    img: '/public/malt_catppuccin.jpg',
+    img: '/public/me_malt.jpg',
     sameAs: [
       'https://www.linkedin.com/in/white-rqbbit/',
       'https://github.com/whiterqbbit',

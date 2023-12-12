@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const pic_src = ref('malt_catppuccin.jpg')
+const pic_src = ref('img/me_malt.jpg')
 
 function useEaster() {
   useToast().add({
@@ -8,8 +8,8 @@ function useEaster() {
     icon: 'i-ci-help',
     closeButton: { loading: true },
     actions: [
-      { label: '🐇', size: 'xl', click: () => { pic_src.value = 'malt_seinen.jpg' } },
-      { label: '🐑', size: 'xl', click: () => { pic_src.value = 'malt_chad.jpg' } },
+      { label: '🐇', size: 'xl', click: () => { pic_src.value = 'img/me_seinen.jpg' } },
+      { label: '🐑', size: 'xl', click: () => { pic_src.value = 'img/me_chad.jpg' } },
     ],
   })
   umTrackEvent('easter_egg')

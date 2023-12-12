@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const moi_src = ref('moi_station_f_comp.jpg')
+const moi_src = ref('img/me_stationf.jpg')
 </script>
 
 <template>
@@ -13,12 +13,12 @@ const moi_src = ref('moi_station_f_comp.jpg')
         </div>
         <NuxtImg
           :src="moi_src" alt="moi a station-f" class="h-64 border-animation p-[0.3rem] glow-anim object-cover rounded-3xl"
-          @click="moi_src = 'manga_moi.png'"
+          @click="moi_src = 'img/me_shojo.png'"
         />
       </div>
 
       <div class="bandeau">
-        <NuxtImg src="musk.png" class="h-64 border-animation p-[0.3rem] glow-anim object-cover rounded-3xl" />
+        <NuxtImg src="img/musk.png" class="h-64 border-animation p-[0.3rem] glow-anim object-cover rounded-3xl" />
         <div class="textzone">
           Professionnellement, j'aime les environnements dynamiques et exigeants, je n'ai travaillé qu'en startup.
           J'apprécie contribuer à plus que du code, je me passionne notamment d'UI/UX et de copywriting.
@@ -31,7 +31,7 @@ const moi_src = ref('moi_station_f_comp.jpg')
           Je m'intéresse beaucoup au design, a l'IA, et au monde des startups.<br>
           Mon side-projet du moment est : <span class="text-anim-color font-bold text-2xl">ce site !</span>
         </div>
-        <NuxtImg src="wot_cat.jpg" class="h-64 border-animation p-[0.3rem] glow-anim object-cover rounded-3xl" />
+        <NuxtImg src="img/wot_cat.jpg" class="h-64 border-animation p-[0.3rem] glow-anim object-cover rounded-3xl" />
       </div>
     </div>
   </UContainer>
