@@ -1,14 +1,26 @@
 <script setup lang="ts">
 import { topography } from 'hero-patterns'
 
-const env_is_local = useRuntimeConfig().public.ENVIRONNEMENT === 'local'
-const emoji = env_is_local ? '🔮' : '🐇'
+if (useRuntimeConfig().public.ENVIRONNEMENT === 'local') // sets favicon to 🔮 in dev
+  useHead({ link: [{ rel: 'icon', type: 'image/svg+xml', href: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🔮%3C/text%3E%3C/svg%3E` }] })
 
-useHead({
-  title: env_is_local ? 'LOC - Guillaume Bonnefoy' : 'Guillaume Bonnefoy',
-  meta: [{ name: 'Guillaume Bonnefoy', content: 'Veni, Vidi, Codi' }],
-  link: [{ rel: 'icon', type: 'image/svg+xml', href: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E${emoji}%3C/text%3E%3C/svg%3E` }],
-})
+useSchemaOrg([
+  definePerson({
+    name: 'Guillaume Bonnefoy',
+    img: '/public/malt_catppuccin.jpg',
+    sameAs: [
+      'https://www.linkedin.com/in/white-rqbbit/',
+      'https://github.com/whiterqbbit',
+      'https://gitlab.com/whiterqbbit',
+      'https://www.guillaumebonnefoy.com',
+    ],
+  }),
+  defineWebSite({
+    name: 'Guillaume Bonnefoy',
+    url: 'https://whiterqbbit.io',
+  }),
+  defineWebPage(),
+])
 
 const colorMode = useColorMode()
 const bg_color = computed(() => colorMode.preference === 'light' ? '#E6E9EF' : '#1E1E2E')
