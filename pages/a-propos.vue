@@ -12,8 +12,8 @@ const moi_src = ref('moi_station_f_comp.jpg')
           et à 30 ans, j'en ai fait mon métier !
         </div>
         <NuxtImg
-          :src="moi_src" @click="moi_src = 'manga_moi.png'" alt="moi a station-f"
-          class="h-64 border-animation p-[0.3rem] glow-anim object-cover rounded-3xl"
+          :src="moi_src" alt="moi a station-f" class="h-64 border-animation p-[0.3rem] glow-anim object-cover rounded-3xl"
+          @click="moi_src = 'manga_moi.png'"
         />
       </div>
 
