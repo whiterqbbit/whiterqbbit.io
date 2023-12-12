@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     'nuxt-resend',
     '@nuxtjs/fontaine',
     '@nuxtseo/module',
+    'nuxt-simple-sitemap',
   ],
   extends: ['nuxt-umami'],
 
