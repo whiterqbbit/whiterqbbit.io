@@ -39,9 +39,9 @@ watch(() => colorMode.value, () => {
     <!-- voir si certaines classes ne sont pas retirables -->
     <div class="relative">
       <div v-if="title" class="flex gap-4 place-content-center text-2xl">
-        <div class="text-xl sm:text-2xl font-semibold text-anim-color mb-4">
+        <h2 class="text-xl sm:text-2xl font-semibold text-anim-color mt-4 mb-6">
           {{ title }}
-        </div>
+        </h2>
         <div class="mt-1">
           <NuxtLink v-if="url" class="i-ci-link transition-fast hover:text-ctp-yellow" :to="url" target="_blank" />
           <NuxtLink v-if="source" class="i-ci-github transition-fast hover:text-ctp-yellow" :to="source" target="_blank" />
