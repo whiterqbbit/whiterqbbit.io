@@ -77,39 +77,37 @@ const projects: IProject[] = [
 
 <template>
   <div class="flex flex-col gap-4 m-auto py-4">
-    <div class="text-4xl text-center mb-8">
+    <div class="text-2xl sm:text-4xl text-center md:mb-4 lg:mb-8">
       Quelques projets
     </div>
     <div
-      class="flex flex-wrap justify-around w-full gap-4"
+      class="flex flex-wrap justify-evenly w-full gap-4"
     >
       <GlowCard
         v-for="project in projects" :key="project.name" anim :title="project.name" :url="project.url" :source="project.source"
-        class="max-w-xs overflow-visible"
+        class="w-80 overflow-visible"
       >
-        <template #default>
-          <div class="text-sm flex flex-col gap-1" v-html="project.description" />
-          <div v-if="project.tasks" class="mt-2 text-sm italic text-ctp-overlay2 hover:text-anim-color-light"> {{ project.tasks }} </div>
-          <div class="flex flex-col mt-4 gap-2 text-lg cursor-default text-ctp-overlay2 hover:text-ctp-text transition-fast">
-            <div class="flex flex-row gap-2">
-              <span class="text-sm text-ctp-overlay2">Front :</span>
-              <div v-for="tech in project.stack.front" :key="tech.name">
-                <UTooltip :text="tech.name">
-                  <li :class="tech.icon" />
-                </UTooltip>
-              </div>
-            </div>
-
-            <div class="flex flex-row gap-2">
-              <span class="text-sm text-ctp-overlay2">Back :</span>
-              <div v-for="tech in project.stack.back" :key="tech.name">
-                <UTooltip :text="tech.name">
-                  <li :class="tech.icon" />
-                </UTooltip>
-              </div>
+        <div class="text-sm flex flex-col gap-1" v-html="project.description" />
+        <div v-if="project.tasks" class="mt-2 text-sm italic text-ctp-overlay2 hover:text-anim-color-light"> {{ project.tasks }} </div>
+        <div class="flex flex-col mt-4 gap-2 text-lg cursor-default text-ctp-overlay2 hover:text-ctp-text transition-fast">
+          <div class="flex flex-row gap-2">
+            <span class="text-sm text-ctp-overlay2">Front :</span>
+            <div v-for="tech in project.stack.front" :key="tech.name">
+              <UTooltip :text="tech.name">
+                <li :class="tech.icon" />
+              </UTooltip>
             </div>
           </div>
-        </template>
+
+          <div class="flex flex-row gap-2">
+            <span class="text-sm text-ctp-overlay2">Back :</span>
+            <div v-for="tech in project.stack.back" :key="tech.name">
+              <UTooltip :text="tech.name">
+                <li :class="tech.icon" />
+              </UTooltip>
+            </div>
+          </div>
+        </div>
       </GlowCard>
     </div>
   </div>

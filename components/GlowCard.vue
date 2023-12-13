@@ -39,7 +39,7 @@ watch(() => colorMode.value, () => {
     <!-- voir si certaines classes ne sont pas retirables -->
     <div class="relative">
       <div v-if="title" class="flex gap-4 place-content-center text-2xl">
-        <div class="text-lg sm:text-2xl font-semibold text-anim-color mb-4">
+        <div class="text-xl sm:text-2xl font-semibold text-anim-color mb-4">
           {{ title }}
         </div>
         <div class="mt-1">
