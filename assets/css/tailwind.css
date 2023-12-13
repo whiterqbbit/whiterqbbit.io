@@ -9,6 +9,10 @@
     font-museo text-ctp-text
     mx-auto;
   }
+
+  strong {
+    @apply font-bold dark:font-extrabold text-ctp-blue;
+  }
 }
 
 @layer components {
