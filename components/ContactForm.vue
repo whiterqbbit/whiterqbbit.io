@@ -49,7 +49,7 @@ async function submit(event: FormSubmitEvent<Schema>) {
     </UFormGroup>
 
     <div class="my-3" />
-    <UButton :icon="has_sent ? 'i-ci-circle-check' : 'i-ci-paper-plane'" type="submit" size="lg" class="mx-auto" :loading="is_emailing">
+    <UButton :icon="has_sent ? 'i-ci-circle-check' : 'i-ci-paper-plane'" type="submit" class="mx-auto" :loading="is_emailing">
       {{ has_sent ? 'Envoyé !' : 'Envoyer' }}
     </UButton>
     <p v-if="display_error" class="text-ctp-red">

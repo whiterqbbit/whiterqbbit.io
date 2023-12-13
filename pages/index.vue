@@ -17,17 +17,19 @@ function useEaster() {
 </script>
 
 <template>
-  <div class="flex flex-col gap-12 mx-auto text-lg mt-12 max-w-4xl px-2 sm:px-4 md:px-6">
+  <div class="flex flex-col gap-12 mx-auto sm:text-lg text-center sm:text-left mt-12 max-w-4xl px-2 sm:px-4 md:px-6">
     <div class="flex justify-evenly place-content-center">
-      <div class="border-animation rounded-full">
-        <div class="p-1.5 rounded-full glow-anim">
-          <NuxtImg :src="pic_src" class="w-64 object-cover rounded-full m-0" @click="useEaster()" />
+      <div class="place-self-center">
+        <div class="border-animation rounded-full">
+          <div class="p-1 sm:p-1.5 rounded-full glow-anim">
+            <NuxtImg :src="pic_src" class="w-36 sm:w-48 md:w-64 object-cover rounded-full m-0" @click="useEaster()" />
+          </div>
         </div>
       </div>
 
       <div class="flex flex-col text-center w-1/2 gap-4 justify-round place-content-center">
-        <div class="text-3xl">
-          Hello ! Je suis <span class="text-anim-color font-bold text-4xl">Guillaume Bonnefoy</span>
+        <div class="text-xl sm:text-3xl">
+          Hello ! Je suis <span class="text-anim-color font-bold text-xl sm:text-4xl">Guillaume Bonnefoy</span>
         </div>
         <p class="text-ctp-subtext1">
           Développeur fullstack et designer graphique,
@@ -36,43 +38,43 @@ function useEaster() {
       </div>
     </div>
 
-    <div class="flex gap-12">
-      <div class="w-1/2 place-self-center">
-        Je suis actuellement : <span class="text-anim-color text-2xl italic font-bold pr-1">disponible !</span><br><br>
+    <div class="card-duo">
+      <div class="sm:w-1/2 place-self-center">
+        Je suis actuellement : <span class="text-anim-color text-xl sm:text-2xl italic font-bold sm:pr-1">disponible !</span><br><br>
         J'aime travailler sur des projets <strong>ambitieux</strong> et <strong>challengeants</strong>!<br>
         Si votre vision est claire, je peux vous livrer le design et le développement de votre app en un
         <strong>temps record</strong> !
         <!-- Mon TJM est de <span class="text-anim-color font-bold pr-1">400€</span><br> -->
       </div>
-      <GlowCard title="Contactez-moi !" class="w-1/2">
-        <template #default>
-          <ContactForm />
-        </template>
+      <GlowCard title="Contactez-moi !" class="m-auto sm:w-1/2">
+        <ContactForm />
       </GlowCard>
     </div>
-    <div class="flex gap-12">
-      <GlowCard title="Ma stack" class="place-self-center w-1/2">
-        <template #default>
-          <TechStack />
-        </template>
+    <div class="card-duo">
+      <GlowCard title="Ma stack" class="place-self-center max-w-sm sm:max-w-none sm:w-1/2">
+        <TechStack />
       </GlowCard>
-      <div class="w-1/2 place-self-center">
+      <div class="sm:w-1/2 place-self-center">
         Techniquement, j'ai un faible pour l'écosystème <strong>Vue/Nuxt</strong>, qui allie rapidité et scalabilité, ainsi que <strong>Typescript</strong>.<br>
         Je privilégie les techniques <strong>modernes</strong>, mais <strong>matures</strong>. Évidemment, tout est fonction du projet !
       </div>
     </div>
-    <div class="flex gap-12">
-      <div class="w-1/2 place-self-center">
+    <div class="card-duo">
+      <div class="sm:w-1/2 place-self-center">
         Si votre projet le nécessite, je peux également solliciter mes amis au travers de notre collectif de freelance
-        <span class="text-anim-color text-2xl italic font-bold pr-1">Vite!</span>.<br>
+        <span class="text-anim-color text-lg sm:text-2xl italic font-bold sm:pr-1">Vite!</span>.<br>
         C'est particulièrement pertinent pour les projets crypto/web3/IA, ou simplement si vous voulez avancer encore plus vite.
       </div>
-      <img src="https://media1.tenor.com/m/w61O0eYj-M4AAAAC/frens.gif" class="h-64 object-cover rounded-3xl">
+      <img src="https://media1.tenor.com/m/w61O0eYj-M4AAAAC/frens.gif" class="h-52 hidden sm:block object-cover rounded-3xl">
     </div>
-    <GlowCard title="Contactez-moi !" class="my-16 m-auto w-1/2" emphasize>
-      <template #default>
-        <ContactForm />
-      </template>
+    <GlowCard title="Contactez-moi !" class="sm:my-16 m-auto sm:w-1/2" emphasize>
+      <ContactForm />
     </GlowCard>
   </div>
 </template>
+
+<style scoped>
+.card-duo{
+  @apply flex flex-col-reverse sm:flex-row gap-6 sm:gap-12 px-4 sm:px-0;
+}
+</style>

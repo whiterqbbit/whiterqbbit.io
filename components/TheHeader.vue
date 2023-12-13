@@ -21,11 +21,11 @@ watch(() => route.path, newPath => path.value = newPath)
           class="w-10 h-10 md:w-12 md:h-12 autoSlideIn m-auto rounded-full transition-slow
                 shadow-[0_0_14px_3px] shadow-ctp-blue/25 hover:shadow-[0_0_20px_4px] hover:shadow-ctp-blue/30"
         />
-        <div class="m-auto sm:text-xl md:text-2xl text-sky hover-target font-black">Guillaume Bonnefoy</div>
+        <div class="m-auto hidden sm:block sm:text-xl md:text-2xl text-sky hover-target font-black ">Guillaume Bonnefoy</div>
       </NuxtLink>
 
       <ul class="m-auto flex">
-        <li class="flex gap-2 md:gap-6 font-bold text-sm sm:text-base md:text-lg">
+        <li class="flex gap-2 md:gap-6 font-bold  md:text-lg">
           <NuxtLink to="/portfolio" exact-active-class="nav-link"> {{ $t('header.portfolio') }} </NuxtLink>
           <NuxtLink to="/blog" exact-active-class="nav-link"> {{ $t('header.blog') }} </NuxtLink>
           <NuxtLink to="/a-propos" exact-active-class="nav-link"> {{ $t('header.about') }} </NuxtLink>
@@ -33,9 +33,9 @@ watch(() => route.path, newPath => path.value = newPath)
       </ul>
 
       <div class="my-auto flex gap-1">
-        <LocaleButton />
-        <p> | </p>
-        <DarkModeButton />
+        <LocaleButton class="sm:text-sm md:text-base pr-1" />
+        <p class="m-auto"> | </p>
+        <DarkModeButton class="text-xl sm:text-3xl" />
       </div>
     </div>
   </nav>

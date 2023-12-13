@@ -6,7 +6,7 @@ function toggle_locale() {
 </script>
 
 <template>
-  <div id="language_button" class="font-bold px-1 pt-1 rounded-full hover:text-anim-color">
+  <div id="language_button" class="font-bold hover:text-anim-color place-self-center">
     <button @click="toggle_locale">{{ locale === 'fr' ? 'FR' : 'EN' }}</button>
   </div>
 </template>
