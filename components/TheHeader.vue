@@ -27,7 +27,7 @@ watch(() => route.path, newPath => path.value = newPath)
       <ul class="m-auto flex">
         <li class="flex gap-2 md:gap-6 font-bold  md:text-lg">
           <NuxtLink to="/portfolio" exact-active-class="nav-link"> {{ $t('header.portfolio') }} </NuxtLink>
-          <NuxtLink to="/blog" exact-active-class="nav-link"> {{ $t('header.blog') }} </NuxtLink>
+          <!-- <NuxtLink to="/blog" exact-active-class="nav-link"> {{ $t('header.blog') }} </NuxtLink> -->
           <NuxtLink to="/a-propos" exact-active-class="nav-link"> {{ $t('header.about') }} </NuxtLink>
         </li>
       </ul>
