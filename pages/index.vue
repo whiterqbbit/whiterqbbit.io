@@ -17,7 +17,7 @@ function useEaster() {
 </script>
 
 <template>
-  <div class="flex flex-col gap-12 mx-auto sm:text-lg text-center sm:text-left mt-12 max-w-4xl px-2 sm:px-4 md:px-6">
+  <div class="flex flex-col gap-8 sm:gap-12 mx-auto sm:text-lg text-center sm:text-left mt-12 max-w-4xl px-2 sm:px-4 md:px-6">
     <div class="flex justify-evenly place-content-center">
       <div class="place-self-center">
         <div class="border-animation rounded-full">
@@ -75,6 +75,6 @@ function useEaster() {
 
 <style scoped>
 .card-duo{
-  @apply flex flex-col-reverse sm:flex-row gap-6 sm:gap-12 px-4 sm:px-0;
+  @apply flex flex-col-reverse sm:flex-row gap-4 md:gap-12 px-4 sm:px-0;
 }
 </style>

@@ -6,7 +6,7 @@
   </ContentDoc>
 </template>
 
-<style>
+<style scoped>
 h1 {
   @apply text-4xl font-black text-ctp-yellow my-8;
 }
