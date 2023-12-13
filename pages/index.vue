@@ -32,7 +32,7 @@ function useEaster() {
           Hello ! Je suis <span class="text-anim-color font-bold text-xl sm:text-4xl">Guillaume Bonnefoy</span>
         </div>
         <p class="text-ctp-subtext1">
-          Développeur fullstack et designer graphique,
+          <strong>Développeur fullstack</strong> et designer graphique,
           spécialisé dans la création d'app early-stage
         </p>
       </div>
@@ -67,9 +67,11 @@ function useEaster() {
       </div>
       <img src="https://media1.tenor.com/m/w61O0eYj-M4AAAAC/frens.gif" class="h-52 hidden sm:block object-cover rounded-3xl">
     </div>
-    <GlowCard title="Contactez-moi !" class="sm:my-16 m-auto sm:w-1/2" emphasize>
-      <ContactForm />
-    </GlowCard>
+    <div class="flex">
+      <GlowCard title="Contactez-moi !" class="w-full max-w-sm sm:max-w-md sm:my-16 m-auto" emphasize>
+        <ContactForm />
+      </GlowCard>
+    </div>
   </div>
 </template>
 
