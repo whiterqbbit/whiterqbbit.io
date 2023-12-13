@@ -30,7 +30,7 @@ watch(() => colorMode.value, () => {
       '--y': `${elementY}px`,
     }"
     class="p-4 lg:p-8 overflow-hidden rounded-3xl
-    border border-gradient border-ctp-text/10 bg-ctp-mantle
+    border border-gradient border-ctp-text/10 bg-ctp-surface0/30 hover:bg-ctp-base sm:bg-ctp-mantle sm:hover:bg-ctp-mantle
     before:absolute before:-inset-px before:h-[calc(100%+2px)] before:w-[calc(100%+2px)] before:rounded-xl
     transition-all ease-out group relative before:blur-xl"
     :class="[anim ? 'hover:-translate-y-1 hover:translate-x-1 hover:shadow-[-0.5rem_12px_25px_-5px] duration-200' : 'hover:shadow-[0_0_30px_3px] duration-500',
