@@ -12,12 +12,12 @@ useSchemaOrg([
       'https://www.linkedin.com/in/white-rqbbit/',
       'https://github.com/whiterqbbit',
       'https://gitlab.com/whiterqbbit',
-      'https://www.guillaumebonnefoy.com',
+      'https://whiterqbbit.io',
     ],
   }),
   defineWebSite({
     name: 'Guillaume Bonnefoy',
-    url: 'https://whiterqbbit.io',
+    url: 'https://www.guillaumebonnefoy.com',
   }),
   defineWebPage(),
 ])

@@ -31,7 +31,7 @@ export default defineNuxtConfig({
   colorMode: { preference: 'dark', classSuffix: '' },
 
   image: {
-    domains: ['whiterqbbit.io'],
+    domains: ['guillaumebonnefoy.com'],
     dir: 'public',
     format: ['webp'],
     provider: 'netlify',
@@ -40,7 +40,7 @@ export default defineNuxtConfig({
   content: { documentDriven: true, contentHead: false },
 
   site: {
-    url: 'https://whiterqbbit.io',
+    url: 'https://www.guillaumebonnefoy.com',
     name: 'Guillaume Bonnefoy',
     description: 'Portfolio de Guillaume Bonnefoy - "Veni, Vidi, Codi"',
     identity: { type: 'Person' },
