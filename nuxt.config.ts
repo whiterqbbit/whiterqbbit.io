@@ -7,7 +7,6 @@ export default defineNuxtConfig({
     'nuxt-resend',
     '@nuxtjs/fontaine',
     '@nuxtseo/module',
-    'nuxt-simple-sitemap',
   ],
   extends: ['nuxt-umami'],
 
@@ -26,7 +25,12 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   devServer: { port: 3210 },
 
-  i18n: { vueI18n: './i18n.config.ts' },
+  i18n: {
+    vueI18n: './i18n.config.ts',
+    defaultLocale: 'fr',
+    strategy: 'no_prefix',
+    locales: ['fr', 'en'],
+  },
 
   colorMode: { preference: 'dark', classSuffix: '' },
 
