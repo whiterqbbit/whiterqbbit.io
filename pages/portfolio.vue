@@ -82,7 +82,7 @@ const projects: IProject[] = [
     </div>
     <div class="flex flex-wrap justify-evenly w-full gap-4">
       <GlowCard
-        v-for="project, idx in projects" :key="project.name" anim :title="project.name" :url="project.url" :source="project.source"
+        v-for="project, idx in projects" :key="project.name" :title="project.name" :url="project.url" :source="project.source"
         class="w-80 overflow-visible slide-enter" :style="{ '--enter-stage': idx, '--enter-step': '130ms' }"
       >
         <div class="text-sm flex flex-col gap-1" v-html="project.description" />
