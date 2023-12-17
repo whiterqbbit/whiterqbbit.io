@@ -5,7 +5,7 @@ const moi_src = ref('img/me_stationf.jpg')
 <template>
   <UContainer class="text-center sm:text-left text-lg sm:text-xl mt-8">
     <div class="flex flex-col gap-10">
-      <div class="bandeau">
+      <div class="bandeau" :style="{ '--enter-stage': 1 }">
         <div class="place-self-center text-center !max-w-sm">
           Passionné depuis tout petit, je commence à m'électrocuter dès l'âge de
           15 ans en bricolant mon ordi. À 17 ans, je programme des jeux sur ma calculette,
@@ -17,7 +17,7 @@ const moi_src = ref('img/me_stationf.jpg')
         />
       </div>
 
-      <div class="bandeau !flex-col sm:!flex-row">
+      <div class="bandeau !flex-col sm:!flex-row" :style="{ '--enter-stage': 2 }">
         <NuxtImg src="img/musk.png" class="a-propos-pic max-h-64 place-self-center w-max object-contain" />
         <div class="textzone">
           Professionnellement, j'aime les environnements dynamiques et exigeants, je n'ai travaillé qu'en startup.
@@ -25,7 +25,7 @@ const moi_src = ref('img/me_stationf.jpg')
         </div>
       </div>
 
-      <div class="bandeau">
+      <div class="bandeau" :style="{ '--enter-stage': 3 }">
         <div class="textzone">
           Au-delà du code, je fais du piano et de la photographie.
           Je m'intéresse beaucoup au design, à l'IA, et au monde des startups.<br>
@@ -39,7 +39,7 @@ const moi_src = ref('img/me_stationf.jpg')
 
 <style scoped>
 .bandeau {
-  @apply flex flex-col-reverse sm:flex-row gap-4 justify-evenly place-content-center ;
+  @apply slide-enter flex flex-col-reverse sm:flex-row gap-4 justify-evenly place-content-center;
 }
 
 .textzone {

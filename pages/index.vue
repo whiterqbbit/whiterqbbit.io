@@ -17,8 +17,13 @@ function useEaster() {
 </script>
 
 <template>
-  <div class="flex flex-col gap-8 sm:gap-12 mx-auto sm:text-lg text-center sm:text-left mt-12 max-w-4xl px-2 sm:px-4 md:px-6">
-    <div class="flex justify-evenly place-content-center">
+  <div
+    class="flex flex-col gap-8 sm:gap-12 mx-auto sm:text-lg text-center sm:text-left mt-12 max-w-4xl px-2 sm:px-4 md:px-6"
+  >
+    <div
+      class="flex justify-evenly place-content-center slide-enter"
+      :style="{ '--enter-stage': 1 }"
+    >
       <div class="place-self-center">
         <div class="border-animation rounded-full">
           <div class="p-1 sm:p-1.5 rounded-full glow-anim">
@@ -27,7 +32,9 @@ function useEaster() {
         </div>
       </div>
 
-      <div class="flex flex-col text-center w-1/2 gap-4 justify-round place-content-center">
+      <div
+        class="flex flex-col text-center w-1/2 gap-4 justify-round place-content-center slide-enter"
+      >
         <div class="text-xl sm:text-3xl">
           Hello ! Je suis <span class="text-anim-color font-bold text-xl sm:text-4xl">Guillaume Bonnefoy</span>
         </div>
@@ -38,7 +45,7 @@ function useEaster() {
       </div>
     </div>
 
-    <div class="card-duo">
+    <div class="card-duo" :style="{ '--enter-stage': 2 }">
       <div class="sm:w-1/2 place-self-center">
         Je suis actuellement : <span class="text-anim-color text-xl sm:text-2xl italic font-bold sm:pr-1">disponible !</span><br><br>
         J'aime travailler sur des projets <strong>ambitieux</strong> et <strong>challengeants</strong>!<br>
@@ -50,7 +57,8 @@ function useEaster() {
         <ContactForm />
       </GlowCard>
     </div>
-    <div class="card-duo">
+
+    <div class="card-duo" :style="{ '--enter-stage': 3 }">
       <GlowCard title="Ma stack" class="place-self-center max-w-sm sm:max-w-none sm:w-1/2">
         <TechStack />
       </GlowCard>
@@ -59,7 +67,8 @@ function useEaster() {
         Je privilégie les techniques <strong>modernes</strong>, mais <strong>matures</strong>. Évidemment, tout est fonction du projet !
       </div>
     </div>
-    <div class="card-duo">
+
+    <div class="card-duo" :style="{ '--enter-stage': 4 }">
       <div class="sm:w-1/2 place-self-center">
         Si votre projet le nécessite, je peux également solliciter mes amis au travers de notre collectif de freelance
         <span class="text-anim-color text-lg sm:text-2xl italic font-bold sm:pr-1">Vite!</span>.<br>
@@ -67,7 +76,7 @@ function useEaster() {
       </div>
       <img src="https://media1.tenor.com/m/w61O0eYj-M4AAAAC/frens.gif" class="h-52 hidden sm:block object-cover rounded-3xl">
     </div>
-    <div class="flex">
+    <div class="flex slide-enter" :style="{ '--enter-stage': 5 }">
       <GlowCard title="Contactez-moi !" class="w-full max-w-sm sm:max-w-md sm:my-16 m-auto" emphasize>
         <ContactForm />
       </GlowCard>
@@ -77,6 +86,6 @@ function useEaster() {
 
 <style scoped>
 .card-duo{
-  @apply flex flex-col-reverse sm:flex-row gap-4 md:gap-12 px-4 sm:px-0;
+  @apply slide-enter flex flex-col-reverse sm:flex-row gap-4 md:gap-12 px-4 sm:px-0;
 }
 </style>
