@@ -6,7 +6,6 @@ const { title, url, source } = defineProps<{
   title?: string
   url?: string
   source?: string
-  anim?: boolean
   emphasize?: boolean
 }>()
 
@@ -34,7 +33,7 @@ watch(() => colorMode.value, () => {
   >
     <div class="relative">
       <div v-if="title" class="flex gap-4 place-content-center text-2xl">
-        <h2 class="text-xl sm:text-2xl font-semibold text-anim-color mt-4 mb-6">
+        <h2 class="text-xl text-center sm:text-2xl font-semibold text-anim-color mb-6">
           {{ title }}
         </h2>
         <div class="mt-1">
@@ -43,13 +42,7 @@ watch(() => colorMode.value, () => {
         </div>
       </div>
 
-      <div class="">
-        <slot name="image" />
-      </div>
-
-      <div class="text-base text-subtext0">
-        <slot />
-      </div>
+      <div class="text-base text-subtext0"><slot /></div>
     </div>
   </div>
 </template>
