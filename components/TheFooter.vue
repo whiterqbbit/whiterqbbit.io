@@ -8,9 +8,9 @@
       </li>
     </ul>
     <div class="text-center text-sm text-ctp-overlay1">
-      Fait par mes petites mains avec Nuxt.<br>
+      {{ $t('footer.made_by') }}<br>
       <NuxtLink class="hover:text-anim-color" to="https://www.github.com/whiterqbbit/whiterqbbit-website" target="_blank">
-        Code source sur Github
+        {{ $t('footer.source') }}
       </NuxtLink>
     </div>
   </nav>

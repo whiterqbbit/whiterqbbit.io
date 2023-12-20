@@ -1,4 +1,4 @@
-export const header = {
+export const portfolio = {
   en: {
     portfolio: 'Portfolio',
     blog: 'Blog',

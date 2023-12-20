@@ -2,6 +2,8 @@
 import { z } from 'zod'
 import type { FormSubmitEvent } from '#ui/types'
 
+const { t } = useI18n()
+
 const state = reactive({
   email: undefined,
   message: undefined,
@@ -28,7 +30,7 @@ async function submit(event: FormSubmitEvent<Schema>) {
     await $fetch('/api/resend', { method: 'POST', body: { ...event.data } })
     has_sent.value = true
     umTrackEvent('contact_form_sent', { email: event.data.email, message: event.data.message })
-    useToast().add({ title: 'Message envoyé !' })
+    useToast().add({ title: t('contact.message_sent') })
   }
   catch (error) {
     console.error(error)
@@ -50,10 +52,10 @@ async function submit(event: FormSubmitEvent<Schema>) {
 
     <div class="my-3" />
     <UButton :icon="has_sent ? 'i-ci-circle-check' : 'i-ci-paper-plane'" type="submit" class="mx-auto" :loading="is_emailing">
-      {{ has_sent ? 'Envoyé !' : 'Envoyer' }}
+      {{ has_sent ? $t('contact.sent') : $t('contact.send') }}
     </UButton>
     <p v-if="display_error" class="text-ctp-red">
-      Navré, il y a eu une erreur, veuillez me contacter par mail à whiterqbbit@proton.me !
+      {{ $t('contact.error') }}
     </p>
   </UForm>
 </template>

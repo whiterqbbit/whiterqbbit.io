@@ -7,31 +7,27 @@ const moi_src = ref('img/me_stationf.jpg')
     <div class="flex flex-col gap-10">
       <div class="bandeau" :style="{ '--enter-stage': 1 }">
         <div class="place-self-center text-center !max-w-sm">
-          Passionné depuis tout petit, je commence à m'électrocuter dès l'âge de
-          15 ans en bricolant mon ordi. À 17 ans, je programme des jeux sur ma calculette,
-          et à 30 ans, j'en ai fait mon métier !
+          {{ $t('a_propos.childhood') }}
         </div>
         <NuxtImg
-          :src="moi_src" alt="Guillaume à Station-F" class="a-propos-pic"
+          :src="moi_src" :alt="$t('a_propos.alt.sf')" class="a-propos-pic"
           @click="moi_src = 'img/me_shojo.png'"
         />
       </div>
 
       <div class="bandeau !flex-col sm:!flex-row" :style="{ '--enter-stage': 2 }">
-        <NuxtImg src="img/musk.png" class="a-propos-pic max-h-64 place-self-center w-max object-contain" />
+        <NuxtImg src="img/musk.png" :alt="$t('a_propos.alt.musk')" class="a-propos-pic max-h-64 place-self-center w-max object-contain" />
         <div class="textzone">
-          Professionnellement, j'aime les environnements dynamiques et exigeants, je n'ai travaillé qu'en startup.
-          J'apprécie contribuer à plus que du code, je me passionne notamment d'UI/UX et de copywriting.
+          {{ $t('a_propos.professionally') }}
         </div>
       </div>
 
       <div class="bandeau" :style="{ '--enter-stage': 3 }">
         <div class="textzone">
-          Au-delà du code, je fais du piano et de la photographie.
-          Je m'intéresse beaucoup au design, à l'IA, et au monde des startups.<br>
-          Mon side-projet du moment est : <span class="text-anim-color font-bold text-2xl">ce site !</span>
+          {{ $t('a_propos.passions') }}<br><br>
+          {{ $t('a_propos.side_project.main') }}<span class="text-anim-color font-bold text-2xl">{{ $t('a_propos.side_project.name') }}</span>
         </div>
-        <NuxtImg src="img/wot_cat.jpg" class="a-propos-pic" />
+        <NuxtImg src="img/wot_cat.jpg" :alt="$t('a_propos.alt.wot_cat')" class="a-propos-pic" />
       </div>
     </div>
   </UContainer>
