@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { vue23, nuxt, tailwind, unocss, typescript, node, nodets, prisma, react, sequelize, postgresql, mongodb, openai, elasticsearch, firebase, terraform, docker, netlify, aws, bootstrap, sass, redis, lighthouse, puppeteer, amplify, jest, vitest, cucumber, figma, i18n, express, cypress, metabase, google_analytics, umami, cloudwatch, radix, macOS, debian, arch, lambda, github_actions, s3, ec2, route53, step_functions, iot_core, photoshop } = icons
+const { t } = useI18n()
 
 const short_stack = [
   { name: 'Front', tech: [typescript, vue23, nuxt, tailwind] },
@@ -39,6 +40,21 @@ const current_stack = computed(() => is_short_stack.value ? short_stack : long_s
         </ul>
       </div>
     </div>
-    <UButton :icon="is_short_stack ? 'i-ci-caret-down-md' : 'i-ci-caret-up-md'" class="mt-8 pr-4" @click="is_short_stack = !is_short_stack">{{ is_short_stack ? 'En détail' : 'Moins de buzzwords' }}</UButton>
+    <UButton :icon="is_short_stack ? 'i-ci-caret-down-md' : 'i-ci-caret-up-md'" class="mt-8 pr-4" @click="is_short_stack = !is_short_stack">
+      {{ is_short_stack ? t('less_details') : t('less_buzzwords') }}
+    </UButton>
   </div>
 </template>
+
+<i18n lang="ts">
+  {
+    en: {
+      less_details: 'More details',
+      less_buzzwords: 'Less buzzwords',
+    },
+    fr: {
+      less_details: 'En détail',
+      less_buzzwords: 'Moins de buzzwords',
+    }
+  }
+  </i18n>
