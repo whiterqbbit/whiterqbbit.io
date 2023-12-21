@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useWindowScroll } from '@vueuse/core'
 
+const { t } = useI18n({ useScope: 'local' })
 const { y } = useWindowScroll()
 
 const route = useRoute()
@@ -26,9 +27,9 @@ watch(() => route.path, newPath => path.value = newPath)
 
       <ul class="m-auto flex">
         <li class="flex gap-2 md:gap-6 font-bold  md:text-lg">
-          <NuxtLink to="/portfolio" exact-active-class="nav-link"> {{ $t('header.portfolio') }} </NuxtLink>
-          <!-- <NuxtLink to="/blog" exact-active-class="nav-link"> {{ $t('header.blog') }} </NuxtLink> -->
-          <NuxtLink to="/a-propos" exact-active-class="nav-link"> {{ $t('header.about') }} </NuxtLink>
+          <NuxtLink to="/portfolio" exact-active-class="nav-link"> {{ t('portfolio') }} </NuxtLink>
+          <!-- <NuxtLink to="/blog" exact-active-class="nav-link"> {{ t('blog') }} </NuxtLink> -->
+          <NuxtLink to="/a-propos" exact-active-class="nav-link"> {{ t('about') }} </NuxtLink>
         </li>
       </ul>
 
@@ -75,3 +76,14 @@ ul li *:hover {
   animation: slideInFromLeft 0.65s ease-out forwards;
 }
 </style>
+
+<i18n lang="yaml">
+en:
+  portfolio: 'Portfolio'
+  blog: 'Blog'
+  about: 'About'
+fr:
+  portfolio: 'Portfolio'
+  blog: 'Blog'
+  about: 'À Propos'
+</i18n>

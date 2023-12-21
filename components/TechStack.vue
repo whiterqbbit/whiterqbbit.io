@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { vue23, nuxt, tailwind, unocss, typescript, node, nodets, prisma, react, sequelize, postgresql, mongodb, openai, elasticsearch, firebase, terraform, docker, netlify, aws, bootstrap, sass, redis, lighthouse, puppeteer, amplify, jest, vitest, cucumber, figma, i18n, express, cypress, metabase, google_analytics, umami, cloudwatch, radix, macOS, debian, arch, lambda, github_actions, s3, ec2, route53, step_functions, iot_core, photoshop } = icons
-const { t } = useI18n()
+const { t } = useI18n({ useScope: 'local' })
 
 const short_stack = [
   { name: 'Front', tech: [typescript, vue23, nuxt, tailwind] },
@@ -46,15 +46,11 @@ const current_stack = computed(() => is_short_stack.value ? short_stack : long_s
   </div>
 </template>
 
-<i18n lang="ts">
-  {
-    en: {
-      less_details: 'More details',
-      less_buzzwords: 'Less buzzwords',
-    },
-    fr: {
-      less_details: 'En détail',
-      less_buzzwords: 'Moins de buzzwords',
-    }
-  }
-  </i18n>
+<i18n lang="yaml">
+en:
+  less_details: More details
+  less_buzzwords: Less buzzwords
+fr:
+  less_details: En détail
+  less_buzzwords: Moins de buzzwords
+</i18n>

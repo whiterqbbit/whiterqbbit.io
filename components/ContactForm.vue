@@ -2,7 +2,7 @@
 import { z } from 'zod'
 import type { FormSubmitEvent } from '#ui/types'
 
-const { t } = useI18n()
+const { t } = useI18n({ useScope: 'local' })
 
 const state = reactive({
   email: undefined,
@@ -30,7 +30,7 @@ async function submit(event: FormSubmitEvent<Schema>) {
     await $fetch('/api/resend', { method: 'POST', body: { ...event.data } })
     has_sent.value = true
     umTrackEvent('contact_form_sent', { email: event.data.email, message: event.data.message })
-    useToast().add({ title: t('contact.message_sent') })
+    useToast().add({ title: t('message_sent') })
   }
   catch (error) {
     console.error(error)
@@ -52,10 +52,23 @@ async function submit(event: FormSubmitEvent<Schema>) {
 
     <div class="my-3" />
     <UButton :icon="has_sent ? 'i-ci-circle-check' : 'i-ci-paper-plane'" type="submit" class="mx-auto" :loading="is_emailing">
-      {{ has_sent ? $t('contact.sent') : $t('contact.send') }}
+      {{ has_sent ? t('sent') : t('send') }}
     </UButton>
     <p v-if="display_error" class="text-ctp-red">
-      {{ $t('contact.error') }}
+      {{ t('error') }}
     </p>
   </UForm>
 </template>
+
+<i18n lang="yaml">
+en:
+  message_sent: "Message sent !"
+  sent: "Sent !"
+  send: "Send"
+  error: "Sorry, there was an error, please write me an email at whiterqbbit{'@'}proton.me !"
+fr:
+  message_sent: "Message envoyé !"
+  sent: "Envoyé !"
+  send: "Envoyer"
+  error: "Navré, il y a eu une erreur, veuillez me contacter par mail à whiterqbbit{'@'}proton.me !"
+</i18n>
