@@ -1,7 +1,6 @@
 <script setup>
-const response = await useFetch('/api/spotify')
+const { data } = await useAsyncData('spotify', () => $fetch('/api/spotify'))
 
-const data = response.data
 const artist = data?.value?.item?.artists[0]?.name
 const song = data?.value?.item?.name
 const link = data?.value?.item?.external_urls?.spotify
