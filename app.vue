@@ -32,6 +32,7 @@ const bg_color = computed(() => colorMode.preference === 'light' ? '#E6E9EF' : '
     <NuxtPage class="min-h-[80vh] max-w-5xl" />
     <TheFooter />
 
+    <NowPlaying />
     <UNotifications />
   </div>
 </template>
