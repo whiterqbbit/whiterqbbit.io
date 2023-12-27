@@ -3,7 +3,7 @@ export const portfolio = {
     title: 'Recent projects',
     kafo: {
       description: 'Coworking find and meet startup.',
-      tasks: 'Lead dev, product, UI/UX, user surveys, scrapping',
+      tasks: 'Founder, lead dev, product, UI/UX, user surveys, scrapping',
     },
     moonolith: {
       description: `<p>Decentralized web3 app.</p>
@@ -12,12 +12,12 @@ export const portfolio = {
     },
     chadguard: {
       description: `<p>Chrome extension using AI to block adult content.</p>
-                    <p>~3000 active users.</p>`,
+                    <p>~1500 active users.</p>`,
       tasks: 'Dev, product, UI/UX',
     },
     omniscient: {
       description: 'IoT startup in the construction industry.',
-      tasks: `Fullstack dev: sensor integration, backoffice tools development`,
+      tasks: `Fullstack dev, sensor integration, backoffice tools development`,
     },
     aestima: {
       description: `SaaS startup in wealth management.`,
@@ -39,8 +39,8 @@ export const portfolio = {
   fr: {
     title: 'Projets récents',
     kafo: {
-      description: 'Startup marketplace et rencontre coworking.',
-      tasks: 'Lead dev, produit, UI/UX, enquêtes utilisateurs, scrapping',
+      description: 'Startup recherche et rencontre coworking.',
+      tasks: 'Fondateur, lead dev, produit, UI/UX, enquêtes utilisateurs, scrapping',
     },
     moonolith: {
       description: `<p>App web3 décentralisée.</p>
@@ -49,12 +49,12 @@ export const portfolio = {
     },
     chadguard: {
       description: `<p>Extension Chrome utilisant IA pour bloquer le contenu adulte.</p>
-                    <p>~3000 utilisateurs actifs.</p>`,
+                    <p>~1500 utilisateurs actifs.</p>`,
       tasks: 'Dev, produit, UI/UX',
     },
     omniscient: {
       description: 'Startup IOT dans le secteur du BTP.',
-      tasks: `Dev fullstack: intégration de capteurs, développement d'outils backoffice`,
+      tasks: `Dev fullstack, intégration de capteurs, développement d'outils backoffice`,
     },
     aestima: {
       description: `Startup SaaS dans la gestion de patrimoine.`,

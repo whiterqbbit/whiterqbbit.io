@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { vue2, vue3, nuxt, tailwind, unocss, typescript, chrome, ethereum, node, nodets, prisma, umami, google_analytics, react, sequelize, redis, mongodb, elasticsearch, aws_omniscient, aws_ttt, aws_calypso, terraform, docker, netlify, bootstrap, sass, html5, javascript, puppeteer, amplify, jest, vitest, cucumber } = icons
+const { vue2, vue3, nuxt, tailwind, unocss, typescript, chrome, ethereum, node, nodets, prisma, postgresql, umami, google_analytics, react, sequelize, redis, mongodb, elasticsearch, aws_omniscient, aws_ttt, aws_calypso, terraform, docker, netlify, bootstrap, sass, html5, javascript, puppeteer, amplify, jest, vitest, cucumber } = icons
 const { t } = useI18n()
 
 interface IProject {
@@ -14,23 +14,9 @@ const projects: IProject[] = [
   {
     name: 'kafo',
     formatted: 'Kafo',
-    stack: { front: [vue3, unocss, typescript, vitest], back: [nodets, prisma, amplify] },
+    stack: { front: [vue3, unocss, typescript, vitest], back: [nodets, postgresql, prisma, amplify] },
     url: 'https://www.kafo.work/',
     // source: 'https://github.com/whiterqbbit/kafo_front_vitesse'
-  },
-  {
-    name: 'moonolith',
-    formatted: 'Moonolith',
-    stack: { front: [html5, javascript], back: [ethereum] },
-    url: 'https://www.moonolith.io/',
-    source: 'https://github.com/LaGuerrePiece/moonolith',
-  },
-  {
-    name: 'chadguard',
-    formatted: 'ChadGuard',
-    stack: { front: [vue2, tailwind], back: [chrome] },
-    url: 'https://chromewebstore.google.com/detail/chadguard/oogpehhghgfaeojjbflgeemilhkhgbhe?hl=fr&pli=1',
-    source: 'https://github.com/LaGuerrePiece/ChadGuard',
   },
   {
     name: 'omniscient',
@@ -47,8 +33,22 @@ const projects: IProject[] = [
   {
     name: 'tictactrip',
     formatted: 'Tictactrip',
-    stack: { front: [react, tailwind, jest], back: [nodets, aws_ttt, terraform, sequelize, redis, jest] },
+    stack: { front: [react, tailwind, jest], back: [nodets, aws_ttt, terraform, postgresql, sequelize, redis, jest] },
     url: 'https://www.tictactrip.eu/',
+  },
+  {
+    name: 'moonolith',
+    formatted: 'Moonolith',
+    stack: { front: [html5, javascript], back: [ethereum] },
+    url: 'https://www.moonolith.io/',
+    source: 'https://github.com/LaGuerrePiece/moonolith',
+  },
+  {
+    name: 'chadguard',
+    formatted: 'ChadGuard',
+    stack: { front: [vue2, tailwind], back: [chrome] },
+    url: 'https://chromewebstore.google.com/detail/chadguard/oogpehhghgfaeojjbflgeemilhkhgbhe?hl=fr&pli=1',
+    source: 'https://github.com/LaGuerrePiece/ChadGuard',
   },
   {
     name: 'calypso',
@@ -59,7 +59,7 @@ const projects: IProject[] = [
   },
   {
     name: 'whiterqbbit',
-    formatted: 'Ce site-même!',
+    formatted: 'Ce site-ci!',
     stack: { front: [nuxt, tailwind], back: [netlify, umami] },
     source: 'https://github.com/whiterqbbit/whiterqbbit-website',
   },
