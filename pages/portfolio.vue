@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { vue2, vue3, nuxt, tailwind, unocss, typescript, chrome, ethereum, node, nodets, prisma, postgresql, umami, google_analytics, react, sequelize, redis, mongodb, elasticsearch, aws_omniscient, aws_ttt, aws_calypso, terraform, docker, netlify, bootstrap, sass, html5, javascript, puppeteer, amplify, jest, vitest, cucumber } = icons
+const { vue2, vue3, nuxt, tailwind, unocss, typescript, chrome, ethereum, node, nodets, prisma, postgresql, umami, google_analytics, react, sequelize, redis, mongodb, elasticsearch, aws_omniscient, aws_ttt, aws_calypso, terraform, docker, netlify, bootstrap, sass, html5, canvas, javascript, puppeteer, amplify, jest, vitest, cucumber } = icons
 const { t } = useI18n()
 
 interface IProject {
@@ -39,14 +39,14 @@ const projects: IProject[] = [
   {
     name: 'moonolith',
     formatted: 'Moonolith',
-    stack: { front: [html5, javascript], back: [ethereum] },
+    stack: { front: [html5, javascript, canvas], back: [ethereum] },
     url: 'https://www.moonolith.io/',
     source: 'https://github.com/LaGuerrePiece/moonolith',
   },
   {
     name: 'chadguard',
     formatted: 'ChadGuard',
-    stack: { front: [vue2, tailwind], back: [chrome] },
+    stack: { front: [vue3, tailwind], back: [chrome] },
     url: 'https://chromewebstore.google.com/detail/chadguard/oogpehhghgfaeojjbflgeemilhkhgbhe?hl=fr&pli=1',
     source: 'https://github.com/LaGuerrePiece/ChadGuard',
   },

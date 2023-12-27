@@ -119,6 +119,10 @@ export const icons = {
     name: 'HTML5',
     icon: 'i-simple-icons-html5',
   },
+  canvas: {
+    name: 'HTML Canvas',
+    icon: 'i-simple-icons-airplayvideo',
+  },
   javascript: {
     name: 'JavaScript',
     icon: 'i-simple-icons-javascript',
