@@ -27,9 +27,9 @@ const bg_color = computed(() => colorMode.preference === 'light' ? '#E6E9EF' : '
 </script>
 
 <template>
-  <div :style="`background-image: ${topography(bg_color, 1)}`">
+  <div class="min-h-[100vh]" :style="`background-image: ${topography(bg_color, 1)}`">
     <TheHeader />
-    <NuxtPage class="min-h-[80vh] max-w-5xl" />
+    <NuxtPage class="max-w-5xl" />
     <TheFooter />
 
     <NowPlaying />
