@@ -34,7 +34,7 @@ const is_playing = computed(() => data.value?.is_playing)
     <NuxtLink :to="link" target="_blank">
       <p class="font-bold mb-2">Now listening to</p>
       <div class="flex gap-3 place-content-center">
-        <NuxtImg :src="image" class="rounded-xl h-10" />
+        <img :src="image" class="rounded-xl h-10">
         <div class="flex flex-col text-sm place-content-center">
           <p>{{ song }}</p>
           <p>{{ artist }}</p>
