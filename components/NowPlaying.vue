@@ -1,11 +1,24 @@
 <script setup>
-const { data } = await useAsyncData('spotify', () => $fetch('/api/spotify'))
+const data = ref(null)
 
-const artist = data?.value?.item?.artists[0]?.name
-const song = data?.value?.item?.name
-const link = data?.value?.item?.external_urls?.spotify
-const image = data?.value?.item?.album?.images[2]?.url
-const is_playing = data?.value?.is_playing
+onMounted(async () => {
+  try {
+    const response = await fetch('/api/spotify')
+    if (!response.ok)
+      throw new Error('Failed to fetch')
+
+    data.value = await response.json()
+  }
+  catch (error) {
+    console.error('Error fetching Spotify data:', error)
+  }
+})
+
+const artist = computed(() => data.value?.item?.artists[0]?.name)
+const song = computed(() => data.value?.item?.name)
+const link = computed(() => data.value?.item?.external_urls?.spotify)
+const image = computed(() => data.value?.item?.album?.images[2]?.url)
+const is_playing = computed(() => data.value?.is_playing)
 
 // TODO: fix backdrop-blur-lg not working
 </script>
