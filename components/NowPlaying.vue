@@ -19,8 +19,6 @@ const song = computed(() => data.value?.item?.name)
 const link = computed(() => data.value?.item?.external_urls?.spotify)
 const image = computed(() => data.value?.item?.album?.images[2]?.url)
 const is_playing = computed(() => data.value?.is_playing)
-
-// TODO: fix backdrop-blur-lg not working
 </script>
 
 <template>
@@ -28,7 +26,7 @@ const is_playing = computed(() => data.value?.is_playing)
     v-if="data && is_playing"
     class="flex flex-col gap-4 !p-4 w-fit
       sticky bottom-4 left-4 right-0
-      opacity-50 hover:opacity-100 !backdrop-blur-lg
+      !bg-opacity-20 !backdrop-blur-sm hover:!bg-opacity-90
       place-items-center rounded-xl place-self-center"
   >
     <NuxtLink :to="link" target="_blank">
