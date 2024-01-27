@@ -5,7 +5,7 @@ export const landing = {
       fullstack: 'Fullstack developer',
       designer: ' and graphic designer, specialized in early-stage app creation',
     },
-    availability: { main: 'I am currently:', yes: 'available!', no: 'not available till' },
+    availability: { main: 'I am currently:', yes: 'available!', no: 'in a freelance mission.' },
     contact_me: 'Contact me !',
     work_preference: {
       main: 'I love working on',
@@ -36,7 +36,7 @@ export const landing = {
       fullstack: 'Développeur fullstack',
       designer: ' et designer graphique, spécialisé dans la création d\'app early-stage',
     },
-    availability: { main: 'Je suis actuellement:', yes: 'disponible !', no: 'indisponible jusqu\'au' },
+    availability: { main: 'Je suis actuellement:', yes: 'disponible !', no: 'en mission.' },
     contact_me: 'Contactez-moi !',
     work_preference: {
       main: 'J\'aime travailler sur des projets',
