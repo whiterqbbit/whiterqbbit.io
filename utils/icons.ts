@@ -115,6 +115,22 @@ export const icons = {
     name: 'Sass',
     icon: 'i-simple-icons-sass',
   },
+  sentry: {
+    name: 'Sentry',
+    icon: 'i-simple-icons-sentry',
+  },
+  graphql: {
+    name: 'GraphQL',
+    icon: 'i-simple-icons-graphql',
+  },
+  playwright: {
+    name: 'Playwright',
+    icon: 'i-simple-icons-playwright',
+  },
+  postman: {
+    name: 'Postman',
+    icon: 'i-simple-icons-postman',
+  },
   html5: {
     name: 'HTML5',
     icon: 'i-simple-icons-html5',
