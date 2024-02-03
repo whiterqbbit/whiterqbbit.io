@@ -5,6 +5,10 @@ export const portfolio = {
       description: 'Coworking find and meet startup.',
       tasks: 'Founder, lead dev, product, UI/UX, user surveys, scrapping',
     },
+    vitesse: {
+      description: 'Industrial IoT startup.',
+      tasks: 'Fullstack dev, MVP, UI/UX',
+    },
     moonolith: {
       description: `<p>Decentralized web3 app.</p>
                     <p>Custom game engine, backend fully on the blockchain.</p>`,
@@ -41,6 +45,10 @@ export const portfolio = {
     kafo: {
       description: 'Startup recherche et rencontre coworking.',
       tasks: 'Fondateur, lead dev, produit, UI/UX, enquêtes utilisateurs, scrapping',
+    },
+    vitesse: {
+      description: 'Startup IoT industriel.',
+      tasks: 'Dev fullstack, MVP, UI/UX',
     },
     moonolith: {
       description: `<p>App web3 décentralisée.</p>

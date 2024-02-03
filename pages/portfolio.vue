@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { vue2, vue3, nuxt, tailwind, unocss, typescript, chrome, ethereum, node, nodets, prisma, postgresql, umami, google_analytics, react, sequelize, redis, mongodb, elasticsearch, aws_omniscient, aws_ttt, aws_calypso, terraform, docker, netlify, bootstrap, sass, html5, canvas, javascript, puppeteer, amplify, jest, vitest, cucumber } = icons
+const { vue2, vue3, nuxt, tailwind, unocss, typescript, chrome, ethereum, node, graphql, playwright, nodets, prisma, postgresql, umami, google_analytics, react, sequelize, redis, mongodb, elasticsearch, aws_omniscient, aws_ttt, aws_calypso, terraform, docker, netlify, bootstrap, sass, html5, canvas, javascript, puppeteer, amplify, jest, vitest, cucumber } = icons
 const { t } = useI18n()
 
 interface IProject {
@@ -12,17 +12,10 @@ interface IProject {
 
 const projects: IProject[] = [
   {
-    name: 'kafo',
-    formatted: 'Kafo',
-    stack: { front: [vue3, unocss, typescript, vitest], back: [nodets, postgresql, prisma, amplify] },
-    url: 'https://www.kafo.work/',
-    // source: 'https://github.com/whiterqbbit/kafo_front_vitesse'
-  },
-  {
-    name: 'omniscient',
-    formatted: 'My Omniscient',
-    stack: { front: [vue2, bootstrap, sass], back: [node, aws_omniscient, elasticsearch, mongodb, cucumber] },
-    url: 'https://myomniscient.com/solutions/application/',
+    name: 'vitesse',
+    formatted: 'Vitesse',
+    stack: { front: [nuxt, typescript, tailwind, playwright], back: [nuxt, redis, postgresql, graphql] },
+    url: 'https://vitesseautomation.com/',
   },
   {
     name: 'aestima',
@@ -35,6 +28,19 @@ const projects: IProject[] = [
     formatted: 'Tictactrip',
     stack: { front: [react, tailwind, jest], back: [nodets, aws_ttt, terraform, postgresql, sequelize, redis, jest] },
     url: 'https://www.tictactrip.eu/',
+  },
+  {
+    name: 'omniscient',
+    formatted: 'My Omniscient',
+    stack: { front: [vue2, bootstrap, sass], back: [node, aws_omniscient, elasticsearch, mongodb, cucumber] },
+    url: 'https://myomniscient.com/solutions/application/',
+  },
+  {
+    name: 'kafo',
+    formatted: 'Kafo',
+    stack: { front: [vue3, unocss, typescript, vitest], back: [nodets, postgresql, prisma, amplify] },
+    url: 'https://www.kafo.work/',
+    // source: 'https://github.com/whiterqbbit/kafo_front_vitesse'
   },
   {
     name: 'moonolith',
