@@ -40,7 +40,8 @@
     "nuxt-resend": "^0.0.2",
     "sharp": "^0.33.2",
     "vue": "^3.4.15",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "vue3-calendar-heatmap": "^2.0.5"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm pre-commit"
