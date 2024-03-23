@@ -3,7 +3,7 @@ const pic_src = ref('img/me_malt.jpg')
 
 function useEaster() {
   umTrackEvent('easter_egg')
-  pic_src.value = 'img/me_chad.jpg'
+  pic_src.value = pic_src.value === 'img/me_malt.jpg' ? 'img/me_chad.jpg' : 'img/me_malt.jpg'
 }
 </script>
 
@@ -72,6 +72,7 @@ function useEaster() {
         <ContactForm />
       </GlowCard>
     </div>
+    <GitHeatmap />
   </div>
 </template>
 

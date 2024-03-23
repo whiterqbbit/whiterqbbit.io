@@ -1,5 +1,4 @@
 export default defineEventHandler(async () => {
-  // Fetch GitLab data
   const gitlabData = await fetch('https://gitlab.com/users/whiterqbbit/calendar.json', {
     headers: {
       Accept: 'application/json',
@@ -8,7 +7,6 @@ export default defineEventHandler(async () => {
     .then(response => response.json())
     .then(data => Object.entries(data).map(([key, value]) => ({ date: key, count: value })))
 
-  // Fetch GitHub data
   const githubResponse = await fetch('https://api.github.com/graphql', {
     method: 'POST',
     headers: {
@@ -33,7 +31,6 @@ export default defineEventHandler(async () => {
     }),
   }).then(response => response.json())
 
-  // Flatten GitHub data
   const githubData = githubResponse.data.user.contributionsCollection.contributionCalendar.weeks
     .flatMap((week: any) => week.contributionDays)
     .map((day: any) => ({ date: day.date, count: day.contributionCount }))
@@ -45,8 +42,38 @@ export default defineEventHandler(async () => {
       return acc
     }, {})
 
-  // Convert merged data back to array format
-  const mergedDataArray = Object.entries(mergedData).map(([date, count]) => ({ date, count }))
+  interface Contribution {
+    date: string
+    count: number
+  }
 
-  return mergedDataArray
+  // Convert merged data back to array format and sort by date
+  let mergedDataArray: Contribution[] = Object.entries(mergedData).map(([date, count]): Contribution => ({ date, count: count as number }))
+  mergedDataArray = mergedDataArray.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+
+  // Find the index where the date exceeds one year from the start
+  const oneYearFromStart = new Date(mergedDataArray[0].date)
+  oneYearFromStart.setFullYear(oneYearFromStart.getFullYear() + 1)
+
+  const endIndex = mergedDataArray.findIndex(({ date }) => new Date(date) >= oneYearFromStart)
+
+  // If endIndex is -1, it means all dates are within one year
+  // Otherwise, slice the array to keep only dates within one year
+  if (endIndex !== -1)
+    mergedDataArray = mergedDataArray.slice(0, endIndex)
+
+  const totalContributionCount = mergedDataArray.reduce((acc, { count }) => acc + count, 0)
+  const totalWorkedDayCount = mergedDataArray.filter(({ count }) => count > 0).length
+  const averageContributionsPerDay = (totalContributionCount / totalWorkedDayCount).toFixed(2)
+
+  const stats = {
+    totalContributionCount,
+    totalWorkedDayCount,
+    averageContributionsPerDay,
+  }
+
+  return {
+    contributions: mergedDataArray,
+    stats,
+  }
 })

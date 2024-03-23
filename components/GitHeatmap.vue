@@ -39,17 +39,18 @@ const locales = {
 
 <template>
   <div class="flex w-full flex-col">
-    <!-- <div v-if="totalContributionCount !== null" class="mb-5">
-      {{ totalContributionCount }} contributions in the last year
-    </div> -->
+    <div v-if="gitData?.stats" class="text-sm mt-3 text-ctp-surface2 flex justify-between">
+      <p>{{ gitData.stats.totalContributionCount }} contributions in the last year</p>
+      <!-- <p>{{ gitData.stats.totalWorkedDayCount }} worked days</p> -->
+      <p>{{ gitData.stats.averageContributionsPerDay }} contributions per day</p>
+    </div>
     <CalendarHeatmap
-      v-if="gitData" :values="gitData" :end-date="new Date('2024-3-23')"
+      v-if="gitData?.contributions" :values="gitData.contributions" :end-date="new Date()"
       :round="3" :range-color="colorMode.preference === 'dark' ? rangeColorsDark : rangeColorsLight"
-      class="w-full text-xs !text-pink-600"
       :locale="locales.empty"
       :tooltip-formatter="(v) => {
         const date = new Date(v.date);
-        return `${v.count} contributions on ${date.toLocaleDateString('en-US')}`
+        return `${v.count} contributions on ${date.toLocaleDateString('fr-FR')}`
       }"
       no-data-text="No contributions"
     />
