@@ -20,6 +20,8 @@ export default defineNuxtConfig({
     },
   },
 
+  build: { transpile: ['vue3-calendar-heatmap'] },
+
   runtimeConfig: {
     public: { ENVIRONNEMENT: process.env.ENVIRONNEMENT },
     SPOTIFY_REFRESH_TOKEN: process.env.SPOTIFY_REFRESH_TOKEN,
