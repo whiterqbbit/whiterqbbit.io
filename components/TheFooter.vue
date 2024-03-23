@@ -8,6 +8,7 @@ const { t } = useI18n({ useScope: 'local' })
       <li class="m-auto flex gap-6 md:gap-8 text-3xl">
         <NuxtLink class="i-ci-mail" to="mailto:whiterqbbit@proton.me" target="_blank" />
         <NuxtLink class="i-ci-github" to="https://www.github.com/whiterqbbit" target="_blank" />
+        <NuxtLink class="i-simple-icons-gitlab h-6 mt-1" to="https://www.gitlab.com/whiterqbbit" target="_blank" />
         <NuxtLink class="i-ci-linkedin" to="https://www.linkedin.com/in/white-rqbbit/" target="_blank" />
       </li>
     </ul>
