@@ -48,6 +48,7 @@ const locales = {
       v-if="gitData?.contributions" :values="gitData.contributions" :end-date="new Date()"
       :round="3" :range-color="colorMode.preference === 'dark' ? rangeColorsDark : rangeColorsLight"
       :locale="locales.empty"
+      :max="20"
       :tooltip-formatter="(v) => {
         const date = new Date(v.date);
         return `${v.count} contributions on ${date.toLocaleDateString('fr-FR')}`
