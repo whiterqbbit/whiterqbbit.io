@@ -17,7 +17,7 @@ function useEaster() {
       :style="{ '--enter-stage': 1 }"
     >
       <div class="place-self-center">
-        <div class="border-animation rounded-full">
+        <div class="border-animation rounded-full cursor-pointer">
           <div class="p-1 sm:p-1.5 rounded-full glow-anim">
             <NuxtImg :src="pic_src" class="w-36 sm:w-48 md:w-64 object-cover rounded-full m-0" @click="useEaster()" />
           </div>
