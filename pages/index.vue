@@ -38,7 +38,7 @@ function useEaster() {
     <!-- AVAILABILITY -->
     <div class="card-duo" :style="{ '--enter-stage': 2 }">
       <div class="sm:w-1/2 place-self-center">
-        {{ $t('landing.availability.main') }} <span class="text-anim-color text-xl sm:text-2xl italic font-bold sm:pr-1">{{ $t('landing.availability.no') }}</span><br><br>
+        {{ $t('landing.availability.main') }} <span class="text-anim-color text-xl sm:text-2xl italic font-bold sm:pr-1">{{ $t('landing.availability.yes') }}</span><br><br>
         {{ $t('landing.work_preference.main') }} <strong>{{ $t('landing.work_preference.ambitious') }}</strong> {{ $t('landing.work_preference.and') }} <strong> {{ $t('landing.work_preference.challenging') }}</strong> !<br>
         {{ $t('landing.vision') }} <strong>{{ $t('landing.record_time') }}</strong> !
         <!-- Mon TJM est de <span class="text-anim-color font-bold pr-1">400€</span><br> -->
