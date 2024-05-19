@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { vue2, vue3, nuxt, tailwind, unocss, typescript, chrome, ethereum, node, graphql, playwright, nodets, prisma, postgresql, umami, google_analytics, react, sequelize, redis, mongodb, elasticsearch, aws_omniscient, aws_ttt, aws_calypso, terraform, docker, netlify, bootstrap, sass, html5, canvas, javascript, puppeteer, amplify, jest, vitest, cucumber } = icons
+const { vue2, vue3, nuxt, tailwind, unocss, typescript, chrome, ethereum, node, graphql, playwright, nodets, prisma, postgresql, umami, google_analytics, react, sequelize, redis, mongodb, elasticsearch, aws_omniscient, aws_ttt, aws_calypso, terraform, docker, airtable, netlify, bootstrap, sass, html5, canvas, javascript, puppeteer, amplify, jest, vitest, cucumber } = icons
 const { t } = useI18n()
 
 interface IProject {
@@ -41,6 +41,12 @@ const projects: IProject[] = [
     stack: { front: [vue3, unocss, typescript, vitest], back: [nodets, postgresql, prisma, amplify] },
     url: 'https://www.kafo.work/',
     // source: 'https://github.com/whiterqbbit/kafo_front_vitesse'
+  },
+  {
+    name: 'camello',
+    formatted: 'Camello',
+    stack: { front: [nuxt, tailwind, typescript], back: [nuxt, airtable] },
+    url: 'https://www.camello.fr/',
   },
   {
     name: 'moonolith',

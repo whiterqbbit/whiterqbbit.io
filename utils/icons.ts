@@ -195,6 +195,10 @@ export const icons = {
     name: 'Radix',
     icon: 'i-simple-icons-radixui',
   },
+  airtable: {
+    name: 'Airtable',
+    icon: 'i-simple-icons-airtable',
+  },
   macOS: {
     name: 'macOS',
     icon: 'i-simple-icons-apple',

@@ -7,7 +7,7 @@ export const portfolio = {
     },
     vitesse: {
       description: 'Industrial IoT startup.',
-      tasks: 'Fullstack dev, MVP, UI/UX',
+      tasks: 'Fullstack dev, UI/UX',
     },
     moonolith: {
       description: `<p>Decentralized web3 app.</p>
@@ -39,6 +39,10 @@ export const portfolio = {
       description: 'Small static website showcasing my talents!',
       tasks: 'Dev, design',
     },
+    camello: {
+      description: 'Integrated management platform for a condo syndicate management company.',
+      tasks: 'Fullstack dev, UI/UX',
+    },
   },
   fr: {
     title: 'Projets récents',
@@ -48,7 +52,7 @@ export const portfolio = {
     },
     vitesse: {
       description: 'Startup IoT industriel.',
-      tasks: 'Dev fullstack, MVP, UI/UX',
+      tasks: 'Dev fullstack, UI/UX',
     },
     moonolith: {
       description: `<p>App web3 décentralisée.</p>
@@ -79,6 +83,10 @@ export const portfolio = {
     whiterqbbit: {
       description: 'Petit site statique mettant en valeur mes talents !',
       tasks: 'Dev, design',
+    },
+    camello: {
+      description: 'Plateforme de gestion intégrée pour un gestionnaire de copropriétés.',
+      tasks: 'Dev Fullstack, UI/UX',
     },
   },
 }
