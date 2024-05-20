@@ -32,7 +32,7 @@ const moi_src = ref('img/me_stationf.jpg')
           {{ t('side_project.main') }}
           <span class="text-anim-color font-bold text-2xl">{{ t('side_project.name') }}</span>
         </div>
-        <NuxtImg src="img/wot_cat.jpg" :alt="t('alt.wot_cat')" class="a-propos-pic" />
+        <NuxtImg src="img/me_family.jpg" :alt="t('alt.family')" class="a-propos-pic" />
       </div>
     </div>
   </UContainer>
@@ -56,23 +56,23 @@ const moi_src = ref('img/me_stationf.jpg')
 fr:
   childhood: "Passionné depuis tout petit, je commence à m'électrocuter dès l'âge de 15 ans en bricolant mon ordi. À 17 ans, je programme des jeux sur ma calculette, et à 30 ans, j'en ai fait mon métier !"
   professionally: "Professionnellement, j'aime les environnements dynamiques et exigeants, je n'ai travaillé qu'en startup. J'apprécie contribuer à plus que du code, je me passionne notamment d'UI/UX et de copywriting."
-  passions: "Au-delà du code, je fais du piano et de la photographie. Je m'intéresse beaucoup au design, à l'IA, et au monde des startups."
+  passions: "Au-delà du code, je fais du piano, de la photographie, et je m'occupe de ma petite famille. Je m'intéresse beaucoup au design, à l'IA, et au monde des startups."
   side_project:
-    main: "Mon side-projet du moment est : "
+    main: "Mon side-projet du moment : "
     name: "une webapp pour automatiser des posts Twitter !"
   alt:
     sf: "Guillaume Bonnefoy à Station-F"
     musk: "Elon Musk visiblement perturbé par ce paragraphe"
-    wot_cat: "Un chat incrédule"
+    family: "Guillaume Bonnefoy, sa femme, sa fille, et son chien"
 en:
   childhood: "Geek since I was a kid, I started to electrocute myself at age 15 by tinkering with my motherboard. At 17, I was programming games on my calculator, and at 30, I made it my job!"
   professionally: "Professionally, I like dynamic and demanding environments, which is why I have worked exclusively in startups. I like to contribute to more than just code, I am particularly passionate about UI/UX and copywriting."
-  passions: "Beyond code, I play the piano and take pictures. I am very interested in design, AI, and the world of startups."
+  passions: "Beyond code, I play the piano, take pictures, and take care of my family. I am very interested in design, AI, and the world of startups."
   side_project:
-    main: "My current side-project is: "
+    main: "My current side-project : "
     name: "a webapp to automate tweets!"
   alt:
     sf: "Guillaume Bonnefoy at Station-F"
     musk: "Elon Musk looking disturbed by that paragraph"
-    wot_cat: "A cat in disbelief"
+    family: "Guillaume Bonnefoy, his wife, his daughter, and his dog"
 </i18n>
