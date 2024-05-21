@@ -57,7 +57,7 @@ async function submit(event: FormSubmitEvent<Schema>) {
       </UButton>
       <p class="m-auto text-ctp-subtext0">{{ t('or') }}</p>
       <UButton icon="i-ci-calendar-add" class="mx-auto">
-        <NuxtLink to="https://cal.com/whiterqbbit" target="_blank">
+        <NuxtLink to="https://cal.com/guillaume-bonnefoy" target="_blank">
           {{ t('book_a_call') }}
         </NuxtLink>
       </UButton>
