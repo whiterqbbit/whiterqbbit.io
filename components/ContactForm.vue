@@ -51,9 +51,17 @@ async function submit(event: FormSubmitEvent<Schema>) {
     </UFormGroup>
 
     <div class="my-3" />
-    <UButton :icon="has_sent ? 'i-ci-circle-check' : 'i-ci-paper-plane'" type="submit" class="mx-auto" :loading="is_emailing">
-      {{ has_sent ? t('sent') : t('send') }}
-    </UButton>
+    <div class="flex">
+      <UButton :icon="has_sent ? 'i-ci-circle-check' : 'i-ci-paper-plane'" type="submit" class="mx-auto" :loading="is_emailing">
+        {{ has_sent ? t('sent') : t('send') }}
+      </UButton>
+      <p class="m-auto text-ctp-subtext0">{{ t('or') }}</p>
+      <UButton icon="i-ci-calendar-add" class="mx-auto">
+        <NuxtLink to="https://cal.com/whiterqbbit" target="_blank">
+          {{ t('book_a_call') }}
+        </NuxtLink>
+      </UButton>
+    </div>
     <p v-if="display_error" class="text-ctp-red">
       {{ t('error') }}
     </p>
@@ -65,10 +73,14 @@ en:
   message_sent: "Message sent !"
   sent: "Sent !"
   send: "Send"
+  or: "or"
+  book_a_call: "Schedule a call"
   error: "Sorry, there was an error, please write me an email at whiterqbbit{'@'}proton.me !"
 fr:
   message_sent: "Message envoyé !"
   sent: "Envoyé !"
   send: "Envoyer"
+  or: "ou"
+  book_a_call: "Prendre RDV"
   error: "Navré, il y a eu une erreur, veuillez me contacter par mail à whiterqbbit{'@'}proton.me !"
 </i18n>
