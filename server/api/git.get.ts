@@ -79,11 +79,18 @@ function filterDataByYear(data: Record<string, number>): Contribution[] {
   const dataArray: Contribution[] = Object.entries(data).map(([date, count]) => ({ date, count }))
   dataArray.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
 
-  const oneYearFromStart = new Date(dataArray[0].date)
+  const firstFullWeekStartIndex = dataArray.findIndex(({ date }) => new Date(date).getDay() === 1) // 1 for Monday, 0 for Sunday
+  const startDate = new Date(dataArray[firstFullWeekStartIndex].date)
+
+  const oneYearFromStart = new Date(startDate)
   oneYearFromStart.setFullYear(oneYearFromStart.getFullYear() + 1)
 
-  const endIndex = dataArray.findIndex(({ date }) => new Date(date) >= oneYearFromStart)
-  return endIndex === -1 ? dataArray : dataArray.slice(0, endIndex)
+  const dayOfWeek = oneYearFromStart.getDay()
+  const endOfWeekDate = new Date(oneYearFromStart)
+  endOfWeekDate.setDate(oneYearFromStart.getDate() + (7 - dayOfWeek))
+
+  const endIndex = dataArray.findIndex(({ date }) => new Date(date) > endOfWeekDate)
+  return endIndex === -1 ? dataArray.slice(firstFullWeekStartIndex) : dataArray.slice(firstFullWeekStartIndex, endIndex)
 }
 
 function calculateStats(data: Contribution[]): Stats {
