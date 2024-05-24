@@ -1,6 +1,14 @@
 import { Buffer } from 'node:buffer'
 
 export default defineEventHandler(async () => {
+  if (useRuntimeConfig().public.ENVIRONNEMENT === 'local') {
+    return {
+      isPlaying: false,
+      title: 'Spotify API is not available in development',
+      artist: 'Development',
+    }
+  }
+
   const refresh_token = useRuntimeConfig().SPOTIFY_REFRESH_TOKEN
   const clientId = useRuntimeConfig().SPOTIFY_CLIENT_ID
   const clientSecret = useRuntimeConfig().SPOTIFY_CLIENT_SECRET
