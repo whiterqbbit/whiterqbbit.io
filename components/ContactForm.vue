@@ -51,11 +51,11 @@ async function submit(event: FormSubmitEvent<Schema>) {
     </UFormGroup>
 
     <div class="my-3" />
-    <div class="flex">
+    <div class="flex gap-2">
       <UButton :icon="has_sent ? 'i-ci-circle-check' : 'i-ci-paper-plane'" type="submit" class="mx-auto" :loading="is_emailing">
         {{ has_sent ? t('sent') : t('send') }}
       </UButton>
-      <p class="m-auto text-ctp-subtext0">{{ t('or') }}</p>
+      <p class="m-auto text-ctp-subtext0 text-sm sm:text-base">{{ t('or') }}</p>
       <UButton icon="i-ci-calendar-add" class="mx-auto">
         <NuxtLink to="https://cal.com/guillaume-bonnefoy" target="_blank">
           {{ t('book_a_call') }}

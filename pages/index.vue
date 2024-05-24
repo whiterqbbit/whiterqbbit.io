@@ -10,7 +10,7 @@ function useEaster() {
 
 <template>
   <div
-    class="flex flex-col gap-8 sm:gap-12 mx-auto sm:text-lg text-center sm:text-left mt-12 max-w-4xl px-2 sm:px-4 md:px-6"
+    class="flex flex-col gap-12 mx-auto sm:text-lg text-center sm:text-left mt-12 max-w-4xl px-2 sm:px-4 md:px-6"
   >
     <!-- INTRO -->
     <div
@@ -81,7 +81,7 @@ function useEaster() {
 
 <style scoped>
 .card-duo{
-  @apply slide-enter flex flex-col-reverse sm:flex-row gap-4 md:gap-12 px-4 sm:px-0;
+  @apply slide-enter flex flex-col-reverse sm:flex-row gap-6 md:gap-12 px-4 sm:px-0;
 }
 </style>
 
