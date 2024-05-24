@@ -41,17 +41,16 @@ function useEaster() {
       <div class="sm:w-1/2 place-self-center">
         {{ t('availability.main') }} <span class="text-anim-color text-xl sm:text-2xl italic font-bold sm:pr-1">{{ t('availability.yes') }}</span><br><br>
         {{ t('work_preference.main') }} <strong>{{ t('work_preference.ambitious') }}</strong> {{ t('work_preference.and') }} <strong> {{ t('work_preference.challenging') }}</strong> !<br>
-        {{ t('vision') }} <strong>{{ t('record_time') }}</strong> !
-        <!-- Mon TJM est de <span class="text-anim-color font-bold pr-1">400€</span><br> -->
+        {{ t('collaborate') }} <strong>{{ t('uiux') }}</strong> {{ t('share') }} !
       </div>
-      <GlowCard :title="$t('contact_me')" class="m-auto sm:w-1/2">
+      <GlowCard :title="t('contact_me')" class="m-auto sm:w-1/2">
         <ContactForm />
       </GlowCard>
     </div>
 
     <!-- STACK -->
     <div class="card-duo" :style="{ '--enter-stage': 3 }">
-      <GlowCard :title="$t('my_stack')" class="place-self-center max-w-sm sm:max-w-none sm:w-1/2">
+      <GlowCard :title="t('my_stack')" class="place-self-center max-w-sm sm:max-w-none sm:w-1/2">
         <TechStack />
       </GlowCard>
       <div class="sm:w-1/2 place-self-center">
@@ -72,7 +71,7 @@ function useEaster() {
 
     <!-- CONTACT -->
     <div class="flex slide-enter" :style="{ '--enter-stage': 5 }">
-      <GlowCard :title="$t('contact_me')" class="w-full max-w-sm sm:max-w-md sm:my-16 m-auto" emphasize>
+      <GlowCard :title="t('contact_me')" class="w-full max-w-sm sm:max-w-md sm:my-16 m-auto" emphasize>
         <ContactForm />
       </GlowCard>
     </div>
@@ -91,7 +90,7 @@ en:
   intro:
     hello: "Hello! I am"
     fullstack: "Fullstack developer"
-    designer: " and graphic designer, specialized in early-stage app creation"
+    designer: " and graphic designer, specialized in the Vue/Nuxt ecosystem"
   availability:
     main: "I am currently"
     yes: "available!"
@@ -102,7 +101,9 @@ en:
     ambitious: "ambitious"
     and: "and"
     challenging: "challenging projects"
-  vision: "If your vision is clear, I can deliver the design and development of your app in"
+  collaborate: "Furthermore, I love collaborating on"
+  uiux: "UI/UX"
+  share: "and sharing my insights"
   record_time: "no time"
   my_stack: "My Stack"
   technical:
@@ -120,7 +121,7 @@ fr:
   intro:
     hello: "Hello ! Je suis"
     fullstack: "Développeur fullstack"
-    designer: " et designer graphique, spécialisé dans la création d'app early-stage"
+    designer: " et designer graphique, spécialisé dans l'écosystème Vue/Nuxt"
   availability:
     main: "Je suis actuellement"
     yes: "disponible !"
@@ -131,7 +132,9 @@ fr:
     ambitious: "ambitieux"
     and: "et"
     challenging: "challengeants"
-  vision: "Si votre vision est claire, je peux vous livrer le design et le développement de votre app en un"
+  collaborate: "Passionné, j'adore collaborer sur les sujets"
+  uiux: "UI/UX"
+  share: " et partager mes idées"
   record_time: "temps record"
   my_stack: "Ma stack"
   technical:
