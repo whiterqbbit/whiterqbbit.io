@@ -34,7 +34,6 @@ export default defineNuxtConfig({
   devServer: { port: 3210 },
 
   i18n: {
-    vueI18n: './i18n.config.ts',
     defaultLocale: 'fr',
     strategy: 'no_prefix',
     locales: ['fr', 'en'],

@@ -1,6 +1,6 @@
 <script setup lang="ts">
+const { t } = useI18n({ useScope: 'local' })
 const { vue2, vue3, nuxt, tailwind, unocss, typescript, chrome, ethereum, node, graphql, playwright, nodets, prisma, postgresql, umami, google_analytics, react, sequelize, redis, mongodb, elasticsearch, aws_omniscient, aws_ttt, aws_calypso, terraform, docker, airtable, netlify, bootstrap, sass, html5, canvas, javascript, puppeteer, amplify, jest, vitest, cucumber } = icons
-const { t } = useI18n()
 
 interface IProject {
   name: string
@@ -81,15 +81,15 @@ const projects: IProject[] = [
 <template>
   <div class="flex flex-col gap-4 m-auto py-4">
     <div class="text-2xl sm:text-4xl text-center md:mb-4 lg:mb-8">
-      {{ $t('portfolio.title') }}
+      {{ t('title') }}
     </div>
     <div class="flex flex-wrap justify-evenly w-full gap-4">
       <GlowCard
         v-for="project, idx in projects" :key="project.name" :title="project.formatted" :url="project.url" :source="project.source"
         class="w-80 overflow-visible slide-enter" :style="{ '--enter-stage': idx, '--enter-step': '130ms' }"
       >
-        <div class="text-sm flex flex-col gap-1" v-html="t(`portfolio.${project.name}.description`)" />
-        <div class="mt-2 text-sm italic text-ctp-overlay2 hover:text-anim-color-light"> {{ $t(`portfolio.${project.name}.tasks`) }} </div>
+        <div class="text-sm flex flex-col gap-1" v-html="t(`${project.name}.description`)" />
+        <div class="mt-2 text-sm italic text-ctp-overlay2 hover:text-anim-color-light"> {{ t(`${project.name}.tasks`) }} </div>
         <div class="flex flex-col mt-4 gap-2 text-lg cursor-default text-ctp-overlay2 hover:text-ctp-text transition-fast">
           <div class="flex flex-row gap-2">
             <span class="text-sm text-ctp-overlay2">Front :</span>
@@ -113,3 +113,70 @@ const projects: IProject[] = [
     </div>
   </div>
 </template>
+
+<i18n lang="yaml">
+en:
+  title: "Recent projects"
+  kafo:
+    description: "Coworking find and meet startup."
+    tasks: "Founder, lead dev, product, UI/UX, user surveys, scrapping"
+  vitesse:
+    description: "Industrial IoT startup."
+    tasks: "Fullstack dev, UI/UX"
+  moonolith:
+    description: "Decentralized web3 app. Custom game engine, backend fully on the blockchain."
+    tasks: "Dev, product, art direction, music"
+  chadguard:
+    description: "Chrome extension using AI to block adult content. ~1500 active users."
+    tasks: "Dev, product, UI/UX"
+  omniscient:
+    description: "IoT startup in the construction industry."
+    tasks: "Fullstack dev, sensor integration, backoffice tools development"
+  aestima:
+    description: "SaaS startup in wealth management."
+    tasks: "Fullstack dev, front refactor of a v1 and dev of a v2"
+  tictactrip:
+    description: "Itinerary search engine startup."
+    tasks: "Backend dev, apps reverse-engineering"
+  calypso:
+    description: "Classical artist showcase website. Form, mailing."
+    tasks: "Dev, design"
+  whiterqbbit:
+    description: "Small static website showcasing my talents!"
+    tasks: "Dev, design"
+  camello:
+    description: "Integrated management platform for a condo syndicate management company."
+    tasks: "Fullstack dev, UI/UX"
+fr:
+  title: "Projets récents"
+  kafo:
+    description: "Startup recherche et rencontre coworking."
+    tasks: "Fondateur, lead dev, produit, UI/UX, enquêtes utilisateurs, scrapping"
+  vitesse:
+    description: "Startup IoT industriel."
+    tasks: "Dev fullstack, UI/UX"
+  moonolith:
+    description: "App web3 décentralisée. Moteur graphique maison, backend entièrement sur la blockchain."
+    tasks: "Dev, produit, direction artistique, musique"
+  chadguard:
+    description: "Extension Chrome utilisant IA pour bloquer le contenu adulte. ~1500 utilisateurs actifs."
+    tasks: "Dev, produit, UI/UX"
+  omniscient:
+    description: "Startup IOT dans le secteur du BTP."
+    tasks: "Dev fullstack, intégration de capteurs, développement d'outils backoffice"
+  aestima:
+    description: "Startup SaaS dans la gestion de patrimoine."
+    tasks: "Dev fullstack, refactor front d'une v1 et dev d'une v2"
+  tictactrip:
+    description: "Startup de moteur de recherche d'itinéraire."
+    tasks: "Dev backend, reverse-engineering d'apps"
+  calypso:
+    description: "Site vitrine d'artiste de style classique. Formulaire, mailing."
+    tasks: "Dev, design"
+  whiterqbbit:
+    description: "Petit site statique mettant en valeur mes talents !"
+    tasks: "Dev, design"
+  camello:
+    description: "Plateforme de gestion intégrée pour un gestionnaire de copropriétés."
+    tasks: "Dev, produit, UI/UX"
+</i18n>

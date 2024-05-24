@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { t } = useI18n({ useScope: 'local' })
 const pic_src = ref('img/me_malt.jpg')
 
 function useEaster() {
@@ -25,12 +26,12 @@ function useEaster() {
       </div>
       <div class="flex flex-col text-center w-1/2 gap-4 justify-round place-content-center slide-enter">
         <div class="text-xl sm:text-3xl">
-          {{ $t('landing.intro.hello') }}
+          {{ t('intro.hello') }}
           <span class="text-anim-color font-bold text-xl sm:text-4xl">Guillaume Bonnefoy</span>
         </div>
         <p class="text-ctp-subtext1">
-          <strong>{{ $t('landing.intro.fullstack') }}</strong>
-          {{ $t('landing.intro.designer') }}
+          <strong>{{ t('intro.fullstack') }}</strong>
+          {{ t('intro.designer') }}
         </p>
       </div>
     </div>
@@ -38,40 +39,40 @@ function useEaster() {
     <!-- AVAILABILITY -->
     <div class="card-duo" :style="{ '--enter-stage': 2 }">
       <div class="sm:w-1/2 place-self-center">
-        {{ $t('landing.availability.main') }} <span class="text-anim-color text-xl sm:text-2xl italic font-bold sm:pr-1">{{ $t('landing.availability.yes') }}</span><br><br>
-        {{ $t('landing.work_preference.main') }} <strong>{{ $t('landing.work_preference.ambitious') }}</strong> {{ $t('landing.work_preference.and') }} <strong> {{ $t('landing.work_preference.challenging') }}</strong> !<br>
-        {{ $t('landing.vision') }} <strong>{{ $t('landing.record_time') }}</strong> !
+        {{ t('availability.main') }} <span class="text-anim-color text-xl sm:text-2xl italic font-bold sm:pr-1">{{ t('availability.yes') }}</span><br><br>
+        {{ t('work_preference.main') }} <strong>{{ t('work_preference.ambitious') }}</strong> {{ t('work_preference.and') }} <strong> {{ t('work_preference.challenging') }}</strong> !<br>
+        {{ t('vision') }} <strong>{{ t('record_time') }}</strong> !
         <!-- Mon TJM est de <span class="text-anim-color font-bold pr-1">400€</span><br> -->
       </div>
-      <GlowCard :title="$t('landing.contact_me')" class="m-auto sm:w-1/2">
+      <GlowCard :title="$t('contact_me')" class="m-auto sm:w-1/2">
         <ContactForm />
       </GlowCard>
     </div>
 
     <!-- STACK -->
     <div class="card-duo" :style="{ '--enter-stage': 3 }">
-      <GlowCard :title="$t('landing.my_stack')" class="place-self-center max-w-sm sm:max-w-none sm:w-1/2">
+      <GlowCard :title="$t('my_stack')" class="place-self-center max-w-sm sm:max-w-none sm:w-1/2">
         <TechStack />
       </GlowCard>
       <div class="sm:w-1/2 place-self-center">
-        {{ $t('landing.technical.main') }} <strong>Vue/Nuxt</strong>{{ $t('landing.technical.speed') }} <strong>Typescript</strong>.<br>
-        {{ $t('landing.technical.approach') }} <strong>{{ $t('landing.technical.modern') }}</strong>, {{ $t('landing.technical.yet') }} <strong>{{ $t('landing.technical.mature') }}</strong>{{ $t('landing.technical.everything') }}
+        {{ t('technical.main') }} <strong>Vue/Nuxt</strong>{{ t('technical.speed') }} <strong>Typescript</strong>.<br>
+        {{ t('technical.approach') }} <strong>{{ t('technical.modern') }}</strong>, {{ t('technical.yet') }} <strong>{{ t('technical.mature') }}</strong>{{ t('technical.everything') }}
       </div>
     </div>
 
     <!-- COLLECTIF VITE -->
     <!-- <div class="card-duo" :style="{ '--enter-stage': 4 }">
       <div class="sm:w-1/2 place-self-center">
-        {{ $t('landing.collective.main') }}
+        {{ t('collective.main') }}
         <span class="text-anim-color text-lg sm:text-2xl italic font-bold sm:pr-1">Vite!</span>.<br>
-        {{ $t('landing.collective.relevance') }}
+        {{ t('collective.relevance') }}
       </div>
       <img src="https://media1.tenor.com/m/w61O0eYj-M4AAAAC/frens.gif" class="h-52 hidden sm:block object-cover rounded-3xl">
     </div> -->
 
     <!-- CONTACT -->
     <div class="flex slide-enter" :style="{ '--enter-stage': 5 }">
-      <GlowCard :title="$t('landing.contact_me')" class="w-full max-w-sm sm:max-w-md sm:my-16 m-auto" emphasize>
+      <GlowCard :title="$t('contact_me')" class="w-full max-w-sm sm:max-w-md sm:my-16 m-auto" emphasize>
         <ContactForm />
       </GlowCard>
     </div>
@@ -84,3 +85,64 @@ function useEaster() {
   @apply slide-enter flex flex-col-reverse sm:flex-row gap-4 md:gap-12 px-4 sm:px-0;
 }
 </style>
+
+<i18n lang="yaml">
+en:
+  intro:
+    hello: "Hello! I am"
+    fullstack: "Fullstack developer"
+    designer: " and graphic designer, specialized in early-stage app creation"
+  availability:
+    main: "I am currently"
+    yes: "available!"
+    no: "in a freelance mission."
+  contact_me: "Contact me !"
+  work_preference:
+    main: "I love working on"
+    ambitious: "ambitious"
+    and: "and"
+    challenging: "challenging projects"
+  vision: "If your vision is clear, I can deliver the design and development of your app in"
+  record_time: "no time"
+  my_stack: "My Stack"
+  technical:
+    main: "Technically, I have a preference for the"
+    speed: " ecosystem, which combines speed and scalability, as well as"
+    approach: "I favor"
+    modern: "modern"
+    yet: "yet"
+    mature: "mature"
+    everything: " technologies. Obviously, everything depends on the project!"
+  collective:
+    main: "If your project requires it, I can also engage my friends through our freelance collective"
+    relevance: "This is particularly relevant for crypto/web3/AI projects, or simply if you want to move forward even faster."
+fr:
+  intro:
+    hello: "Hello ! Je suis"
+    fullstack: "Développeur fullstack"
+    designer: " et designer graphique, spécialisé dans la création d'app early-stage"
+  availability:
+    main: "Je suis actuellement"
+    yes: "disponible !"
+    no: "en mission."
+  contact_me: "Contactez-moi !"
+  work_preference:
+    main: "J'aime travailler sur des projets"
+    ambitious: "ambitieux"
+    and: "et"
+    challenging: "challengeants"
+  vision: "Si votre vision est claire, je peux vous livrer le design et le développement de votre app en un"
+  record_time: "temps record"
+  my_stack: "Ma stack"
+  technical:
+    main: "Techniquement, j'ai une préférence pour l'écosystème"
+    speed: ", qui combine vitesse et scalabilité, ainsi que"
+    approach: "Je privilégie les technologies"
+    modern: "modernes"
+    yet: "mais"
+    mature: "matures"
+    everything: ". Évidemment, tout est fonction du projet !"
+  collective:
+    main: "Si votre projet le nécessite, je peux également solliciter mes amis au travers de notre collectif de freelance"
+    relevance: "C'est particulièrement pertinent pour les projets crypto/web3/IA, ou simplement si vous voulez avancer encore plus vite."
+</i18n>
