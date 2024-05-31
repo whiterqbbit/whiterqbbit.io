@@ -1,12 +1,20 @@
 <template>
-  <ContentDoc class="max-w-2xl m-auto p-8">
-    <template #not-found>
-      <NotFound title="404 frero" content="lol" />
-    </template>
-  </ContentDoc>
+  <main class="max-w-3xl m-auto p-8">
+    <ContentDoc>
+      <template #not-found>
+        <NotFound title="404 frero" content="lol" />
+      </template>
+      <template #default="{ doc }">
+        <article>
+          <h1>{{ doc.title }}</h1>
+          <ContentRendererMarkdown :value="doc" />
+        </article>
+      </template>
+    </ContentDoc>
+  </main>
 </template>
 
-<style scoped>
+<style>
 h1 {
   @apply text-4xl font-black text-ctp-yellow my-8;
 }
@@ -32,6 +40,6 @@ ul {
 }
 
 img {
-  @apply rounded-2xl my-6;
+  @apply rounded-lg;
 }
 </style>
