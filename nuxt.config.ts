@@ -27,7 +27,8 @@ export default defineNuxtConfig({
     SPOTIFY_REFRESH_TOKEN: process.env.SPOTIFY_REFRESH_TOKEN,
     SPOTIFY_CLIENT_ID: process.env.SPOTIFY_CLIENT_ID,
     SPOTIFY_CLIENT_SECRET: process.env.SPOTIFY_CLIENT_SECRET,
-    GITHUB_PERSONAL_KEY: process.env.NUXT_GITHUB_PERSONAL_KEY,
+    GITHUB_BONNEFOY_KEY: process.env.NUXT_GITHUB_BONNEFOY_KEY,
+    GITHUB_WHITERQBBIT_KEY: process.env.NUXT_GITHUB_WHITERQBBIT_KEY,
   },
 
   devtools: { enabled: true },

@@ -11,8 +11,11 @@ interface Stats {
 
 export default defineEventHandler(async (): Promise<{ contributions: Contribution[], stats: Stats }> => {
   const gitlabData = await fetchGitLabData()
-  const githubData = await fetchGitHubData()
-
+  const githubData = await fetchGitHubData([
+    { username: 'whiterqbbit', key: useRuntimeConfig().GITHUB_WHITERQBBIT_KEY },
+    { username: 'guillaume-bonnefoy', key: useRuntimeConfig().GITHUB_BONNEFOY_KEY }
+  ])
+  
   const mergedData = mergeAndProcessData(gitlabData, githubData)
   const filteredData = filterDataByYear(mergedData)
   const stats = calculateStats(filteredData)
@@ -31,7 +34,12 @@ async function fetchGitLabData(): Promise<Contribution[]> {
   return Object.entries(data).map(([date, count]) => ({ date, count }))
 }
 
-async function fetchGitHubData(): Promise<Contribution[]> {
+interface GitHubAccount {
+  username: string
+  key: string
+}
+
+async function fetchGitHubData(accounts: GitHubAccount[]): Promise<Contribution[]> {
   interface GitHubWeek {
     contributionDays: {
       date: string
@@ -39,33 +47,48 @@ async function fetchGitHubData(): Promise<Contribution[]> {
     }[]
   }
 
-  const query = `query {
-    user(login: "whiterqbbit"){
-      contributionsCollection {
-        contributionCalendar {
-          weeks {
-            contributionDays {
-              contributionCount
-              date
+  let allContributions: Contribution[] = []
+
+  for (const account of accounts) {
+    const query = `query {
+      user(login: "${account.username}"){
+        contributionsCollection {
+          contributionCalendar {
+            weeks {
+              contributionDays {
+                contributionCount
+                date
+              }
             }
           }
         }
       }
-    }
-  }`
+    }`
 
-  const response = await fetch('https://api.github.com/graphql', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${useRuntimeConfig().GITHUB_PERSONAL_KEY}`,
-    },
-    body: JSON.stringify({ query }),
-  })
-  const { data } = await response.json()
-  return data.user.contributionsCollection.contributionCalendar.weeks
-    .flatMap((week: GitHubWeek) => week.contributionDays)
-    .map((day: { date: string, contributionCount: number }) => ({ date: day.date, count: day.contributionCount }))
+    const response = await fetch('https://api.github.com/graphql', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${account.key}`,
+      },
+      body: JSON.stringify({ query }),
+    })
+    
+    const { data } = await response.json()
+
+    if (data?.user?.contributionsCollection?.contributionCalendar?.weeks) {
+      const accountContributions = data.user.contributionsCollection.contributionCalendar.weeks
+        .flatMap((week: GitHubWeek) => week.contributionDays)
+        .map((day: { date: string, contributionCount: number }) => ({ 
+          date: day.date, 
+          count: day.contributionCount 
+        }))
+      
+      allContributions = [...allContributions, ...accountContributions]
+    }
+  }
+
+  return allContributions
 }
 
 function mergeAndProcessData(gitlabData: Contribution[], githubData: Contribution[]): Record<string, number> {
