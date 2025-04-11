@@ -12,6 +12,12 @@ interface IProject {
 
 const projects: IProject[] = [
   {
+    name: 'patrowl',
+    formatted: 'Patrowl',
+    stack: { front: [vue3, typescript, tailwind] },
+    url: 'https://patrowl.io/',
+  },
+  {
     name: 'vitesse',
     formatted: 'Vitesse',
     stack: { front: [nuxt, typescript, tailwind, playwright], back: [nuxt, redis, postgresql, graphql] },
@@ -71,7 +77,7 @@ const projects: IProject[] = [
   },
   {
     name: 'whiterqbbit',
-    formatted: 'Ce site-ci!',
+    formatted: t('whiterqbbit.title'),
     stack: { front: [nuxt, tailwind], back: [netlify, umami] },
     source: 'https://github.com/whiterqbbit/whiterqbbit-website',
   },
@@ -85,8 +91,10 @@ const projects: IProject[] = [
     </div>
     <div class="flex flex-wrap justify-evenly w-full gap-4">
       <GlowCard
-        v-for="project, idx in projects" :key="project.name" :title="project.formatted" :url="project.url" :source="project.source"
-        class="w-80 overflow-visible slide-enter" :style="{ '--enter-stage': idx, '--enter-step': '130ms' }"
+      v-for="project, idx in projects" :key="project.name"
+      :title="project.name === 'whiterqbbit' ? t('whiterqbbit.title') : project.formatted" 
+      :url="project.url" :source="project.source"
+      class="w-80 overflow-visible slide-enter" :style="{ '--enter-stage': idx, '--enter-step': '130ms' }"
       >
         <div class="text-sm flex flex-col gap-1" v-html="t(`${project.name}.description`)" />
         <div class="mt-2 text-sm italic text-ctp-overlay2 hover:text-anim-color-light"> {{ t(`${project.name}.tasks`) }} </div>
@@ -100,7 +108,7 @@ const projects: IProject[] = [
             </div>
           </div>
 
-          <div class="flex flex-row gap-2">
+          <div v-if="project.stack.back" class="flex flex-row gap-2">
             <span class="text-sm text-ctp-overlay2">Back :</span>
             <div v-for="tech in project.stack.back" :key="tech.name">
               <UTooltip :text="tech.name">
@@ -116,7 +124,10 @@ const projects: IProject[] = [
 
 <i18n lang="yaml">
 en:
-  title: "Recent projects"
+  title: "Work history"
+  patrowl:
+    description: "Cybersecurity all-in-one platform."
+    tasks: "Front-end dev, planning and remake of a front-end app, at scale"
   kafo:
     description: "Coworking find and meet startup."
     tasks: "Founder, lead dev, product, UI/UX, user surveys, scrapping"
@@ -142,13 +153,14 @@ en:
     description: "Classical artist showcase website. Form, mailing."
     tasks: "Dev, design"
   whiterqbbit:
+    title: "This website!"
     description: "Small static website showcasing my talents!"
     tasks: "Dev, design"
   camello:
     description: "Integrated management platform for a condo syndicate management company."
     tasks: "Fullstack dev, UI/UX"
 fr:
-  title: "Projets récents"
+  title: "Expériences"
   kafo:
     description: "Startup recherche et rencontre coworking."
     tasks: "Fondateur, lead dev, produit, UI/UX, enquêtes utilisateurs, scrapping"
@@ -174,6 +186,7 @@ fr:
     description: "Site vitrine d'artiste de style classique. Formulaire, mailing."
     tasks: "Dev, design"
   whiterqbbit:
+    title: "Ce site-ci!"
     description: "Petit site statique mettant en valeur mes talents !"
     tasks: "Dev, design"
   camello:
