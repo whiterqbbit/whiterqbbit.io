@@ -39,7 +39,7 @@ function useEaster() {
     <!-- AVAILABILITY -->
     <div class="card-duo" :style="{ '--enter-stage': 2 }">
       <div class="sm:w-1/2 place-self-center">
-        {{ t('availability.main') }} <span class="text-anim-color text-xl sm:text-2xl italic font-bold sm:pr-1">{{ t('availability.yes') }}</span><br><br>
+        {{ t('availability.main') }} <span class="text-anim-color text-xl sm:text-2xl italic font-bold sm:pr-1">{{ t('availability.employed') }}</span><br><br>
         {{ t('work_preference.main') }} <strong>{{ t('work_preference.ambitious') }}</strong> {{ t('work_preference.and') }} <strong> {{ t('work_preference.challenging') }}</strong> !<br>
         {{ t('collaborate') }} <strong>{{ t('uiux') }}</strong> {{ t('share') }} !
       </div>
@@ -95,6 +95,7 @@ en:
     main: "I am currently"
     yes: "available!"
     no: "in a freelance mission."
+    employed: "in a full-time position."
   contact_me: "Contact me !"
   work_preference:
     main: "I love working on"
@@ -126,6 +127,7 @@ fr:
     main: "Je suis actuellement"
     yes: "disponible !"
     no: "en mission."
+    employed: "en CDI !"
   contact_me: "Contactez-moi !"
   work_preference:
     main: "J'aime travailler sur des projets"
