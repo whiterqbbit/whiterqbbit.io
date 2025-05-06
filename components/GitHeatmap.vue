@@ -40,9 +40,8 @@ const locales = {
 <template>
   <div class="flex w-full flex-col">
     <div v-if="gitData?.stats" class="text-sm mt-3 text-ctp-surface2 flex justify-between">
-      <p>{{ gitData.stats.totalContributionCount }} contributions in the last year</p>
-      <!-- <p>{{ gitData.stats.totalWorkedDayCount }} worked days</p> -->
-      <p>{{ gitData.stats.averageContributionsPerDay }} contributions per day</p>
+      <p><span class="text-anim-color opacity-70">{{ gitData.stats.totalContributionCount }}</span> contributions in the last year</p>
+      <p><span class="text-anim-color opacity-70">{{ gitData.stats.averageContributionsPerDay }}</span> contributions per day</p>
     </div>
     <CalendarHeatmap
       v-if="gitData?.contributions" :values="gitData.contributions" :end-date="new Date()"

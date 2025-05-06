@@ -75,7 +75,9 @@ function useEaster() {
         <ContactForm />
       </GlowCard>
     </div>
-    <GitHeatmap />
+
+    <!-- GIT CONTRIBUTIONS -->
+      <GitHeatmap />
   </div>
 </template>
 
