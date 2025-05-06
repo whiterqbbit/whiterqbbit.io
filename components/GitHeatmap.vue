@@ -2,9 +2,11 @@
 import { CalendarHeatmap } from 'vue3-calendar-heatmap'
 
 const gitData = ref(null)
+const isLoading = ref(true)
 
 onMounted(async () => {
   gitData.value = await $fetch('/api/git')
+  isLoading.value = false
 })
 
 const colorMode = useColorMode()
@@ -38,7 +40,11 @@ const locales = {
 </script>
 
 <template>
-  <div class="flex w-full flex-col">
+  <div v-if="isLoading" class="flex w-full items-center mb-16">
+    <Spinner class="m-auto size-20 opacity-50" />
+  </div>
+
+  <div v-else class="flex w-full flex-col">
     <div v-if="gitData?.stats" class="text-sm mt-3 text-ctp-surface2 flex justify-between">
       <p><span class="text-anim-color opacity-70">{{ gitData.stats.totalContributionCount }}</span> contributions in the last year</p>
       <p><span class="text-anim-color opacity-70">{{ gitData.stats.averageContributionsPerDay }}</span> contributions per day</p>
