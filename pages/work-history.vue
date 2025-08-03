@@ -7,7 +7,7 @@ interface IProject {
   formatted: string
   url?: string
   source?: string
-  stack: { front: typeof icons[keyof typeof icons][], back: typeof icons[keyof typeof icons][] }
+  stack: { front: typeof icons[keyof typeof icons][], back?: typeof icons[keyof typeof icons][] }
 }
 
 const projects: IProject[] = [
@@ -126,8 +126,8 @@ const projects: IProject[] = [
 en:
   title: "Work history"
   patrowl:
-    description: "Cybersecurity all-in-one platform."
-    tasks: "Front-end dev, planning and remake of a front-end app, at scale"
+    description: "Pentest as a Service platform."
+    tasks: "Front-end dev, planning and total makeover of a front-end app, at scale"
   kafo:
     description: "Coworking find and meet startup."
     tasks: "Founder, lead dev, product, UI/UX, user surveys, scrapping"
@@ -161,6 +161,9 @@ en:
     tasks: "Fullstack dev, UI/UX"
 fr:
   title: "Expériences"
+  patrowl:
+    description: "Plateforme de Pentest as a Service."
+    tasks: "Dev front-end, planification et refonte totale d'une application front-end à l'échelle."
   kafo:
     description: "Startup recherche et rencontre coworking."
     tasks: "Fondateur, lead dev, produit, UI/UX, enquêtes utilisateurs, scrapping"
