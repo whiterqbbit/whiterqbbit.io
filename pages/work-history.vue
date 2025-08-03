@@ -30,6 +30,12 @@ const projects: IProject[] = [
     url: 'https://www.aestima-immo.com/',
   },
   {
+    name: 'ief',
+    formatted: 'Mon journal IEF',
+    stack: { front: [vue3, typescript, tailwind], back: [nodets, postgresql, prisma, playwright] },
+    url: 'http://ief.180.149.199.151.sslip.io/',
+  },
+  {
     name: 'tictactrip',
     formatted: 'Tictactrip',
     stack: { front: [react, tailwind, jest], back: [nodets, aws_ttt, terraform, postgresql, sequelize, redis, jest] },
@@ -134,6 +140,9 @@ en:
   vitesse:
     description: "Industrial IoT startup."
     tasks: "Fullstack dev, UI/UX"
+  ief:
+    description: "Homeschooling tracking app."
+    tasks: "Fullstack dev, UI/UX"
   moonolith:
     description: "Decentralized web3 app. Custom game engine, backend fully on the blockchain."
     tasks: "Dev, product, art direction, music"
@@ -169,6 +178,9 @@ fr:
     tasks: "Fondateur, lead dev, produit, UI/UX, enquêtes utilisateurs, scrapping"
   vitesse:
     description: "Startup IoT industriel."
+    tasks: "Dev fullstack, UI/UX"
+  ief:
+    description: "Journal de suivi pour l'instruction en famille."
     tasks: "Dev fullstack, UI/UX"
   moonolith:
     description: "App web3 décentralisée. Moteur graphique maison, backend entièrement sur la blockchain."
