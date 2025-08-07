@@ -43,11 +43,11 @@ async function submit(event: FormSubmitEvent<Schema>) {
 <template>
   <UForm ref="form" :schema="schema" :state="state" class="space-y-4 flex flex-col" data-netlify="true" @submit="submit">
     <UFormGroup name="email" label="Email">
-      <UInput v-model="state.email" icon="i-ci-mail" placeholder="votre@email.com" />
+      <UInput v-model="state.email" icon="i-ci-mail" :placeholder="t('email_placeholder')" />
     </UFormGroup>
 
     <UFormGroup name="message" label="Message">
-      <UTextarea v-model="state.message" autoresize placeholder="Votre message ici..." />
+      <UTextarea v-model="state.message" autoresize :placeholder="t('message_placeholder')" />
     </UFormGroup>
 
     <div class="my-3" />
@@ -76,6 +76,8 @@ en:
   or: "or"
   book_a_call: "Schedule a call"
   error: "Sorry, there was an error, please write me an email at whiterqbbit{'@'}proton.me !"
+  email_placeholder: "hello@example.com"
+  message_placeholder: "Tell me about your project, ideas, or just say hi! ✨"
 fr:
   message_sent: "Message envoyé !"
   sent: "Envoyé !"
@@ -83,4 +85,6 @@ fr:
   or: "ou"
   book_a_call: "Prendre RDV"
   error: "Navré, il y a eu une erreur, veuillez me contacter par mail à whiterqbbit{'@'}proton.me !"
+  email_placeholder: "bonjour@exemple.com"
+  message_placeholder: "Parlez-moi de votre projet, vos idées, ou dites simplement bonjour ! ✨"
 </i18n>
