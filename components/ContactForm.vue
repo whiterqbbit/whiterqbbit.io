@@ -43,11 +43,11 @@ async function submit(event: FormSubmitEvent<Schema>) {
 <template>
   <UForm ref="form" :schema="schema" :state="state" class="space-y-4 flex flex-col" data-netlify="true" @submit="submit">
     <UFormGroup name="email" label="Email">
-      <UInput v-model="state.email" icon="i-ci-mail" />
+      <UInput v-model="state.email" icon="i-ci-mail" placeholder="votre@email.com" />
     </UFormGroup>
 
     <UFormGroup name="message" label="Message">
-      <UTextarea v-model="state.message" autoresize />
+      <UTextarea v-model="state.message" autoresize placeholder="Votre message ici..." />
     </UFormGroup>
 
     <div class="my-3" />
