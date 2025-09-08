@@ -32,8 +32,8 @@ const projects: IProject[] = [
   {
     name: 'ief',
     formatted: 'Mon journal IEF',
-    stack: { front: [vue3, typescript, tailwind], back: [nodets, postgresql, prisma, playwright] },
-    url: 'http://ief.180.149.199.151.sslip.io/',
+    stack: { front: [vue3, typescript, tailwind], back: [nodets, postgresql, prisma, postgresql, playwright, umami] },
+    url: 'https://mon-journal-ief.com/',
   },
   {
     name: 'tictactrip',
@@ -181,7 +181,7 @@ fr:
     tasks: "Dev fullstack, UI/UX"
   ief:
     description: "Journal de suivi pour l'instruction en famille."
-    tasks: "Dev fullstack, UI/UX"
+    tasks: "Dev fullstack, produit, UI/UX"
   moonolith:
     description: "App web3 décentralisée. Moteur graphique maison, backend entièrement sur la blockchain."
     tasks: "Dev, produit, direction artistique, musique"
