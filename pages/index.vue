@@ -2,6 +2,11 @@
 const { t } = useI18n({ useScope: 'local' })
 const pic_src = ref('img/me_malt.jpg')
 
+useSeoMeta({
+  title: () => t('seo.title'),
+  description: () => t('seo.description'),
+})
+
 function useEaster() {
   umTrackEvent('easter_egg')
   pic_src.value = pic_src.value === 'img/me_malt.jpg' ? 'img/me_chad.jpg' : 'img/me_malt.jpg'
@@ -25,10 +30,10 @@ function useEaster() {
         </div>
       </div>
       <div class="flex flex-col text-center w-1/2 gap-4 justify-round place-content-center slide-enter">
-        <div class="text-xl sm:text-3xl">
+        <h1 class="text-xl sm:text-3xl">
           {{ t('intro.hello') }}
           <span class="text-anim-color font-bold text-xl sm:text-4xl">Guillaume Bonnefoy</span>
-        </div>
+        </h1>
         <p class="text-ctp-subtext1">
           <strong>{{ t('intro.fullstack') }}</strong>
           {{ t('intro.designer') }}
@@ -89,6 +94,9 @@ function useEaster() {
 
 <i18n lang="yaml">
 en:
+  seo:
+    title: "Fullstack Vue/Nuxt developer & graphic designer"
+    description: "Guillaume Bonnefoy, fullstack developer and graphic designer specialized in the Vue/Nuxt ecosystem. Startup experience, UI/UX, TypeScript."
   intro:
     hello: "Hello! I am"
     fullstack: "Fullstack developer"
@@ -121,6 +129,9 @@ en:
     main: "If your project requires it, I can also engage my friends through our freelance collective"
     relevance: "This is particularly relevant for crypto/web3/AI projects, or simply if you want to move forward even faster."
 fr:
+  seo:
+    title: "Développeur fullstack Vue/Nuxt & designer graphique"
+    description: "Guillaume Bonnefoy, développeur fullstack et designer graphique spécialisé dans l'écosystème Vue/Nuxt. Expérience startup, UI/UX, TypeScript."
   intro:
     hello: "Hello ! Je suis"
     fullstack: "Développeur fullstack"

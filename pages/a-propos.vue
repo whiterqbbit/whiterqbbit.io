@@ -1,10 +1,18 @@
 <script setup lang="ts">
 const { t } = useI18n({ useScope: 'local' })
 const moi_src = ref('img/me_stationf.jpg')
+
+useSeoMeta({
+  title: () => t('title'),
+  description: () => t('seo_description'),
+})
 </script>
 
 <template>
   <UContainer class="text-center sm:text-left text-lg sm:text-xl mt-8">
+    <h1 class="text-2xl sm:text-4xl text-center md:mb-4 lg:mb-8 slide-enter" :style="{ '--enter-stage': 0 }">
+      {{ t('title') }}
+    </h1>
     <div class="flex flex-col gap-10">
       <div class="bandeau" :style="{ '--enter-stage': 1 }">
         <div class="place-self-center text-center !max-w-sm">
@@ -54,6 +62,8 @@ const moi_src = ref('img/me_stationf.jpg')
 
 <i18n lang="yaml">
 fr:
+  title: "À Propos"
+  seo_description: "Développeur fullstack depuis ses 30 ans, passionné d'UI/UX, de piano et de photo. Le parcours de Guillaume Bonnefoy, du bricolage de carte mère aux startups."
   childhood: "Passionné depuis tout petit, je commence à m'électrocuter dès l'âge de 15 ans en bricolant mon ordi. À 17 ans, je programme des jeux sur ma calculette, et à 30 ans, j'en ai fait mon métier !"
   professionally: "Professionnellement, j'aime les environnements dynamiques et exigeants, je n'ai travaillé qu'en startup. J'apprécie contribuer à plus que du code, je me passionne notamment d'UI/UX et de copywriting."
   passions: "Au-delà du code, je fais du piano, de la photographie, et je m'occupe de ma petite famille. Je m'intéresse beaucoup au design, à l'IA, et au monde des startups."
@@ -65,6 +75,8 @@ fr:
     musk: "Elon Musk visiblement perturbé par ce paragraphe"
     family: "Guillaume Bonnefoy, sa femme, sa fille, et son chien"
 en:
+  title: "About"
+  seo_description: "Fullstack developer since 30, passionate about UI/UX, piano and photography. Guillaume Bonnefoy's path, from tinkering with motherboards to startups."
   childhood: "Geek since I was a kid, I started to electrocute myself at age 15 by tinkering with my motherboard. At 17, I was programming games on my calculator, and at 30, I made it my job!"
   professionally: "Professionally, I like dynamic and demanding environments, which is why I have worked exclusively in startups. I like to contribute to more than just code, I am particularly passionate about UI/UX and copywriting."
   passions: "Beyond code, I play the piano, take pictures, and take care of my family. I am very interested in design, AI, and the world of startups."

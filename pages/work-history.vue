@@ -1,5 +1,11 @@
 <script setup lang="ts">
 const { t } = useI18n({ useScope: 'local' })
+
+useSeoMeta({
+  title: () => t('title'),
+  description: () => t('seo_description'),
+})
+
 const { vue2, vue3, nuxt, tailwind, unocss, typescript, chrome, ethereum, node, graphql, playwright, nodets, prisma, postgresql, umami, google_analytics, react, sequelize, redis, mongodb, elasticsearch, aws_omniscient, aws_ttt, aws_calypso, terraform, docker, airtable, netlify, bootstrap, sass, html5, canvas, javascript, puppeteer, amplify, jest, vitest, cucumber } = icons
 
 interface IProject {
@@ -92,9 +98,9 @@ const projects: IProject[] = [
 
 <template>
   <div class="flex flex-col gap-4 m-auto py-4">
-    <div class="text-2xl sm:text-4xl text-center md:mb-4 lg:mb-8">
+    <h1 class="text-2xl sm:text-4xl text-center md:mb-4 lg:mb-8">
       {{ t('title') }}
-    </div>
+    </h1>
     <div class="flex flex-wrap justify-evenly w-full gap-4">
       <GlowCard
       v-for="project, idx in projects" :key="project.name"
@@ -131,6 +137,7 @@ const projects: IProject[] = [
 <i18n lang="yaml">
 en:
   title: "Work history"
+  seo_description: "The projects and startups Guillaume Bonnefoy has worked on: Patrowl, Vitesse, Aestima, Tictactrip, My Omniscient and more — Vue/Nuxt, TypeScript, Node."
   patrowl:
     description: "Pentest as a Service platform."
     tasks: "Front-end dev, planning and total makeover of a front-end app, at scale"
@@ -170,6 +177,7 @@ en:
     tasks: "Fullstack dev, UI/UX"
 fr:
   title: "Expériences"
+  seo_description: "Les projets et startups sur lesquels Guillaume Bonnefoy a travaillé : Patrowl, Vitesse, Aestima, Tictactrip, My Omniscient et d'autres — Vue/Nuxt, TypeScript, Node."
   patrowl:
     description: "Plateforme de Pentest as a Service."
     tasks: "Dev front-end, planification et refonte totale d'une application front-end à l'échelle."

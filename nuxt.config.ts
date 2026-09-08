@@ -14,7 +14,6 @@ export default defineNuxtConfig({
     head: {
       templateParams: { site: { name: 'Guillaume Bonnefoy' }, separator: '|' },
       titleTemplate: '%pageTitle %separator %site.name',
-      meta: [{ name: 'Guillaume Bonnefoy', content: 'Portfolio de Guillaume Bonnefoy - "Veni, Vidi, Codi"' }],
       link: [{ rel: 'icon', type: 'image/svg+xml', href: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🐇%3C/text%3E%3C/svg%3E` }],
     },
   },
@@ -51,7 +50,8 @@ export default defineNuxtConfig({
   site: {
     url: 'https://www.guillaumebonnefoy.com',
     name: 'Guillaume Bonnefoy',
-    description: 'Portfolio de Guillaume Bonnefoy - "Veni, Vidi, Codi"',
+    // guillemets français : des `"` ici ressortent échappés (`\"`) dans og:description
+    description: 'Portfolio de Guillaume Bonnefoy — « Veni, Vidi, Codi »',
     identity: { type: 'Person' },
     trailingSlash: true,
     defaultLocale: 'fr-FR',
