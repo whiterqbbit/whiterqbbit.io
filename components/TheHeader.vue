@@ -28,7 +28,6 @@ watch(() => route.path, newPath => path.value = newPath)
       <ul class="m-auto flex">
         <li class="flex gap-2 md:gap-6 font-bold  md:text-lg">
           <NuxtLink to="/work-history" exact-active-class="nav-link"> {{ t('work_history') }} </NuxtLink>
-          <!-- <NuxtLink to="/blog" exact-active-class="nav-link"> {{ t('blog') }} </NuxtLink> -->
           <NuxtLink to="/a-propos" exact-active-class="nav-link"> {{ t('about') }} </NuxtLink>
         </li>
       </ul>
@@ -80,10 +79,8 @@ ul li *:hover {
 <i18n lang="yaml">
 en:
   work_history: 'Work history'
-  blog: 'Blog'
   about: 'About'
 fr:
   work_history: 'Expériences'
-  blog: 'Blog'
   about: 'À Propos'
 </i18n>

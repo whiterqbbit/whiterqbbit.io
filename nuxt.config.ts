@@ -2,7 +2,6 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/image',
     '@nuxtjs/i18n',
-    '@nuxt/content',
     '@nuxt/ui',
     'nuxt-resend',
     '@nuxtjs/fontaine',
@@ -48,8 +47,6 @@ export default defineNuxtConfig({
     format: ['webp'],
     provider: 'netlify',
   },
-
-  content: { documentDriven: true, contentHead: false },
 
   site: {
     url: 'https://www.guillaumebonnefoy.com',
