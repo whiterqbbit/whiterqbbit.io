@@ -260,7 +260,7 @@ fr:
   title: 'Expériences'
   seo_description: "Les projets et startups sur lesquels Guillaume Bonnefoy a travaillé : Second Eyes, Patrowl, Vitesse, Aestima, Tictactrip, My Omniscient et d'autres — Vue/Nuxt, TypeScript, Node."
   second_eyes:
-    description: 'App de variations d\'images par IA pour les artistes.'
+    description: "App de variations d'images par IA pour les artistes."
     tasks: 'Dev fullstack, produit, UI/UX'
   patrowl:
     description: 'Plateforme de Pentest as a Service.'
