@@ -47,6 +47,10 @@ export const icons = {
     name: 'Express',
     icon: 'i-simple-icons-express',
   },
+  fastify: {
+    name: 'Fastify',
+    icon: 'i-simple-icons-fastify',
+  },
   prisma: {
     name: 'Prisma',
     icon: 'i-simple-icons-prisma',
@@ -54,6 +58,14 @@ export const icons = {
   react: {
     name: 'React',
     icon: 'i-simple-icons-react',
+  },
+  react_native: {
+    name: 'React Native',
+    icon: 'i-simple-icons-react',
+  },
+  expo: {
+    name: 'Expo',
+    icon: 'i-simple-icons-expo',
   },
   sequelize: {
     name: 'Sequelize',
@@ -222,6 +234,14 @@ export const icons = {
   openai: {
     name: 'OpenAI',
     icon: 'i-simple-icons-openai',
+  },
+  gemini: {
+    name: 'Gemini',
+    icon: 'i-simple-icons-googlebard',
+  },
+  telegram: {
+    name: 'Telegram bot',
+    icon: 'i-simple-icons-telegram',
   },
   aws: {
     name: 'AWS',

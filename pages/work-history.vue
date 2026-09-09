@@ -6,17 +6,73 @@ useSeoMeta({
   description: () => t('seo_description'),
 })
 
-const { vue2, vue3, nuxt, tailwind, unocss, typescript, chrome, ethereum, node, graphql, playwright, nodets, prisma, postgresql, umami, google_analytics, react, sequelize, redis, mongodb, elasticsearch, aws_omniscient, aws_ttt, aws_calypso, terraform, docker, airtable, netlify, bootstrap, sass, html5, canvas, javascript, puppeteer, amplify, jest, vitest, cucumber } = icons
+const {
+  vue2,
+  vue3,
+  nuxt,
+  tailwind,
+  unocss,
+  typescript,
+  chrome,
+  ethereum,
+  node,
+  graphql,
+  playwright,
+  nodets,
+  prisma,
+  postgresql,
+  react_native,
+  expo,
+  fastify,
+  gemini,
+  telegram,
+  umami,
+  google_analytics,
+  react,
+  sequelize,
+  redis,
+  mongodb,
+  elasticsearch,
+  aws_omniscient,
+  aws_ttt,
+  aws_calypso,
+  terraform,
+  docker,
+  airtable,
+  netlify,
+  bootstrap,
+  sass,
+  html5,
+  canvas,
+  javascript,
+  puppeteer,
+  amplify,
+  jest,
+  vitest,
+  cucumber,
+} = icons
 
 interface IProject {
   name: string
   formatted: string
   url?: string
   source?: string
-  stack: { front: typeof icons[keyof typeof icons][], back?: typeof icons[keyof typeof icons][] }
+  stack: {
+    front: (typeof icons)[keyof typeof icons][]
+    back?: (typeof icons)[keyof typeof icons][]
+  }
 }
 
 const projects: IProject[] = [
+  {
+    name: 'second_eyes',
+    formatted: 'Second Eyes',
+    stack: {
+      front: [react_native, expo, typescript],
+      back: [nodets, fastify, prisma, postgresql, gemini, telegram],
+    },
+    url: 'https://second-eyes.io/',
+  },
   {
     name: 'patrowl',
     formatted: 'Patrowl',
@@ -26,7 +82,10 @@ const projects: IProject[] = [
   {
     name: 'vitesse',
     formatted: 'Vitesse',
-    stack: { front: [nuxt, typescript, tailwind, playwright], back: [nuxt, redis, postgresql, graphql] },
+    stack: {
+      front: [nuxt, typescript, tailwind, playwright],
+      back: [nuxt, redis, postgresql, graphql],
+    },
     url: 'https://vitesseautomation.com/',
   },
   {
@@ -38,25 +97,37 @@ const projects: IProject[] = [
   {
     name: 'ief',
     formatted: 'Mon journal IEF',
-    stack: { front: [vue3, typescript, tailwind], back: [nodets, postgresql, prisma, postgresql, playwright, umami] },
+    stack: {
+      front: [vue3, typescript, tailwind],
+      back: [nodets, postgresql, prisma, postgresql, playwright, umami],
+    },
     url: 'https://mon-journal-ief.com/',
   },
   {
     name: 'tictactrip',
     formatted: 'Tictactrip',
-    stack: { front: [react, tailwind, jest], back: [nodets, aws_ttt, terraform, postgresql, sequelize, redis, jest] },
+    stack: {
+      front: [react, tailwind, jest],
+      back: [nodets, aws_ttt, terraform, postgresql, sequelize, redis, jest],
+    },
     url: 'https://www.tictactrip.eu/',
   },
   {
     name: 'omniscient',
     formatted: 'My Omniscient',
-    stack: { front: [vue2, bootstrap, sass], back: [node, aws_omniscient, elasticsearch, mongodb, cucumber] },
+    stack: {
+      front: [vue2, bootstrap, sass],
+      back: [node, aws_omniscient, elasticsearch, mongodb, cucumber],
+    },
     url: 'https://myomniscient.com/solutions/application/',
   },
   {
     name: 'kafo',
     formatted: 'Kafo',
-    stack: { front: [vue3, unocss, typescript, vitest], back: [nodets, postgresql, prisma, amplify] },
+    stack: {
+      front: [vue3, unocss, typescript, vitest],
+      back: [nodets, postgresql, prisma, amplify],
+    },
     url: 'https://www.kafo.work/',
     // source: 'https://github.com/whiterqbbit/kafo_front_vitesse'
   },
@@ -103,14 +174,21 @@ const projects: IProject[] = [
     </h1>
     <div class="flex flex-wrap justify-evenly w-full gap-4">
       <GlowCard
-      v-for="project, idx in projects" :key="project.name"
-      :title="project.name === 'whiterqbbit' ? t('whiterqbbit.title') : project.formatted" 
-      :url="project.url" :source="project.source"
-      class="w-80 overflow-visible slide-enter" :style="{ '--enter-stage': idx, '--enter-step': '130ms' }"
+        v-for="(project, idx) in projects"
+        :key="project.name"
+        :title="project.name === 'whiterqbbit' ? t('whiterqbbit.title') : project.formatted"
+        :url="project.url"
+        :source="project.source"
+        class="w-80 overflow-visible slide-enter"
+        :style="{ '--enter-stage': idx, '--enter-step': '130ms' }"
       >
         <div class="text-sm flex flex-col gap-1" v-html="t(`${project.name}.description`)" />
-        <div class="mt-2 text-sm italic text-ctp-overlay2 hover:text-anim-color-light"> {{ t(`${project.name}.tasks`) }} </div>
-        <div class="flex flex-col mt-4 gap-2 text-lg cursor-default text-ctp-overlay2 hover:text-ctp-text transition-fast">
+        <div class="mt-2 text-sm italic text-ctp-overlay2 hover:text-anim-color-light">
+          {{ t(`${project.name}.tasks`) }}
+        </div>
+        <div
+          class="flex flex-col mt-4 gap-2 text-lg cursor-default text-ctp-overlay2 hover:text-ctp-text transition-fast"
+        >
           <div class="flex flex-row gap-2">
             <span class="text-sm text-ctp-overlay2">Front :</span>
             <div v-for="tech in project.stack.front" :key="tech.name">
@@ -136,83 +214,89 @@ const projects: IProject[] = [
 
 <i18n lang="yaml">
 en:
-  title: "Work history"
-  seo_description: "The projects and startups Guillaume Bonnefoy has worked on: Patrowl, Vitesse, Aestima, Tictactrip, My Omniscient and more — Vue/Nuxt, TypeScript, Node."
+  title: 'Work history'
+  seo_description: 'The projects and startups Guillaume Bonnefoy has worked on: Second Eyes, Patrowl, Vitesse, Aestima, Tictactrip, My Omniscient and more — Vue/Nuxt, TypeScript, Node.'
+  second_eyes:
+    description: 'AI image variation app for artists.'
+    tasks: 'Fullstack dev, product, UI/UX'
   patrowl:
-    description: "Pentest as a Service platform."
-    tasks: "Front-end dev, planning and total makeover of a front-end app, at scale"
+    description: 'Pentest as a Service platform.'
+    tasks: 'Front-end dev, planning and total makeover of a front-end app, at scale'
   kafo:
-    description: "Coworking find and meet startup."
-    tasks: "Founder, lead dev, product, UI/UX, user surveys, scrapping"
+    description: 'Coworking find and meet startup.'
+    tasks: 'Founder, lead dev, product, UI/UX, user surveys, scrapping'
   vitesse:
-    description: "Industrial IoT startup."
-    tasks: "Fullstack dev, UI/UX"
+    description: 'Industrial IoT startup.'
+    tasks: 'Fullstack dev, UI/UX'
   ief:
-    description: "Homeschooling tracking app."
-    tasks: "Fullstack dev, UI/UX"
+    description: 'Homeschooling tracking app.'
+    tasks: 'Fullstack dev, UI/UX'
   moonolith:
-    description: "Decentralized web3 app. Custom game engine, backend fully on the blockchain."
-    tasks: "Dev, product, art direction, music"
+    description: 'Decentralized web3 app. Custom game engine, backend fully on the blockchain.'
+    tasks: 'Dev, product, art direction, music'
   chadguard:
-    description: "Chrome extension using AI to block adult content. ~1500 active users."
-    tasks: "Dev, product, UI/UX"
+    description: 'Chrome extension using AI to block adult content. ~1500 active users.'
+    tasks: 'Dev, product, UI/UX'
   omniscient:
-    description: "IoT startup in the construction industry."
-    tasks: "Fullstack dev, sensor integration, backoffice tools development"
+    description: 'IoT startup in the construction industry.'
+    tasks: 'Fullstack dev, sensor integration, backoffice tools development'
   aestima:
-    description: "SaaS startup in wealth management."
-    tasks: "Fullstack dev, front refactor of a v1 and dev of a v2"
+    description: 'SaaS startup in wealth management.'
+    tasks: 'Fullstack dev, front refactor of a v1 and dev of a v2'
   tictactrip:
-    description: "Itinerary search engine startup."
-    tasks: "Backend dev, apps reverse-engineering"
+    description: 'Itinerary search engine startup.'
+    tasks: 'Backend dev, apps reverse-engineering'
   calypso:
-    description: "Classical artist showcase website. Form, mailing."
-    tasks: "Dev, design"
+    description: 'Classical artist showcase website. Form, mailing.'
+    tasks: 'Dev, design'
   whiterqbbit:
-    title: "This website!"
-    description: "Small static website showcasing my talents!"
-    tasks: "Dev, design"
+    title: 'This website!'
+    description: 'Small static website showcasing my talents!'
+    tasks: 'Dev, design'
   camello:
-    description: "Integrated management platform for a condo syndicate management company."
-    tasks: "Fullstack dev, UI/UX"
+    description: 'Integrated management platform for a condo syndicate management company.'
+    tasks: 'Fullstack dev, UI/UX'
 fr:
-  title: "Expériences"
-  seo_description: "Les projets et startups sur lesquels Guillaume Bonnefoy a travaillé : Patrowl, Vitesse, Aestima, Tictactrip, My Omniscient et d'autres — Vue/Nuxt, TypeScript, Node."
+  title: 'Expériences'
+  seo_description: "Les projets et startups sur lesquels Guillaume Bonnefoy a travaillé : Second Eyes, Patrowl, Vitesse, Aestima, Tictactrip, My Omniscient et d'autres — Vue/Nuxt, TypeScript, Node."
+  second_eyes:
+    description: 'App de variations d\'images par IA pour les artistes.'
+    tasks: 'Dev fullstack, produit, UI/UX'
   patrowl:
-    description: "Plateforme de Pentest as a Service."
+    description: 'Plateforme de Pentest as a Service.'
     tasks: "Dev front-end, planification et refonte totale d'une application front-end à l'échelle."
   kafo:
-    description: "Startup recherche et rencontre coworking."
-    tasks: "Fondateur, lead dev, produit, UI/UX, enquêtes utilisateurs, scrapping"
+    description: 'Startup recherche et rencontre coworking.'
+    tasks: 'Fondateur, lead dev, produit, UI/UX, enquêtes utilisateurs, scrapping'
   vitesse:
-    description: "Startup IoT industriel."
-    tasks: "Dev fullstack, UI/UX"
+    description: 'Startup IoT industriel.'
+    tasks: 'Dev fullstack, UI/UX'
   ief:
     description: "Journal de suivi pour l'instruction en famille."
-    tasks: "Dev fullstack, produit, UI/UX"
+    tasks: 'Dev fullstack, produit, UI/UX'
   moonolith:
-    description: "App web3 décentralisée. Moteur graphique maison, backend entièrement sur la blockchain."
-    tasks: "Dev, produit, direction artistique, musique"
+    description: 'App web3 décentralisée. Moteur graphique maison, backend entièrement sur la blockchain.'
+    tasks: 'Dev, produit, direction artistique, musique'
   chadguard:
-    description: "Extension Chrome utilisant IA pour bloquer le contenu adulte. ~1500 utilisateurs actifs."
-    tasks: "Dev, produit, UI/UX"
+    description: 'Extension Chrome utilisant IA pour bloquer le contenu adulte. ~1500 utilisateurs actifs.'
+    tasks: 'Dev, produit, UI/UX'
   omniscient:
-    description: "Startup IOT dans le secteur du BTP."
+    description: 'Startup IOT dans le secteur du BTP.'
     tasks: "Dev fullstack, intégration de capteurs, développement d'outils backoffice"
   aestima:
-    description: "Startup SaaS dans la gestion de patrimoine."
+    description: 'Startup SaaS dans la gestion de patrimoine.'
     tasks: "Dev fullstack, refactor front d'une v1 et dev d'une v2"
   tictactrip:
     description: "Startup de moteur de recherche d'itinéraire."
     tasks: "Dev backend, reverse-engineering d'apps"
   calypso:
     description: "Site vitrine d'artiste de style classique. Formulaire, mailing."
-    tasks: "Dev, design"
+    tasks: 'Dev, design'
   whiterqbbit:
-    title: "Ce site-ci!"
-    description: "Petit site statique mettant en valeur mes talents !"
-    tasks: "Dev, design"
+    title: 'Ce site-ci!'
+    description: 'Petit site statique mettant en valeur mes talents !'
+    tasks: 'Dev, design'
   camello:
-    description: "Plateforme de gestion intégrée pour un gestionnaire de copropriétés."
-    tasks: "Dev, produit, UI/UX"
+    description: 'Plateforme de gestion intégrée pour un gestionnaire de copropriétés.'
+    tasks: 'Dev, produit, UI/UX'
 </i18n>
