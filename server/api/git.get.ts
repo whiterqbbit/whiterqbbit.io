@@ -13,9 +13,9 @@ export default defineEventHandler(async (): Promise<{ contributions: Contributio
   const gitlabData = await fetchGitLabData()
   const githubData = await fetchGitHubData([
     { username: 'whiterqbbit', key: useRuntimeConfig().GITHUB_WHITERQBBIT_KEY },
-    { username: 'guillaume-bonnefoy', key: useRuntimeConfig().GITHUB_BONNEFOY_KEY }
+    { username: 'guillaume-bonnefoy', key: useRuntimeConfig().GITHUB_BONNEFOY_KEY },
   ])
-  
+
   const mergedData = mergeAndProcessData(gitlabData, githubData)
   const filteredData = filterDataByYear(mergedData)
   const stats = calculateStats(filteredData)
@@ -73,17 +73,17 @@ async function fetchGitHubData(accounts: GitHubAccount[]): Promise<Contribution[
       },
       body: JSON.stringify({ query }),
     })
-    
+
     const { data } = await response.json()
 
     if (data?.user?.contributionsCollection?.contributionCalendar?.weeks) {
       const accountContributions = data.user.contributionsCollection.contributionCalendar.weeks
         .flatMap((week: GitHubWeek) => week.contributionDays)
-        .map((day: { date: string, contributionCount: number }) => ({ 
-          date: day.date, 
-          count: day.contributionCount 
+        .map((day: { date: string, contributionCount: number }) => ({
+          date: day.date,
+          count: day.contributionCount,
         }))
-      
+
       allContributions = [...allContributions, ...accountContributions]
     }
   }

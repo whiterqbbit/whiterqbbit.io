@@ -82,7 +82,7 @@ function useEaster() {
     </div>
 
     <!-- GIT CONTRIBUTIONS -->
-      <GitHeatmap />
+    <GitHeatmap />
   </div>
 </template>
 
