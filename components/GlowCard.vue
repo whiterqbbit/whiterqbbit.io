@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 import { useMouseInElement } from '@vueuse/core'
 
 const { title, url, source } = defineProps<{
@@ -9,18 +9,10 @@ const { title, url, source } = defineProps<{
   emphasize?: boolean
 }>()
 
-// distance (px) à partir de laquelle la bordure commence à s'allumer
-const REACH = 120
-
 const card = ref<HTMLDivElement>()
-const { elementX, elementY, elementWidth, elementHeight } = useMouseInElement(card)
-
-// 0 loin de la carte, 1 dessus
-const glow = computed(() => {
-  const dx = Math.max(0, -elementX.value, elementX.value - elementWidth.value)
-  const dy = Math.max(0, -elementY.value, elementY.value - elementHeight.value)
-  return Math.max(0, 1 - Math.hypot(dx, dy) / REACH)
-})
+const { elementX, elementY } = useMouseInElement(card)
+// la bordure commence à s'allumer à 120px
+const glow = useProximity(card, 120)
 
 const colorMode = useColorMode()
 

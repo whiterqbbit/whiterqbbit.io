@@ -19,6 +19,16 @@
   .page-title {
     @apply text-3xl sm:text-4xl font-bold tracking-tight text-center text-ctp-text;
   }
+
+  /* tire vers le jaune selon --glow (0 → 1), cf. useProximity */
+  .glow-text {
+    color: color-mix(
+      in srgb,
+      theme('colors.ctp-yellow.DEFAULT') calc(var(--glow, 0) * 100%),
+      theme('colors.ctp-text.DEFAULT')
+    );
+    transition: color 0.2s ease-out;
+  }
 }
 
 @layer utilities {

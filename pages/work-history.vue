@@ -199,9 +199,9 @@ const sections = categories.map(category => ({
 
 <template>
   <div class="mx-auto mt-10 sm:mt-16 px-4 sm:px-6 w-full">
-    <h1 class="page-title mb-10 sm:mb-14">
+    <PageTitle class="mb-10 sm:mb-14">
       {{ t('title') }}
-    </h1>
+    </PageTitle>
     <section
       v-for="(section, sectionIdx) in sections"
       :key="section.category"
@@ -211,10 +211,7 @@ const sections = categories.map(category => ({
         class="slide-enter mb-5 sm:mb-6"
         :style="{ '--enter-stage': sectionIdx * 4, '--enter-step': '80ms' }"
       >
-        <h2 class="pb-3 text-lg sm:text-xl font-bold tracking-tight text-ctp-text">
-          {{ t(`categories.${section.category}.title`) }}
-        </h2>
-        <GlowRule />
+        <SectionHeading :title="t(`categories.${section.category}.title`)" />
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
         <GlowCard

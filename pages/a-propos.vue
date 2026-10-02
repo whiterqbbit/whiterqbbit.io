@@ -15,9 +15,9 @@ useSeoMeta({
 
 <template>
   <UContainer class="mt-10 sm:mt-16 max-w-4xl text-lg">
-    <h1 class="page-title mb-10 sm:mb-16 slide-enter" :style="{ '--enter-stage': 0 }">
+    <PageTitle class="mb-10 sm:mb-16 slide-enter" :style="{ '--enter-stage': 0 }">
       {{ t('title') }}
-    </h1>
+    </PageTitle>
     <div class="flex flex-col gap-14 sm:gap-20">
       <section class="bandeau" :style="{ '--enter-stage': 1 }">
         <p class="textzone">
