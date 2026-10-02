@@ -52,8 +52,11 @@ const {
   cucumber,
 } = icons
 
+type Category = 'employed' | 'products' | 'freelance'
+
 interface IProject {
   name: string
+  category: Category
   formatted: string
   url?: string
   source?: string
@@ -66,6 +69,7 @@ interface IProject {
 const projects: IProject[] = [
   {
     name: 'second_eyes',
+    category: 'products',
     formatted: 'Second Eyes',
     stack: {
       front: [react_native, expo, typescript],
@@ -75,12 +79,14 @@ const projects: IProject[] = [
   },
   {
     name: 'patrowl',
+    category: 'employed',
     formatted: 'Patrowl',
     stack: { front: [vue3, typescript, tailwind] },
     url: 'https://patrowl.io/',
   },
   {
     name: 'vitesse',
+    category: 'employed',
     formatted: 'Vitesse',
     stack: {
       front: [nuxt, typescript, tailwind, playwright],
@@ -89,22 +95,33 @@ const projects: IProject[] = [
     url: 'https://vitesseautomation.com/',
   },
   {
+    name: 'atsora',
+    category: 'freelance',
+    formatted: 'Atsora',
+    stack: { front: [nuxt, typescript, graphql] },
+    url: 'https://www.atsora.com/',
+  },
+  {
     name: 'aestima',
+    category: 'freelance',
     formatted: 'Aestima',
     stack: { front: [vue2, tailwind], back: [nodets, mongodb, docker, terraform, puppeteer] },
     url: 'https://www.aestima-immo.com/',
   },
   {
     name: 'ief',
+    category: 'products',
     formatted: 'Mon journal IEF',
     stack: {
       front: [vue3, typescript, tailwind],
       back: [nodets, postgresql, prisma, playwright, umami],
     },
     url: 'https://mon-journal-ief.com/',
+    source: 'https://github.com/mon-journal-ief',
   },
   {
     name: 'tictactrip',
+    category: 'employed',
     formatted: 'Tictactrip',
     stack: {
       front: [react, tailwind, jest],
@@ -114,6 +131,7 @@ const projects: IProject[] = [
   },
   {
     name: 'omniscient',
+    category: 'employed',
     formatted: 'My Omniscient',
     stack: {
       front: [vue2, bootstrap, sass],
@@ -123,6 +141,7 @@ const projects: IProject[] = [
   },
   {
     name: 'kafo',
+    category: 'products',
     formatted: 'Kafo',
     stack: {
       front: [vue3, unocss, typescript, vitest],
@@ -133,19 +152,22 @@ const projects: IProject[] = [
   },
   {
     name: 'camello',
+    category: 'freelance',
     formatted: 'Camello',
     stack: { front: [nuxt, tailwind, typescript], back: [nuxt, airtable] },
     url: 'https://www.camello.fr/',
   },
   {
     name: 'moonolith',
+    category: 'products',
     formatted: 'Moonolith',
     stack: { front: [html5, javascript, canvas], back: [ethereum] },
-    url: 'https://www.moonolith.io/',
+    url: 'https://www.youtube.com/watch?v=tp0KJ-fR6Ik',
     source: 'https://github.com/LaGuerrePiece/moonolith',
   },
   {
     name: 'chadguard',
+    category: 'products',
     formatted: 'ChadGuard',
     stack: { front: [vue3, tailwind], back: [chrome] },
     url: 'https://chromewebstore.google.com/detail/chadguard/oogpehhghgfaeojjbflgeemilhkhgbhe?hl=fr&pli=1',
@@ -153,6 +175,7 @@ const projects: IProject[] = [
   },
   {
     name: 'calypso',
+    category: 'freelance',
     formatted: 'Calypso',
     stack: { front: [nuxt, tailwind], back: [aws_calypso, docker, terraform, google_analytics] },
     url: 'https://www.calypsobonnefoy.com/',
@@ -160,11 +183,18 @@ const projects: IProject[] = [
   },
   {
     name: 'whiterqbbit',
+    category: 'products',
     formatted: t('whiterqbbit.title'),
     stack: { front: [nuxt, tailwind], back: [netlify, umami] },
     source: 'https://github.com/whiterqbbit/whiterqbbit-website',
   },
 ]
+
+const categories: Category[] = ['employed', 'freelance', 'products']
+const sections = categories.map(category => ({
+  category,
+  projects: projects.filter(p => p.category === category),
+}))
 </script>
 
 <template>
@@ -172,40 +202,55 @@ const projects: IProject[] = [
     <h1 class="page-title mb-10 sm:mb-14">
       {{ t('title') }}
     </h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-      <GlowCard
-        v-for="(project, idx) in projects"
-        :key="project.name"
-        :title="project.name === 'whiterqbbit' ? t('whiterqbbit.title') : project.formatted"
-        :url="project.url"
-        :source="project.source"
-        class="slide-enter"
-        :style="{ '--enter-stage': idx, '--enter-step': '80ms' }"
+    <section
+      v-for="(section, sectionIdx) in sections"
+      :key="section.category"
+      class="mb-14 sm:mb-20 last:mb-0"
+    >
+      <div
+        class="slide-enter mb-5 sm:mb-6 flex items-baseline gap-3 border-b border-ctp-surface0 pb-3"
+        :style="{ '--enter-stage': sectionIdx * 4, '--enter-step': '80ms' }"
       >
-        <p class="text-sm text-ctp-subtext1 leading-relaxed -mt-2">
-          {{ t(`${project.name}.description`) }}
-        </p>
-        <p class="mt-2 text-sm text-ctp-overlay1 italic leading-relaxed">
-          {{ t(`${project.name}.tasks`) }}
-        </p>
+        <h2 class="text-lg sm:text-xl font-bold tracking-tight text-ctp-text">
+          {{ t(`categories.${section.category}.title`) }}
+        </h2>
+        <span class="text-sm text-ctp-overlay1">{{ t(`categories.${section.category}.subtitle`) }}</span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <GlowCard
+          v-for="(project, idx) in section.projects"
+          :key="project.name"
+          :title="project.name === 'whiterqbbit' ? t('whiterqbbit.title') : project.formatted"
+          :url="project.url"
+          :source="project.source"
+          class="slide-enter"
+          :style="{ '--enter-stage': sectionIdx * 4 + idx + 1, '--enter-step': '80ms' }"
+        >
+          <p class="text-sm text-ctp-subtext1 leading-relaxed -mt-2">
+            {{ t(`${project.name}.description`) }}
+          </p>
+          <p class="mt-2 text-sm text-ctp-overlay1 italic leading-relaxed">
+            {{ t(`${project.name}.tasks`) }}
+          </p>
 
-        <div class="mt-auto pt-5 flex flex-col gap-2.5">
-          <div v-for="side in (['front', 'back'] as const)" :key="side">
-            <div v-if="project.stack[side]" class="flex gap-2">
-              <span class="w-11 shrink-0 pt-1 text-[0.65rem] font-bold uppercase tracking-wider text-ctp-overlay0">{{ side }}</span>
-              <div class="flex flex-wrap gap-1.5">
-                <UTooltip v-for="tech in project.stack[side]" :key="tech.name" :text="tech.name" :prevent="!('short' in tech)">
-                  <span class="tech-chip">
-                    <span :class="tech.icon" aria-hidden="true" />
-                    {{ 'short' in tech ? tech.short : tech.name }}
-                  </span>
-                </UTooltip>
+          <div class="mt-auto pt-5 flex flex-col gap-2.5">
+            <div v-for="side in (['front', 'back'] as const)" :key="side">
+              <div v-if="project.stack[side]" class="flex gap-2">
+                <span class="w-11 shrink-0 pt-1 text-[0.65rem] font-bold uppercase tracking-wider text-ctp-overlay0">{{ side }}</span>
+                <div class="flex flex-wrap gap-1.5">
+                  <UTooltip v-for="tech in project.stack[side]" :key="tech.name" :text="tech.name" :prevent="!('short' in tech)">
+                    <span class="tech-chip">
+                      <span :class="tech.icon" aria-hidden="true" />
+                      {{ 'short' in tech ? tech.short : tech.name }}
+                    </span>
+                  </UTooltip>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </GlowCard>
-    </div>
+        </GlowCard>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -220,6 +265,16 @@ const projects: IProject[] = [
 <i18n lang="yaml">
 en:
   title: 'Work history'
+  categories:
+    employed:
+      title: 'Full-time'
+      subtitle: 'In-house, alongside product teams'
+    freelance:
+      title: 'Freelance & websites'
+      subtitle: 'For clients and close ones'
+    products:
+      title: 'Side projects'
+      subtitle: 'Founded or built from scratch'
   seo_description: 'The projects and startups Guillaume Bonnefoy has worked on: Second Eyes, Patrowl, Vitesse, Aestima, Tictactrip, My Omniscient and more — Vue/Nuxt, TypeScript, Node.'
   second_eyes:
     description: 'AI image variation app for artists.'
@@ -245,6 +300,9 @@ en:
   omniscient:
     description: 'IoT startup in the construction industry.'
     tasks: 'Fullstack dev, sensor integration, backoffice tools development'
+  atsora:
+    description: 'Real-time machine monitoring for machining workshops.'
+    tasks: 'Front-end dev, UI/UX'
   aestima:
     description: 'SaaS startup in wealth management.'
     tasks: 'Fullstack dev, front refactor of a v1 and dev of a v2'
@@ -263,6 +321,16 @@ en:
     tasks: 'Fullstack dev, UI/UX'
 fr:
   title: 'Expériences'
+  categories:
+    employed:
+      title: 'CDI'
+      subtitle: 'En interne, avec les équipes produit'
+    freelance:
+      title: 'Freelance & sites'
+      subtitle: 'Pour des clients et des proches'
+    products:
+      title: 'Projets perso'
+      subtitle: 'Fondés ou construits de zéro'
   seo_description: "Les projets et startups sur lesquels Guillaume Bonnefoy a travaillé : Second Eyes, Patrowl, Vitesse, Aestima, Tictactrip, My Omniscient et d'autres — Vue/Nuxt, TypeScript, Node."
   second_eyes:
     description: "App de variations d'images par IA pour les artistes."
@@ -288,6 +356,9 @@ fr:
   omniscient:
     description: 'Startup IOT dans le secteur du BTP.'
     tasks: "Dev fullstack, intégration de capteurs, développement d'outils backoffice"
+  atsora:
+    description: "Suivi en temps réel des machines pour les ateliers d'usinage."
+    tasks: 'Dev front-end, UI/UX'
   aestima:
     description: 'Startup SaaS dans la gestion de patrimoine.'
     tasks: "Dev fullstack, refactor front d'une v1 et dev d'une v2"
