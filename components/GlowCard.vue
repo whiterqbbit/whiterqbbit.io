@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { useMouseInElement } from '@vueuse/core'
 
 const { title, url, source } = defineProps<{
@@ -9,8 +9,18 @@ const { title, url, source } = defineProps<{
   emphasize?: boolean
 }>()
 
+// distance (px) à partir de laquelle la bordure commence à s'allumer
+const REACH = 120
+
 const card = ref<HTMLDivElement>()
-const { elementX, elementY } = useMouseInElement(card)
+const { elementX, elementY, elementWidth, elementHeight } = useMouseInElement(card)
+
+// 0 loin de la carte, 1 dessus
+const glow = computed(() => {
+  const dx = Math.max(0, -elementX.value, elementX.value - elementWidth.value)
+  const dy = Math.max(0, -elementY.value, elementY.value - elementHeight.value)
+  return Math.max(0, 1 - Math.hypot(dx, dy) / REACH)
+})
 
 const colorMode = useColorMode()
 
@@ -23,9 +33,9 @@ watch(() => colorMode.value, () => {
 
 <template>
   <div
-    ref="card" :style="{ '--x': `${elementX}px`, '--y': `${elementY}px` }"
+    ref="card" :style="{ '--x': `${elementX}px`, '--y': `${elementY}px`, '--glow': glow }"
     class="flex flex-col p-5 lg:p-7 rounded-3xl
-    border border-gradient border-ctp-text/10 hover:border-ctp-text/20 bg-white/70 dark:bg-ctp-base/70 backdrop-blur-sm
+    border border-gradient border-ctp-text/10 hover:border-ctp-yellow/35 bg-white/70 dark:bg-ctp-base/70 backdrop-blur-sm
     before:absolute before:-inset-px before:h-[calc(100%+2px)] before:w-[calc(100%+2px)] before:rounded-3xl
     transition-all ease-out group relative before:blur-xl duration-500"
     :class="emphasize
@@ -51,7 +61,7 @@ watch(() => colorMode.value, () => {
 </template>
 
 <style>
-/* la bordure s'allume en jaune autour du curseur */
+/* la bordure s'allume en jaune autour du curseur, dès qu'il s'approche */
 .border-gradient::after {
   content: '';
   position: absolute;
@@ -66,12 +76,11 @@ watch(() => colorMode.value, () => {
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.4s ease-out;
+  opacity: var(--glow, 0);
+  transition: opacity 0.2s ease-out;
   pointer-events: none;
 }
 
-.border-gradient:hover::after,
 .border-gradient:focus-within::after {
   opacity: 1;
 }

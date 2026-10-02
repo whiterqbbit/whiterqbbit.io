@@ -208,12 +208,13 @@ const sections = categories.map(category => ({
       class="mb-14 sm:mb-20 last:mb-0"
     >
       <div
-        class="slide-enter mb-5 sm:mb-6 border-b border-ctp-surface0 pb-3"
+        class="slide-enter mb-5 sm:mb-6"
         :style="{ '--enter-stage': sectionIdx * 4, '--enter-step': '80ms' }"
       >
-        <h2 class="text-lg sm:text-xl font-bold tracking-tight text-ctp-text">
+        <h2 class="pb-3 text-lg sm:text-xl font-bold tracking-tight text-ctp-text">
           {{ t(`categories.${section.category}.title`) }}
         </h2>
+        <GlowRule />
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
         <GlowCard
