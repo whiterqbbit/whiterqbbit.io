@@ -58,7 +58,7 @@ const locales = {
         :round="3" :range-color="colorMode.preference === 'dark' ? rangeColorsDark : rangeColorsLight"
         :locale="{ ...locales[locale], days: locales.empty.days, less: '', more: '' }"
         :max="20"
-        :tooltip-formatter="(v) => t('tooltip', { count: v.count, date: new Date(v.date).toLocaleDateString(locale) })"
+        :tooltip-formatter="(v) => t('tooltip', { count: v.count, date: new Date(v.date).toLocaleDateString(locale, { day: 'numeric', month: 'short', year: 'numeric' }) }, v.count)"
         :no-data-text="t('no_data')"
       />
     </div>
@@ -75,17 +75,38 @@ const locales = {
   font-family: inherit;
   font-size: 6px;
 }
+
+.heatmap :deep(rect.vch__day__square:hover) {
+  stroke: theme('colors.ctp-yellow.DEFAULT');
+  stroke-width: 1.5px;
+  paint-order: stroke;
+}
+</style>
+
+<style>
+/* tooltip tippy de la heatmap (attaché au body), aligné sur les UTooltip */
+.tippy-box {
+  @apply rounded-md bg-ctp-crust px-2 py-1 text-xs text-ctp-text shadow-lg ring-1 ring-ctp-surface1 transition-opacity duration-150;
+}
+
+.tippy-box[data-state='hidden'] {
+  opacity: 0;
+}
+
+.tippy-arrow {
+  display: none;
+}
 </style>
 
 <i18n lang="yaml">
 en:
   last_year: "contributions in the last year"
   per_day: "contributions per day"
-  tooltip: "{count} contributions on {date}"
+  tooltip: "No contributions on {date} | 1 contribution on {date} | {count} contributions on {date}"
   no_data: "No contributions"
 fr:
   last_year: "contributions sur l'année"
   per_day: "contributions par jour"
-  tooltip: "{count} contributions le {date}"
+  tooltip: "Aucune contribution le {date} | 1 contribution le {date} | {count} contributions le {date}"
   no_data: "Aucune contribution"
 </i18n>
