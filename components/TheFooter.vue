@@ -5,11 +5,11 @@ const { t } = useI18n({ useScope: 'local' })
 <template>
   <nav class="rounded-t-3xl h-20 flex flex-col gap-5 my-10">
     <ul class="flex max-w-5xl mx-auto">
-      <li class="m-auto flex gap-6 md:gap-8 text-3xl">
-        <NuxtLink class="i-ci-mail" to="mailto:whiterqbbit@proton.me" target="_blank" />
-        <NuxtLink class="i-ci-github" to="https://www.github.com/whiterqbbit" target="_blank" />
-        <NuxtLink class="i-simple-icons-gitlab h-6 mt-1" to="https://www.gitlab.com/whiterqbbit" target="_blank" />
-        <NuxtLink class="i-ci-linkedin" to="https://www.linkedin.com/in/white-rqbbit/" target="_blank" />
+      <li class="m-auto flex items-center gap-6 md:gap-8 text-2xl text-ctp-subtext0">
+        <NuxtLink aria-label="Email" class="i-ci-mail" to="mailto:whiterqbbit@proton.me" target="_blank" />
+        <NuxtLink aria-label="GitHub" class="i-ci-github" to="https://www.github.com/whiterqbbit" target="_blank" />
+        <NuxtLink aria-label="GitLab" class="i-simple-icons-gitlab text-[1.35rem]" to="https://www.gitlab.com/whiterqbbit" target="_blank" />
+        <NuxtLink aria-label="LinkedIn" class="i-ci-linkedin" to="https://www.linkedin.com/in/white-rqbbit/" target="_blank" />
       </li>
     </ul>
     <div class="text-center text-sm text-ctp-overlay1">
@@ -27,15 +27,15 @@ ul li * {
 }
 
 ul li *:hover {
-  @apply text-ctp-flamingo scale-105;
+  @apply text-ctp-text -translate-y-0.5;
 }
 </style>
 
 <i18n lang="yaml">
 en:
-  made_by: "Made by my little hands with Nuxt."
+  made_by: "Made by my little hands with Nuxt (and, quite recently, Claude)."
   source: "Source code on Github"
 fr:
-  made_by: "Fait de mes petites mains avec Nuxt."
+  made_by: "Fait de mes petites mains avec Nuxt (et, depuis peu, Claude)."
   source: "Code source sur Github"
 </i18n>

@@ -26,24 +26,27 @@ const current_stack = computed(() => is_short_stack.value ? short_stack : long_s
 </script>
 
 <template>
-  <div class="rounded-3xl">
-    <div class="mt-4 flex flex-wrap gap-4">
+  <div>
+    <div class="flex flex-wrap gap-3">
       <div
         v-for="type in current_stack" :key="type.name"
-        class="flex gap-2 bg-ctp-mantle transition-slow rounded-xl px-4 pt-4 pb-2 w-fit
-              border border-ctp-surface0 hover:border-ctp-overlay2"
+        class="flex items-center gap-3 rounded-xl px-3 py-2 w-fit
+              bg-ctp-crust/40 dark:bg-ctp-mantle ring-1 ring-inset ring-ctp-surface0 transition-slow hover:ring-ctp-surface2"
       >
-        <div class="font-semibold text-ctp-overlay2 min-w-fit">{{ type.name }} :</div>
-        <div class="flex flex-wrap gap-2">
-          <ul v-for="tech in type.tech" :key="tech.name" class="flex">
+        <span class="text-xs font-bold uppercase tracking-wider text-ctp-overlay1">{{ type.name }}</span>
+        <ul class="flex flex-wrap gap-2 text-xl text-ctp-subtext1">
+          <li v-for="tech in type.tech" :key="tech.name" class="flex">
             <UTooltip :text="tech.name">
-              <li :class="tech.icon" class="text-xl hover:text-ctp-sky transition-slow" />
+              <span :class="tech.icon" :aria-label="tech.name" role="img" class="hover:text-ctp-sky transition-fast" />
             </UTooltip>
-          </ul>
-        </div>
+          </li>
+        </ul>
       </div>
     </div>
-    <UButton :icon="is_short_stack ? 'i-ci-caret-down-md' : 'i-ci-caret-up-md'" class="mt-8 pr-4" @click="is_short_stack = !is_short_stack">
+    <UButton
+      :icon="is_short_stack ? 'i-ci-caret-down-md' : 'i-ci-caret-up-md'"
+      variant="soft" class="mt-6" @click="is_short_stack = !is_short_stack"
+    >
       {{ is_short_stack ? t('less_details') : t('less_buzzwords') }}
     </UButton>
   </div>

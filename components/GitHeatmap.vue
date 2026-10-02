@@ -1,9 +1,10 @@
 <script setup>
 import { CalendarHeatmap } from 'vue3-calendar-heatmap'
 
+const { t, locale } = useI18n({ useScope: 'local' })
+
 const gitData = ref(null)
 const isLoading = ref(true)
-
 onMounted(async () => {
   gitData.value = await $fetch('/api/git')
   isLoading.value = false
@@ -44,21 +45,47 @@ const locales = {
     <Spinner class="m-auto size-20 opacity-50" />
   </div>
 
-  <div v-else class="flex w-full flex-col">
-    <div v-if="gitData?.stats" class="text-sm mt-3 text-ctp-surface2 flex justify-between">
-      <p><span class="text-anim-color opacity-70">{{ gitData.stats.totalContributionCount }}</span> contributions in the last year</p>
-      <p><span class="text-anim-color opacity-70">{{ gitData.stats.averageContributionsPerDay }}</span> contributions per day</p>
+  <div v-else class="flex w-full flex-col gap-3">
+    <div v-if="gitData?.stats" class="text-sm text-ctp-overlay1 flex flex-wrap justify-between gap-x-6 gap-y-1">
+      <p><span class="font-bold text-ctp-text">{{ gitData.stats.totalContributionCount }}</span> {{ t('last_year') }}</p>
+      <p><span class="font-bold text-ctp-text">{{ gitData.stats.averageContributionsPerDay }}</span> {{ t('per_day') }}</p>
     </div>
-    <CalendarHeatmap
-      v-if="gitData?.contributions" :values="gitData.contributions" :end-date="new Date()"
-      :round="3" :range-color="colorMode.preference === 'dark' ? rangeColorsDark : rangeColorsLight"
-      :locale="locales.empty"
-      :max="20"
-      :tooltip-formatter="(v) => {
-        const date = new Date(v.date);
-        return `${v.count} contributions on ${date.toLocaleDateString('fr-FR')}`
-      }"
-      no-data-text="No contributions"
-    />
+    <!-- rtl : sur mobile la heatmap déborde et le scroll démarre sur les mois récents -->
+    <div class="overflow-x-auto [direction:rtl] -mx-4 px-4 sm:mx-0 sm:px-0">
+      <CalendarHeatmap
+        v-if="gitData?.contributions" class="heatmap [direction:ltr] min-w-[820px] sm:min-w-0"
+        :values="gitData.contributions" :end-date="new Date()"
+        :round="3" :range-color="colorMode.preference === 'dark' ? rangeColorsDark : rangeColorsLight"
+        :locale="{ ...locales[locale], days: locales.empty.days, less: '', more: '' }"
+        :max="20"
+        :tooltip-formatter="(v) => t('tooltip', { count: v.count, date: new Date(v.date).toLocaleDateString(locale) })"
+        :no-data-text="t('no_data')"
+      />
+    </div>
   </div>
 </template>
+
+<style scoped>
+.heatmap :deep(.vch__legend__wrapper) {
+  display: none;
+}
+
+.heatmap :deep(text.vch__month__label) {
+  fill: theme('colors.ctp-overlay1.DEFAULT');
+  font-family: inherit;
+  font-size: 6px;
+}
+</style>
+
+<i18n lang="yaml">
+en:
+  last_year: "contributions in the last year"
+  per_day: "contributions per day"
+  tooltip: "{count} contributions on {date}"
+  no_data: "No contributions"
+fr:
+  last_year: "contributions sur l'année"
+  per_day: "contributions par jour"
+  tooltip: "{count} contributions le {date}"
+  no_data: "Aucune contribution"
+</i18n>

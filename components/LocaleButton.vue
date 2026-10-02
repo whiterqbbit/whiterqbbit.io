@@ -6,7 +6,7 @@ function toggle_locale() {
 </script>
 
 <template>
-  <div id="language_button" class="font-bold hover:text-anim-color place-self-center">
-    <button @click="toggle_locale">{{ locale === 'fr' ? 'FR' : 'EN' }}</button>
+  <div id="language_button" class="font-bold text-ctp-subtext0 hover:text-ctp-text transition-fast place-self-center">
+    <button type="button" :aria-label="locale === 'fr' ? 'Switch to English' : 'Passer en français'" @click="toggle_locale">{{ locale === 'fr' ? 'FR' : 'EN' }}</button>
   </div>
 </template>

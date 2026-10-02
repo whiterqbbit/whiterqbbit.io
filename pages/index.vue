@@ -9,86 +9,93 @@ useSeoMeta({
 
 function useEaster() {
   umTrackEvent('easter_egg')
-  pic_src.value = pic_src.value === 'img/me_malt.jpg' ? 'img/me_chad.jpg' : 'img/me_malt.jpg'
+  pic_src.value = pic_src.value === 'img/me_malt.jpg' ? 'img/me_malt_ai.jpg' : 'img/me_malt.jpg'
 }
 </script>
 
 <template>
-  <div
-    class="flex flex-col gap-12 mx-auto sm:text-lg text-center sm:text-left mt-12 max-w-4xl px-2 sm:px-4 md:px-6"
-  >
+  <div class="flex flex-col gap-16 sm:gap-24 mx-auto sm:text-lg mt-10 sm:mt-16 max-w-4xl px-4 sm:px-6">
     <!-- INTRO -->
-    <div
-      class="flex justify-evenly place-content-center slide-enter"
+    <section
+      class="flex flex-col sm:flex-row items-center gap-8 sm:gap-12 slide-enter"
       :style="{ '--enter-stage': 1 }"
     >
-      <div class="place-self-center">
-        <div class="border-animation rounded-full cursor-pointer">
-          <div class="p-1 sm:p-1.5 rounded-full glow-anim">
-            <NuxtImg :src="pic_src" class="w-36 sm:w-48 md:w-64 object-cover rounded-full m-0" @click="useEaster()" />
-          </div>
+      <div class="shrink-0 border-animation rounded-full cursor-pointer">
+        <div class="p-1 sm:p-1.5 rounded-full glow-anim">
+          <NuxtImg :src="pic_src" alt="Guillaume Bonnefoy" class="size-40 sm:size-52 md:size-60 object-cover rounded-full" @click="useEaster()" />
         </div>
       </div>
-      <div class="flex flex-col text-center w-1/2 gap-4 justify-round place-content-center slide-enter">
-        <h1 class="text-xl sm:text-3xl">
+      <div class="flex flex-col gap-3 text-center sm:text-left">
+        <p class="text-lg sm:text-xl text-ctp-subtext0">
           {{ t('intro.hello') }}
-          <span class="text-anim-color font-bold text-xl sm:text-4xl">Guillaume Bonnefoy</span>
+        </p>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.05] pb-1">
+          <span class="text-anim-color">Guillaume Bonnefoy</span>
         </h1>
-        <p class="text-ctp-subtext1">
-          <strong>{{ t('intro.fullstack') }}</strong>
-          {{ t('intro.designer') }}
+        <p class="text-lg sm:text-xl text-ctp-subtext1 max-w-md leading-relaxed">
+          <strong>{{ t('intro.fullstack') }}</strong>{{ t('intro.designer') }}
         </p>
       </div>
-    </div>
+    </section>
 
     <!-- AVAILABILITY -->
-    <div class="card-duo" :style="{ '--enter-stage': 2 }">
-      <div class="sm:w-1/2 place-self-center">
-        {{ t('availability.main') }} <span class="text-anim-color text-xl sm:text-2xl italic font-bold sm:pr-1">{{ t('availability.employed') }}</span><br><br>
-        {{ t('work_preference.main') }} <strong>{{ t('work_preference.ambitious') }}</strong> {{ t('work_preference.and') }} <strong> {{ t('work_preference.challenging') }}</strong> !<br>
-        {{ t('collaborate') }} <strong>{{ t('uiux') }}</strong> {{ t('share') }} !
+    <section class="card-duo flex-col" :style="{ '--enter-stage': 2 }">
+      <div class="prose-block">
+        <p>
+          {{ t('availability.main') }}
+          <span class="status-pill">
+            <span class="relative flex size-2">
+              <span class="absolute inline-flex size-full rounded-full bg-ctp-yellow opacity-60 motion-safe:animate-ping" />
+              <span class="relative inline-flex size-2 rounded-full bg-ctp-yellow" />
+            </span>
+            {{ t('availability.employed') }}
+          </span>
+        </p>
+        <p>
+          {{ t('work_preference.main') }} <strong>{{ t('work_preference.ambitious') }}</strong> {{ t('work_preference.and') }} <strong>{{ t('work_preference.challenging') }}</strong>{{ t('excl') }}
+          {{ t('collaborate') }} <strong>{{ t('uiux') }}</strong> {{ t('share') }}{{ t('excl') }}
+        </p>
       </div>
-      <GlowCard :title="t('contact_me')" class="m-auto sm:w-1/2">
+      <GlowCard :title="t('contact_me')" class="w-full sm:w-1/2" emphasize>
         <ContactForm />
       </GlowCard>
-    </div>
+    </section>
 
     <!-- STACK -->
-    <div class="card-duo" :style="{ '--enter-stage': 3 }">
-      <GlowCard :title="t('my_stack')" class="place-self-center max-w-sm sm:max-w-none sm:w-1/2">
+    <section class="card-duo flex-col-reverse" :style="{ '--enter-stage': 3 }">
+      <GlowCard :title="t('my_stack')" class="w-full sm:w-1/2">
         <TechStack />
       </GlowCard>
-      <div class="sm:w-1/2 place-self-center">
-        {{ t('technical.main') }} <strong>Vue/Nuxt</strong>{{ t('technical.speed') }} <strong>Typescript</strong>.<br>
-        {{ t('technical.approach') }} <strong>{{ t('technical.modern') }}</strong>, {{ t('technical.yet') }} <strong>{{ t('technical.mature') }}</strong>{{ t('technical.everything') }}
+      <div class="prose-block">
+        <p>
+          {{ t('technical.main') }} <strong>Vue/Nuxt</strong>{{ t('technical.speed') }} <strong>TypeScript</strong>.
+        </p>
+        <p>
+          {{ t('technical.approach') }} <strong>{{ t('technical.modern') }}</strong>, {{ t('technical.yet') }} <strong>{{ t('technical.mature') }}</strong>{{ t('technical.everything') }}
+        </p>
       </div>
-    </div>
-
-    <!-- COLLECTIF VITE -->
-    <!-- <div class="card-duo" :style="{ '--enter-stage': 4 }">
-      <div class="sm:w-1/2 place-self-center">
-        {{ t('collective.main') }}
-        <span class="text-anim-color text-lg sm:text-2xl italic font-bold sm:pr-1">Vite!</span>.<br>
-        {{ t('collective.relevance') }}
-      </div>
-      <img src="https://media1.tenor.com/m/w61O0eYj-M4AAAAC/frens.gif" class="h-52 hidden sm:block object-cover rounded-3xl">
-    </div> -->
-
-    <!-- CONTACT -->
-    <div class="flex slide-enter" :style="{ '--enter-stage': 5 }">
-      <GlowCard :title="t('contact_me')" class="w-full max-w-sm sm:max-w-md sm:my-16 m-auto" emphasize>
-        <ContactForm />
-      </GlowCard>
-    </div>
+    </section>
 
     <!-- GIT CONTRIBUTIONS -->
-    <GitHeatmap />
+    <section class="slide-enter" :style="{ '--enter-stage': 4 }">
+      <GitHeatmap />
+    </section>
   </div>
 </template>
 
 <style scoped>
-.card-duo{
-  @apply slide-enter flex flex-col-reverse sm:flex-row gap-6 md:gap-12 px-4 sm:px-0;
+.card-duo {
+  @apply slide-enter flex sm:flex-row items-center gap-8 md:gap-12;
+}
+
+.prose-block {
+  @apply flex flex-col gap-4 sm:w-1/2 text-center sm:text-left text-ctp-subtext1 leading-relaxed;
+}
+
+.status-pill {
+  @apply inline-flex items-center gap-2 align-middle whitespace-nowrap rounded-full
+    bg-ctp-surface0/70 ring-1 ring-inset ring-ctp-surface1 px-3 py-0.5 ml-1
+    text-base font-semibold text-ctp-text;
 }
 </style>
 
@@ -105,8 +112,9 @@ en:
     main: "I am currently"
     yes: "available!"
     no: "in a freelance mission."
-    employed: "in a full-time position."
-  contact_me: "Contact me !"
+    employed: "in a full-time position"
+  contact_me: "Contact me!"
+  excl: "!"
   work_preference:
     main: "I love working on"
     ambitious: "ambitious"
@@ -140,8 +148,9 @@ fr:
     main: "Je suis actuellement"
     yes: "disponible !"
     no: "en mission."
-    employed: "en CDI !"
-  contact_me: "Contactez-moi !"
+    employed: "en CDI"
+  contact_me: "Contactez-moi\u00A0!"
+  excl: "\u00A0!"
   work_preference:
     main: "J'aime travailler sur des projets"
     ambitious: "ambitieux"
@@ -149,7 +158,7 @@ fr:
     challenging: "challengeants"
   collaborate: "Passionné, j'adore collaborer sur les sujets"
   uiux: "UI/UX"
-  share: " et partager mes idées"
+  share: "et partager mes idées"
   record_time: "temps record"
   my_stack: "Ma stack"
   technical:

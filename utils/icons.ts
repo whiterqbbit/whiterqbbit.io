@@ -89,18 +89,22 @@ export const icons = {
   },
   elasticsearch: {
     name: 'Elasticsearch w/ Kuzzle',
+    short: 'Elasticsearch',
     icon: 'i-simple-icons-elastic',
   },
   aws_omniscient: {
     name: 'AWS IOTCore, Lambda, StepFunctions, S3, API Gateway',
+    short: 'AWS',
     icon: 'i-simple-icons-amazonaws',
   },
   aws_ttt: {
     name: 'AWS Cloudwatch, S3',
+    short: 'AWS',
     icon: 'i-simple-icons-amazonaws',
   },
   aws_calypso: {
     name: 'AWS ECR, EC2, S3, Route53, ACM',
+    short: 'AWS',
     icon: 'i-simple-icons-amazonaws',
   },
   agile: {

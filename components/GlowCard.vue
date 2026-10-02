@@ -24,25 +24,28 @@ watch(() => colorMode.value, () => {
 <template>
   <div
     ref="card" :style="{ '--x': `${elementX}px`, '--y': `${elementY}px` }"
-    class="p-4 lg:p-8 overflow-hidden rounded-3xl
-    border border-gradient border-ctp-text/10 bg-ctp-surface0/30 hover:bg-ctp-base sm:bg-ctp-mantle sm:hover:bg-ctp-mantle
-    before:absolute before:-inset-px before:h-[calc(100%+2px)] before:w-[calc(100%+2px)] before:rounded-xl
-    transition-all ease-out group relative before:blur-xl hover:shadow-[0_0_30px_3px] duration-500"
-    :class=" [emphasize ? 'shadow-[0_0_80px_13px] shadow-ctp-overlay2/60 hover:shadow-ctp-overlay2/60 dark:shadow-ctp-blue/30 hover:dark:shadow-ctp-blue/90'
-      : 'hover:shadow-ctp-surface0 hover:dark:shadow-ctp-blue/10']"
+    class="flex flex-col p-5 lg:p-7 rounded-3xl
+    border border-gradient border-ctp-text/10 hover:border-ctp-text/20 bg-white/70 dark:bg-ctp-base/70 backdrop-blur-sm
+    before:absolute before:-inset-px before:h-[calc(100%+2px)] before:w-[calc(100%+2px)] before:rounded-3xl
+    transition-all ease-out group relative before:blur-xl duration-500"
+    :class="emphasize
+      ? 'shadow-[0_0_40px_4px] shadow-ctp-overlay2/30 dark:shadow-ctp-blue/15 hover:dark:shadow-ctp-blue/25'
+      : 'hover:shadow-[0_8px_30px_-12px] hover:shadow-ctp-overlay2/40 hover:dark:shadow-ctp-blue/20'"
   >
-    <div class="relative">
-      <div v-if="title" class="flex gap-4 place-content-center text-2xl">
-        <h2 class="text-xl text-center sm:text-2xl font-semibold text-anim-color mb-6">
+    <div class="relative flex flex-col flex-1">
+      <div v-if="title" class="flex items-start justify-between gap-3 mb-4">
+        <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-ctp-text group-hover:text-anim-color">
           {{ title }}
         </h2>
-        <div class="mt-1">
-          <NuxtLink v-if="url" class="i-ci-link transition-fast hover:text-ctp-yellow" :to="url" target="_blank" />
-          <NuxtLink v-if="source" class="i-ci-github transition-fast hover:text-ctp-yellow" :to="source" target="_blank" />
+        <div v-if="url || source" class="flex gap-1 text-xl text-ctp-overlay1 mt-0.5">
+          <NuxtLink v-if="url" :to="url" target="_blank" :aria-label="`${title} website`" class="i-ci-link transition-fast hover:text-ctp-yellow" />
+          <NuxtLink v-if="source" :to="source" target="_blank" :aria-label="`${title} source code`" class="i-ci-github transition-fast hover:text-ctp-yellow" />
         </div>
       </div>
 
-      <div class="text-base text-subtext0"><slot /></div>
+      <div class="flex flex-col flex-1 text-base text-ctp-subtext1">
+        <slot />
+      </div>
     </div>
   </div>
 </template>

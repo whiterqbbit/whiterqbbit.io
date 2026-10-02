@@ -2,6 +2,11 @@
 const { t } = useI18n({ useScope: 'local' })
 const moi_src = ref('img/me_stationf.jpg')
 
+function useEaster() {
+  umTrackEvent('easter_egg')
+  moi_src.value = moi_src.value === 'img/me_stationf.jpg' ? 'img/me_stationf_ai.jpg' : 'img/me_stationf.jpg'
+}
+
 useSeoMeta({
   title: () => t('title'),
   description: () => t('seo_description'),
@@ -9,60 +14,70 @@ useSeoMeta({
 </script>
 
 <template>
-  <UContainer class="text-center sm:text-left text-lg sm:text-xl mt-8">
-    <h1
-      class="text-2xl sm:text-4xl text-center md:mb-4 lg:mb-8 slide-enter"
-      :style="{ '--enter-stage': 0 }"
-    >
+  <UContainer class="mt-10 sm:mt-16 max-w-4xl text-lg">
+    <h1 class="page-title mb-10 sm:mb-16 slide-enter" :style="{ '--enter-stage': 0 }">
       {{ t('title') }}
     </h1>
-    <div class="flex flex-col gap-10">
-      <div class="bandeau" :style="{ '--enter-stage': 1 }">
-        <div class="place-self-center text-center !max-w-sm">
+    <div class="flex flex-col gap-14 sm:gap-20">
+      <section class="bandeau" :style="{ '--enter-stage': 1 }">
+        <p class="textzone">
           {{ t('childhood') }}
+        </p>
+        <div class="pic-frame">
+          <NuxtImg
+            :src="moi_src"
+            :alt="t('alt.sf')"
+            class="a-propos-pic cursor-pointer"
+            @click="useEaster()"
+          />
         </div>
-        <NuxtImg
-          :src="moi_src"
-          :alt="t('alt.sf')"
-          class="a-propos-pic"
-          @click="moi_src = 'img/me_shojo.png'"
-        />
-      </div>
+      </section>
 
-      <div class="bandeau !flex-col sm:!flex-row" :style="{ '--enter-stage': 2 }">
-        <NuxtImg
-          src="img/musk.png"
-          :alt="t('alt.musk')"
-          class="a-propos-pic max-h-64 place-self-center w-max object-contain"
-        />
-        <div class="textzone">
+      <section class="bandeau" :style="{ '--enter-stage': 2 }">
+        <div class="pic-frame sm:order-first">
+          <NuxtImg src="img/musk.png" :alt="t('alt.musk')" class="a-propos-pic object-top" />
+        </div>
+        <p class="textzone">
           {{ t('professionally') }}
-        </div>
-      </div>
+        </p>
+      </section>
 
-      <div class="bandeau" :style="{ '--enter-stage': 3 }">
-        <div class="textzone">
-          {{ t('passions') }}<br><br>
-          {{ t('side_project.main') }}
-          <span class="text-anim-color font-bold text-2xl">{{ t('side_project.name') }}</span>
+      <section class="bandeau" :style="{ '--enter-stage': 3 }">
+        <div class="textzone flex flex-col gap-4">
+          <p>{{ t('passions') }}</p>
+          <p>
+            {{ t('side_project.main') }}
+            <NuxtLink
+              to="https://second-eyes.io/" target="_blank"
+              class="font-semibold text-ctp-text underline decoration-ctp-yellow/60 underline-offset-4 decoration-2 hover:decoration-ctp-yellow transition-fast"
+            >
+              {{ t('side_project.name') }}
+            </NuxtLink>
+          </p>
         </div>
-        <NuxtImg src="img/me_family.jpg" :alt="t('alt.family')" class="a-propos-pic" />
-      </div>
+        <div class="pic-frame">
+          <NuxtImg src="img/me_family.jpg" :alt="t('alt.family')" class="a-propos-pic" />
+        </div>
+      </section>
     </div>
   </UContainer>
 </template>
 
 <style scoped>
 .bandeau {
-  @apply slide-enter flex flex-col-reverse sm:flex-row gap-4 justify-evenly place-content-center;
+  @apply slide-enter grid grid-cols-1 sm:grid-cols-2 items-center gap-8 sm:gap-12;
 }
 
 .textzone {
-  @apply max-w-lg place-self-center;
+  @apply text-center sm:text-left text-ctp-subtext1 leading-relaxed;
+}
+
+.pic-frame {
+  @apply border-animation p-1 rounded-3xl glow-anim w-full max-w-sm mx-auto;
 }
 
 .a-propos-pic {
-  @apply sm:h-64 border-animation p-[0.2rem] sm:p-[0.3rem] glow-anim object-cover rounded-3xl;
+  @apply block w-full aspect-[4/3] object-cover rounded-[1.3rem];
 }
 </style>
 
@@ -74,7 +89,7 @@ fr:
   professionally: "Professionnellement, j'aime les environnements dynamiques et exigeants, je n'ai travaillé qu'en startup. J'apprécie contribuer à plus que du code, je me passionne notamment d'UI/UX et de copywriting."
   passions: "Au-delà du code, je fais du piano, de la photographie, et je m'occupe de ma petite famille. Je m'intéresse beaucoup au design, à l'IA, et au monde des startups."
   side_project:
-    main: 'Mon side-projet du moment : '
+    main: "Mon side-projet du moment\u00A0:"
     name: "Une app mobile de génération d'images pour artistes"
   alt:
     sf: 'Guillaume Bonnefoy à Station-F'
@@ -87,7 +102,7 @@ en:
   professionally: 'Professionally, I like dynamic and demanding environments, which is why I have worked exclusively in startups. I like to contribute to more than just code, I am particularly passionate about UI/UX and copywriting.'
   passions: 'Beyond code, I play the piano, take pictures, and take care of my family. I am very interested in design, AI, and the world of startups.'
   side_project:
-    main: 'My current side-project : '
+    main: 'My current side-project:'
     name: 'An AI image variation app for artists'
   alt:
     sf: 'Guillaume Bonnefoy at Station-F'

@@ -22,20 +22,20 @@ watch(() => route.path, newPath => path.value = newPath)
           class="w-10 h-10 md:w-12 md:h-12 autoSlideIn m-auto rounded-full transition-slow
                 shadow-[0_0_14px_3px] shadow-ctp-blue/25 hover:shadow-[0_0_20px_4px] hover:shadow-ctp-blue/30"
         />
-        <div class="m-auto hidden sm:block sm:text-xl md:text-2xl text-sky hover-target font-black ">Guillaume Bonnefoy</div>
+        <div class="m-auto hidden sm:block sm:text-xl md:text-2xl hover-target font-black tracking-tight">Guillaume Bonnefoy</div>
       </NuxtLink>
 
       <ul class="m-auto flex">
-        <li class="flex gap-2 md:gap-6 font-bold  md:text-lg">
+        <li class="flex gap-3 md:gap-6 md:text-lg">
           <NuxtLink to="/work-history" exact-active-class="nav-link"> {{ t('work_history') }} </NuxtLink>
           <NuxtLink to="/a-propos" exact-active-class="nav-link"> {{ t('about') }} </NuxtLink>
         </li>
       </ul>
 
-      <div class="my-auto flex gap-1">
-        <LocaleButton class="sm:text-sm md:text-base pr-1" />
-        <p class="m-auto"> | </p>
-        <DarkModeButton class="text-xl sm:text-3xl" />
+      <div class="my-auto flex items-center gap-3">
+        <LocaleButton class="text-sm md:text-base" />
+        <span class="h-5 w-px bg-ctp-surface2" aria-hidden="true" />
+        <DarkModeButton class="text-xl sm:text-2xl" />
       </div>
     </div>
   </nav>
@@ -46,16 +46,12 @@ watch(() => route.path, newPath => path.value = newPath)
   @apply raise-color;
 }
 
-ul li * {
-  @apply font-black;
+ul li a {
+  @apply font-bold text-ctp-subtext0 transition-fast hover:text-ctp-text;
 }
 
 ul li .nav-link {
-  @apply text-anim-color font-black underline decoration-ctp-yellow/50 underline-offset-[6px] decoration-2;
-}
-
-ul li *:hover {
-  @apply raise-color font-black;
+  @apply text-ctp-text underline decoration-ctp-yellow decoration-2 underline-offset-[8px];
 }
 
 /* used by the logo */

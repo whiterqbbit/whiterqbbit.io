@@ -99,7 +99,7 @@ const projects: IProject[] = [
     formatted: 'Mon journal IEF',
     stack: {
       front: [vue3, typescript, tailwind],
-      back: [nodets, postgresql, prisma, postgresql, playwright, umami],
+      back: [nodets, postgresql, prisma, playwright, umami],
     },
     url: 'https://mon-journal-ief.com/',
   },
@@ -168,42 +168,39 @@ const projects: IProject[] = [
 </script>
 
 <template>
-  <div class="flex flex-col gap-4 m-auto py-4">
-    <h1 class="text-2xl sm:text-4xl text-center md:mb-4 lg:mb-8">
+  <div class="mx-auto mt-10 sm:mt-16 px-4 sm:px-6 w-full">
+    <h1 class="page-title mb-10 sm:mb-14">
       {{ t('title') }}
     </h1>
-    <div class="flex flex-wrap justify-evenly w-full gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
       <GlowCard
         v-for="(project, idx) in projects"
         :key="project.name"
         :title="project.name === 'whiterqbbit' ? t('whiterqbbit.title') : project.formatted"
         :url="project.url"
         :source="project.source"
-        class="w-80 overflow-visible slide-enter"
-        :style="{ '--enter-stage': idx, '--enter-step': '130ms' }"
+        class="slide-enter"
+        :style="{ '--enter-stage': idx, '--enter-step': '80ms' }"
       >
-        <div class="text-sm flex flex-col gap-1" v-html="t(`${project.name}.description`)" />
-        <div class="mt-2 text-sm italic text-ctp-overlay2 hover:text-anim-color-light">
+        <p class="text-sm text-ctp-subtext1 leading-relaxed -mt-2">
+          {{ t(`${project.name}.description`) }}
+        </p>
+        <p class="mt-2 text-sm text-ctp-overlay1 italic leading-relaxed">
           {{ t(`${project.name}.tasks`) }}
-        </div>
-        <div
-          class="flex flex-col mt-4 gap-2 text-lg cursor-default text-ctp-overlay2 hover:text-ctp-text transition-fast"
-        >
-          <div class="flex flex-row gap-2">
-            <span class="text-sm text-ctp-overlay2">Front :</span>
-            <div v-for="tech in project.stack.front" :key="tech.name">
-              <UTooltip :text="tech.name">
-                <li :class="tech.icon" />
-              </UTooltip>
-            </div>
-          </div>
+        </p>
 
-          <div v-if="project.stack.back" class="flex flex-row gap-2">
-            <span class="text-sm text-ctp-overlay2">Back :</span>
-            <div v-for="tech in project.stack.back" :key="tech.name">
-              <UTooltip :text="tech.name">
-                <li :class="tech.icon" />
-              </UTooltip>
+        <div class="mt-auto pt-5 flex flex-col gap-2.5">
+          <div v-for="side in (['front', 'back'] as const)" :key="side">
+            <div v-if="project.stack[side]" class="flex gap-2">
+              <span class="w-11 shrink-0 pt-1 text-[0.65rem] font-bold uppercase tracking-wider text-ctp-overlay0">{{ side }}</span>
+              <div class="flex flex-wrap gap-1.5">
+                <UTooltip v-for="tech in project.stack[side]" :key="tech.name" :text="tech.name" :prevent="!('short' in tech)">
+                  <span class="tech-chip">
+                    <span :class="tech.icon" aria-hidden="true" />
+                    {{ 'short' in tech ? tech.short : tech.name }}
+                  </span>
+                </UTooltip>
+              </div>
             </div>
           </div>
         </div>
@@ -211,6 +208,13 @@ const projects: IProject[] = [
     </div>
   </div>
 </template>
+
+<style scoped>
+.tech-chip {
+  @apply inline-flex items-center gap-1 rounded-md px-1.5 py-0.5
+    text-xs text-ctp-subtext0 bg-ctp-surface0/50 ring-1 ring-inset ring-ctp-surface0;
+}
+</style>
 
 <i18n lang="yaml">
 en:

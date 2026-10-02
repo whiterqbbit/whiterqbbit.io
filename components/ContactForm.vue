@@ -43,23 +43,20 @@ async function submit(event: FormSubmitEvent<Schema>) {
 <template>
   <UForm ref="form" :schema="schema" :state="state" class="space-y-4 flex flex-col" data-netlify="true" @submit="submit">
     <UFormGroup name="email" label="Email">
-      <UInput v-model="state.email" icon="i-ci-mail" />
+      <UInput v-model="state.email" icon="i-ci-mail" size="md" type="email" />
     </UFormGroup>
 
     <UFormGroup name="message" label="Message">
-      <UTextarea v-model="state.message" autoresize />
+      <UTextarea v-model="state.message" size="md" :rows="4" autoresize />
     </UFormGroup>
 
-    <div class="my-3" />
-    <div class="flex gap-2">
-      <UButton :icon="has_sent ? 'i-ci-circle-check' : 'i-ci-paper-plane'" type="submit" class="mx-auto" :loading="is_emailing">
+    <div class="flex flex-wrap items-center gap-3 pt-2">
+      <UButton :icon="has_sent ? 'i-ci-circle-check' : 'i-ci-paper-plane'" type="submit" size="md" :loading="is_emailing">
         {{ has_sent ? t('sent') : t('send') }}
       </UButton>
-      <p class="m-auto text-ctp-subtext0 text-sm sm:text-base">{{ t('or') }}</p>
-      <UButton icon="i-ci-calendar-add" class="mx-auto">
-        <NuxtLink to="https://cal.com/guillaume-bonnefoy" target="_blank">
-          {{ t('book_a_call') }}
-        </NuxtLink>
+      <span class="text-ctp-overlay1 text-sm">{{ t('or') }}</span>
+      <UButton icon="i-ci-calendar-add" variant="soft" size="md" to="https://cal.com/guillaume-bonnefoy" target="_blank">
+        {{ t('book_a_call') }}
       </UButton>
     </div>
     <p v-if="display_error" class="text-ctp-red">
@@ -70,15 +67,15 @@ async function submit(event: FormSubmitEvent<Schema>) {
 
 <i18n lang="yaml">
 en:
-  message_sent: "Message sent !"
-  sent: "Sent !"
+  message_sent: "Message sent!"
+  sent: "Sent!"
   send: "Send"
   or: "or"
   book_a_call: "Schedule a call"
   error: "Sorry, there was an error, please write me an email at whiterqbbit{'@'}proton.me !"
 fr:
-  message_sent: "Message envoyé !"
-  sent: "Envoyé !"
+  message_sent: "Message envoyé\u00A0!"
+  sent: "Envoyé\u00A0!"
   send: "Envoyer"
   or: "ou"
   book_a_call: "Prendre RDV"

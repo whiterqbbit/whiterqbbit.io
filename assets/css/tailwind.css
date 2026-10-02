@@ -11,13 +11,13 @@
   }
 
   strong {
-    @apply font-bold dark:font-extrabold text-ctp-blue;
+    @apply font-bold text-ctp-text;
   }
 }
 
 @layer components {
-  .btn {
-    @apply px-4 py-2 rounded-md bg-blue-500 text-white;
+  .page-title {
+    @apply text-3xl sm:text-4xl font-bold tracking-tight text-center text-ctp-text;
   }
 }
 
@@ -120,7 +120,7 @@
   }
 
   .glow-anim {
-    @apply shadow-[0_0_30px_11px] shadow-ctp-blue/25 transition-slow hover:shadow-[0_0_40px_11px] hover:shadow-ctp-blue/30;
+    @apply shadow-[0_0_24px_4px] shadow-ctp-blue/15 transition-slow hover:shadow-[0_0_32px_6px] hover:shadow-ctp-blue/25;
   }
 
   @keyframes slide-enter {
