@@ -208,13 +208,12 @@ const sections = categories.map(category => ({
       class="mb-14 sm:mb-20 last:mb-0"
     >
       <div
-        class="slide-enter mb-5 sm:mb-6 flex items-baseline gap-3 border-b border-ctp-surface0 pb-3"
+        class="slide-enter mb-5 sm:mb-6 border-b border-ctp-surface0 pb-3"
         :style="{ '--enter-stage': sectionIdx * 4, '--enter-step': '80ms' }"
       >
         <h2 class="text-lg sm:text-xl font-bold tracking-tight text-ctp-text">
           {{ t(`categories.${section.category}.title`) }}
         </h2>
-        <span class="text-sm text-ctp-overlay1">{{ t(`categories.${section.category}.subtitle`) }}</span>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
         <GlowCard
@@ -236,8 +235,8 @@ const sections = categories.map(category => ({
           <div class="mt-auto pt-5 flex flex-col gap-2.5">
             <div v-for="side in (['front', 'back'] as const)" :key="side">
               <div v-if="project.stack[side]" class="flex gap-2">
-                <span class="w-11 shrink-0 pt-1 text-[0.65rem] font-bold uppercase tracking-wider text-ctp-overlay0">{{ side }}</span>
-                <div class="flex flex-wrap gap-1.5">
+                <span class="w-11 shrink-0 text-[0.65rem] leading-5 font-bold uppercase tracking-wider text-ctp-overlay0">{{ side }}</span>
+                <div class="flex flex-wrap items-start content-start gap-1.5">
                   <UTooltip v-for="tech in project.stack[side]" :key="tech.name" :text="tech.name" :prevent="!('short' in tech)">
                     <span class="tech-chip">
                       <span :class="tech.icon" aria-hidden="true" />
@@ -268,13 +267,10 @@ en:
   categories:
     employed:
       title: 'Full-time'
-      subtitle: 'In-house, alongside product teams'
     freelance:
       title: 'Freelance & websites'
-      subtitle: 'For clients and close ones'
     products:
       title: 'Side projects'
-      subtitle: 'Founded or built from scratch'
   seo_description: 'The projects and startups Guillaume Bonnefoy has worked on: Second Eyes, Patrowl, Vitesse, Aestima, Tictactrip, My Omniscient and more — Vue/Nuxt, TypeScript, Node.'
   second_eyes:
     description: 'AI image variation app for artists.'
@@ -324,13 +320,10 @@ fr:
   categories:
     employed:
       title: 'CDI'
-      subtitle: 'En interne, avec les équipes produit'
     freelance:
       title: 'Freelance & sites'
-      subtitle: 'Pour des clients et des proches'
     products:
       title: 'Projets perso'
-      subtitle: 'Fondés ou construits de zéro'
   seo_description: "Les projets et startups sur lesquels Guillaume Bonnefoy a travaillé : Second Eyes, Patrowl, Vitesse, Aestima, Tictactrip, My Omniscient et d'autres — Vue/Nuxt, TypeScript, Node."
   second_eyes:
     description: "App de variations d'images par IA pour les artistes."
