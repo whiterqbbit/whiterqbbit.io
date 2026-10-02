@@ -120,7 +120,7 @@
   }
 
   .glow-anim {
-    @apply shadow-[0_0_24px_4px] shadow-ctp-blue/15 transition-slow hover:shadow-[0_0_32px_6px] hover:shadow-ctp-blue/25;
+    @apply shadow-[0_0_24px_4px] shadow-ctp-blue/15 transition-medium hover:shadow-[0_0_32px_6px] hover:shadow-ctp-yellow/30;
   }
 
   @keyframes slide-enter {

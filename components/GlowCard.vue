@@ -51,6 +51,31 @@ watch(() => colorMode.value, () => {
 </template>
 
 <style>
+/* la bordure s'allume en jaune autour du curseur */
+.border-gradient::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  padding: 1px;
+  border-radius: inherit;
+  background: radial-gradient(
+    220px circle at var(--x) var(--y),
+    theme('colors.ctp-yellow.DEFAULT') 0%,
+    transparent 100%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+  pointer-events: none;
+}
+
+.border-gradient:hover::after,
+.border-gradient:focus-within::after {
+  opacity: 1;
+}
+
 .border-gradient::before {
   background: radial-gradient(
     350px circle at var(--x) var(--y),

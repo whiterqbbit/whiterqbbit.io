@@ -73,11 +73,11 @@ useSeoMeta({
 }
 
 .pic-frame {
-  @apply border-animation p-1 rounded-3xl glow-anim w-full max-w-sm mx-auto;
+  @apply border-animation p-0.5 rounded-3xl glow-anim w-full max-w-sm mx-auto;
 }
 
 .a-propos-pic {
-  @apply block w-full aspect-[4/3] object-cover rounded-[1.3rem];
+  @apply block w-full aspect-[4/3] object-cover rounded-[1.375rem];
 }
 </style>
 

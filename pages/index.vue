@@ -21,7 +21,7 @@ function useEaster() {
       :style="{ '--enter-stage': 1 }"
     >
       <div class="shrink-0 border-animation rounded-full cursor-pointer">
-        <div class="p-1 sm:p-1.5 rounded-full glow-anim">
+        <div class="p-0.5 rounded-full glow-anim">
           <NuxtImg :src="pic_src" alt="Guillaume Bonnefoy" class="size-40 sm:size-52 md:size-60 object-cover rounded-full" @click="useEaster()" />
         </div>
       </div>

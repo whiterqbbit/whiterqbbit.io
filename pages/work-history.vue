@@ -212,7 +212,8 @@ const projects: IProject[] = [
 <style scoped>
 .tech-chip {
   @apply inline-flex items-center gap-1 rounded-md px-1.5 py-0.5
-    text-xs text-ctp-subtext0 bg-ctp-surface0/50 ring-1 ring-inset ring-ctp-surface0;
+    text-xs text-ctp-subtext0 bg-ctp-surface0/50 ring-1 ring-inset ring-ctp-surface0
+    transition-fast hover:ring-ctp-yellow/50 hover:text-ctp-text;
 }
 </style>
 
