@@ -7,11 +7,17 @@ const { t } = useI18n({ useScope: 'local' })
 const state = reactive({
   email: undefined,
   message: undefined,
+  website: '', // honeypot
 })
+
+// le serveur jette les envois trop rapides (bots)
+const mounted_at = ref(0)
+onMounted(() => mounted_at.value = Date.now())
 
 const schema = z.object({
   email: z.string().email('Adresse email invalide'),
   message: z.string(),
+  website: z.string().optional(),
 })
 
 type Schema = z.infer<typeof schema>
@@ -27,7 +33,7 @@ async function submit(event: FormSubmitEvent<Schema>) {
   display_error.value = false
 
   try {
-    await $fetch('/api/resend', { method: 'POST', body: { ...event.data } })
+    await $fetch('/api/resend', { method: 'POST', body: { ...event.data, elapsed: Date.now() - mounted_at.value } })
     has_sent.value = true
     umTrackEvent('contact_form_sent', { email: event.data.email, message: event.data.message })
     useToast().add({ title: t('message_sent') })
@@ -45,6 +51,11 @@ async function submit(event: FormSubmitEvent<Schema>) {
     <UFormGroup name="email" label="Email">
       <UInput v-model="state.email" icon="i-ci-mail" size="md" type="email" />
     </UFormGroup>
+
+    <!-- honeypot : invisible pour les humains, rempli par les bots -->
+    <div class="absolute -left-[9999px] size-px overflow-hidden" aria-hidden="true">
+      <label>Website <input v-model="state.website" type="text" name="website" tabindex="-1" autocomplete="off"></label>
+    </div>
 
     <UFormGroup name="message" label="Message">
       <UTextarea v-model="state.message" size="md" :rows="4" autoresize />

@@ -30,7 +30,7 @@ const current_stack = computed(() => is_short_stack.value ? short_stack : long_s
     <div class="flex flex-wrap gap-3">
       <div
         v-for="type in current_stack" :key="type.name"
-        class="flex items-center gap-3 rounded-xl px-3 py-2 w-fit
+        class="flex items-center gap-3 rounded-xl px-3 py-2 w-fit cursor-default select-none
               bg-ctp-crust/40 dark:bg-ctp-mantle ring-1 ring-inset ring-ctp-surface0 transition-fast hover:ring-ctp-yellow/50"
       >
         <span class="text-xs font-bold uppercase tracking-wider text-ctp-overlay1">{{ type.name }}</span>
